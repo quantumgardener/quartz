@@ -10,7 +10,7 @@ aliases:
 ---
 [[Logseq]] has been appearing a lot in my Mastodon feed lately. Many sing its praises over [[Obsidian]] so with a slow afternoon at work yesterday I thought to take a look.
 
-My first impression is that Logseq is the offline version of [[Roam Research]]; the tool I used before [[Transplanting my brain to Roam to Obsidian|migrating to Obsidian]]. The biggest issue I had with Roam was the storage of everything online via the browser. I never felt that I had full control over my information, and even less for any files that I uploaded. Logseq solves that.
+My first impression is that Logseq is the offline version of [[Roam Research]]; the tool I used before [[Transplanting my Brain to Roam to Obsidian|migrating to Obsidian]]. The biggest issue I had with Roam was the storage of everything online via the browser. I never felt that I had full control over my information, and even less for any files that I uploaded. Logseq solves that.
 
 The big question is "Do I move from Obsidian to Logseq?" and the answer is "No". I have too much investment in Obsidian to move.
 
