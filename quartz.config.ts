@@ -10,6 +10,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     baseUrl: "quantumgardener.info",
+    rssRootFolder: "blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {

@@ -41,6 +41,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex): string {
   const base = cfg.baseUrl ?? ""
   const root = `https://${base}`
+  const rssRoot = cfg.rssRootFolder ?? ""
 
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
     <title>${content.title}</title>
@@ -51,6 +52,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex): string {
   </item>`
 
   const items = Array.from(idx)
+    .filter(([slug,content]) => slug.startsWith(`${rssRoot}`))
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .join("")
   return `<?xml version="1.0" encoding="UTF-8" ?>
