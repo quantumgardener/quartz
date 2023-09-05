@@ -98,8 +98,8 @@ You can access the building instructions at [https://www.lego.com/en-au/service/
 
 ## Other LEGO Models
 I’ve documented my other LEGO builds.
-- [[Building the Millennium Falcon]]
-- [[Building R2-D2]]
+- [[Building the Millennium Falcon in LEGO]]
+- [[Building R2-D2 in LEGO]]
 
 
 

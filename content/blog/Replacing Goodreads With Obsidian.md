@@ -59,6 +59,7 @@ Instructions refer to version 0.5.9. Software changes over time, and there may b
 
 I started with the suggested template file and then made some of my own changes.
 
+````
 ```
 ---
 tag: source/book 
@@ -95,8 +96,7 @@ TABLE WITHOUT ID 
 from #source/book
 where title = this.title
 ```
-
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
+````
 
 The differences are:
 
@@ -111,6 +111,7 @@ At the bottom I have a Dataview that queries the current page to display informa
 ## Sample book page
 Here is the page for _Edgedancer_ by Brandon Sanderson.
 
+````
 ```
 ---
 tag: source/book
@@ -148,8 +149,7 @@ TABLE WITHOUT ID 
 from #source/book
 where title = this.title
 ```
-
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
+````
 
 The only fields I need to fill in are _book.duration_, _series.x_, _history.x_ and _format_. In a few cases I replaced the _cover_ links with an alternative cover I found elsewhere [^2].  
 
@@ -167,7 +167,7 @@ Every book has one or more authors so there will be a page for each.
 
 There is a Templater file called _author_ that makes for quick creation of these pages.
 
-```
+````
 ---
 tags: person/author
 ---
@@ -181,8 +181,7 @@ FROM #source/book
 where contains(author, this.file.name)
 sort publish
 ```
-
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
+````
 
 ## Series
 
@@ -192,6 +191,7 @@ Here’s what a linked series page looks like. I fill in the author’s name, an
 
 And the code to generate it is stored in a Templater file called _book-series_.
 
+````
 ```
 ---
 tags: atlas/series/books state/active
@@ -210,15 +210,13 @@ FROM #source/book 
 WHERE series.name = this.file.link and !contains(file.path, "Templates")
 SORT series.sequence
 ```
-
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
-
+````
 
 ## What else can you do?
 
 ### Make a list of all books
 
-```
+````
 ```dataview
 TABLE WITHOUT ID
    "![|60](" + cover + ")" as Cover,
@@ -232,12 +230,11 @@ WHERE !contains(file.path, "Templates")
 SORT status DESC, file.ctime ASC
 
 ```
-
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
+````
 
 ### Make a list of all series
 
-```
+````
 ```dataview
 TABLE WITHOUT ID
   file.link as "Series",
@@ -246,8 +243,7 @@ from #atlas/series/books and #state/active 
 where !contains(file.path, "Templates")
 sort file.link
 ```
-> [!HINT] I'm having trouble getting the code to display properly. Include a final ``` at the bottom of the code above.
-
+````
   
 ## One more thing. The “Want to Read” wishlist.
 

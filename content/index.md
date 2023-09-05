@@ -14,6 +14,6 @@ Standing on the edge of the garden you can see several intriguing [[Landscapes|l
 
 - [[productive-laziness|Productive Laziness]] — There is art in doing as much as possible, as easily as possible and that’s what I call being productive lazy. It’s the term I use to describe my approach of doing as much as possible with as little effort as possible and applies particularly to repetitive tasks where I want them done quickly and without having to think too much. There is too much going on in my world to allow thinking where I don’t need to.
 
-- [[digital-gardening|Digital Gardening]] — Seed and cultivate thoughts and ideas in public so that others can benefit from what’s there right then. You’re in a digital garden right now.
+- [[digital-gardening|Digital Gardening]] — Seed and cultivate thoughts and ideas in public so that others can benefit from what’s there right then. You’re in a [[Digital Garden]] right now.
 
 - [[the-garden-shed|The Garden Shed]] — Every garden needs a good shed, full of the right tools to make it flourish.
