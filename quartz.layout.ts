@@ -25,7 +25,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.TableOfContents())
   ],
   //right: [Component.Graph(), Component.Backlinks()],
-  right: [Component.Backlinks]
+  right: [Component.Backlinks()]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
