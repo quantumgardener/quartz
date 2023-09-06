@@ -13,7 +13,7 @@ export default (() => {
         segments.push(formatDate(getDate(cfg, fileData)!))
       }
 
-      segments.push(timeTaken)
+      //segments.push(timeTaken)
       return <p class="content-meta">{segments.join(", ")}</p>
     } else {
       return null
