@@ -168,6 +168,9 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
         })
       }
 
+      const plainSlugs = _ctx.allSlugs.map((s) => s.split("/").pop())
+      //console.log(plainSlugs)
+      
       // pre-transform wikilinks (fix anchors to things that may contain illegal syntax e.g. codeblocks, latex)
       if (opts.wikilinks) {
         src = src.toString()
@@ -178,7 +181,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           const displayAnchor = anchor ? `#${slugAnchor(anchor)}` : ""
           const displayAlias = rawAlias ?? rawHeader?.replace("#", "|") ?? ""
           const embedDisplay = value.startsWith("!") ? "!" : ""
-          return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
+          //console.log(fp.replaceAll(" ","-"))
+          if (plainSlugs.includes(fp.replaceAll(" ","-"))) {
+            return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
+          } else {
+            const strippedAlias = displayAlias.slice(1)
+            
+            return strippedAlias === "" ? fp : strippedAlias
+          }
         })
       }
 
