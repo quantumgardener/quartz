@@ -35,4 +35,4 @@ For me, I’m still looking forward to _Forspoken_ this week. It was the promise
 
 [^1]:	Generally in computer games, a high frame rate means a smoother visual experience and better reaction times to what happens on screen. Achieving higher frame rates often comes at the cost of detail quality.
 
-[^2]:	My personal bug-bear is the Rotten Tomatoes score of _The Dark Tower_ movie. It’s as if it became popular to slam this movie because everyone else has. I’m glad to see the ranking has climbed to 15% from a low of 7% when the movie was released. [https://www.rottentomatoes.com/m/the\_dark\_tower\_2017](https://www.rottentomatoes.com/m/the_dark_tower_2017)
+[^2]:	My personal bug-bear is the Rotten Tomatoes score of _[[The Dark Tower (Movie)|The Dark Tower]]_ movie. It’s as if it became popular to slam this movie because everyone else has. I’m glad to see the ranking has climbed to 15% from a low of 7% when the movie was released. 
