@@ -37,10 +37,10 @@ As of September 2032 I'm using a combination of [[Obsidian]] and [[Quartz 4]] to
 
 So, I have my original text written in a nice tool that is properly formatted when published. 
 
-I also use [[Obsidian]]for my journalling and all my personal note making. If I reference a blog post, I will link directly to my site. There hasn’t been a need to integrate my blog post text directly.
+I also use [[Obsidian]]for my journalling and all my personal note making. If I reference a blog post from a journal entry or personal note, it will link to the Obsidian source of that note. No longer do I need to refer to the external web page for reference. In other words, my notes are my notes. My blog posts are also my notes, and are shared publicly without me needing to do anything more than sync to my [[Quartz 4]] [[Github]] repository.
 
 ### Filing Cabinet documents
-**Zotero** is my filing cabinet. I make use of its folder structure, searching and tagging to organise the PDF documents in my life. I was doing this in **Obsidian** until I spent the time to get both working together.
+Zotero is my filing cabinet. I make use of its folder structure, searching and tagging to organise the PDF documents in my life. I was doing this in **Obsidian** until I spent the time to get both working together.
 
 My files are stored on a self-hosted webdav server meaning I can access them via Zotero on Windows, Mac or iPhone[^1]. I use a plugin that lets me copy the link to an individual document, or a collection of documents and paste that in Obsidian. There is a big advantage in linking to a collection eg. Insurance for my car, because as I add documents, I can quickly get to all of them.
 
