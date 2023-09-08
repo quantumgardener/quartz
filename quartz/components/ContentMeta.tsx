@@ -11,6 +11,9 @@ export default (() => {
 
       if (fileData.dates) {
         segments.push(formatDate(getDate(cfg, fileData)!))
+        //if (fileData.dates.created != fileData.dates.modified) {
+        //  segments.push("Modified" && formatDate(fileData.dates.modified))
+        //}
       }
 
       //segments.push(timeTaken)
