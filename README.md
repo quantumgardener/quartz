@@ -2,5 +2,5 @@
 
 Built upon [Quartz V4](https://quartz.jzhao.xyz).
 
-All content copyright.
+content folder copyright David C. Buchan.
 
