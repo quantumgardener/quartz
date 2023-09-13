@@ -32,6 +32,7 @@ const defaultOptions: Options = {
   rssLimit: 10,
   rssFullHtml: false,
   includeEmptyFiles: true,
+  rssRootFolder: ""
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
@@ -46,10 +47,9 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
 }
 
-function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: number, rssRootFolder: string): string {
+function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: string, limit?: number): string {
   const base = cfg.baseUrl ?? ""
   const root = `https://${base}`
-  const rssRoot = rssRootFolder ?? ""
 
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
     <title>${escapeHTML(content.title)}</title>
@@ -117,7 +117,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       if (opts?.enableRSS) {
         emitted.push(
           await emit({
-            content: generateRSSFeed(cfg, linkIndex, opts.rssLimit, opts.rssRootFolder),
+            content: generateRSSFeed(cfg, linkIndex, opts.rssRootFolder!, opts.rssLimit),
             slug: "index" as FullSlug,
             ext: ".xml",
           }),
