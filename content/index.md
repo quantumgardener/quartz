@@ -13,3 +13,6 @@ Standing on the edge of the garden you can see several intriguing [[Landscapes|l
 - [[productive-laziness|Productive Laziness]] 
 - [[digital-gardening|Digital Gardening]] 
 - [[the-garden-shed|The Garden Shed]] 
+
+> [!WARNING]
+> There is a glitch with the display of sample text when searching. HTML code is being displayed when it shouldn't be. Push on, everything will display properly if you click through.

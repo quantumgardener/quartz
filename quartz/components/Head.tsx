@@ -30,14 +30,14 @@ export default (() => {
         <meta name="generator" content="Quartz" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="alternate" type="application/rss+xml" title="The Quantum Garden" href="https://quantumgardener.info/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="The Quantum Garden" href="https://quantumgardener.blog/feed/" />
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
-        <script src="https://kit.fontawesome.com/5428a1cc8b.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5428a1cc8b.js" crossOrigin="anonymous"></script>
       </head>
     )
   }
