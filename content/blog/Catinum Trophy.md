@@ -6,6 +6,8 @@ date: 2023-02-03
 aliases:
   - catinum-trophy
 ---
+![[vg_Stray.webp]]
+
 And that’s the [[Platinum Trophy]] for _[[Stray]]_ on the [[PlayStation 5]]. I finished the main story a little over a week ago and have spent a couple of evenings and some time today cleaning up the remainder of the trophies.
 
 I enjoyed the trophy cleanup more than the game. That is mostly because my first play through was a stop-gap fill between _God of War: Ragnarok_ and _Forspoken_. I was also able to hoon around my little kitty-cat faster than when trying to solve puzzles.

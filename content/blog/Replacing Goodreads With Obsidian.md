@@ -46,9 +46,7 @@ Get Obsidian installed and then install the plugins.
 You will use this plugin to gather book metadata such as title, author, isbn, number of pages, publisher etc. This is the most laborious part of adding book information to any system (it’s what Goodreads excels at). Anything that eases that is worth its weight in gold.
 
 Instructions refer to version 0.5.9. Software changes over time, and there may be changes in your version.
-
-![](https://live.staticflickr.com/65535/53154715235_ce19c09799_c.jpg)
-
+![[replacing-goodreads-with-obsidian-1_c.webp]]
 **New file location** should be obvious. It’s the folder where you want your book notes stored. I use the Auto Note Mover plugin to then file notes into their rightful homes automatically. 
 
 **New file name** uses any of the metadata the plugin returns to name your file. The default is _Title - Author_ but I’ve changed this to just _Title_. When I link to a book from another note, it reads better with the book name alone.
@@ -154,17 +152,12 @@ where title = this.title
 The only fields I need to fill in are _book.duration_, _series.x_, _history.x_ and _format_. In a few cases I replaced the _cover_ links with an alternative cover I found elsewhere [^2].  
 
 The Dataview section looks like this:
-
-![](https://live.staticflickr.com/65535/53153706197_264157b846_c.jpg)
-
+![[replacing-goodreads-with-obsidian-2_c.webp]]
 This book I’ve read only once. For any books I’ve read multiple times, I write the date as `[2021-03-04, 2022-05-04]`. Later Dataview queries pull out the maximum date from the _history.started_ or _history.finished_ fields.
 
 ## Author
-
 Every book has one or more authors so there will be a page for each.
-
-![](https://live.staticflickr.com/65535/53154775843_563e431612_c.jpg)
-
+![[replacing-goodreads-with-obsidian-4_c.webp]]
 There is a Templater file called _author_ that makes for quick creation of these pages.
 
 ````
@@ -186,8 +179,7 @@ sort publish
 ## Series
 
 Here’s what a linked series page looks like. I fill in the author’s name, and grab the Goodreads book series link.
-
-![](https://live.staticflickr.com/65535/53153706647_bd1f7821c9_c.jpg)
+![[replacing-goodreads-with-obsidian-4_c.webp]]
 
 And the code to generate it is stored in a Templater file called _book-series_.
 
