@@ -50,6 +50,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: string, limit?: number): string {
   const base = cfg.baseUrl ?? ""
   const root = `https://${base}`
+  const year = new Date().getFullYear()
 
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
     <title>${escapeHTML(content.title)}</title>
@@ -73,6 +74,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
       <description>${!!limit ? `Last ${limit} notes` : "Recent notes"} on ${
         cfg.pageTitle
       }</description>
+      <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       ${items}
     </channel>
