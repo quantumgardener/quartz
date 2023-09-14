@@ -1,3 +1,6 @@
+---
+date: 2023-09-14
+---
 Maps are ways to access notes quickly, in a context. Much more than just an index, they organise and relate, include searches/tags even for quick access.
 
 The three phases of a Map of Contents creation are are:

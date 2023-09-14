@@ -1,7 +1,7 @@
 ---
 tags:
   - on/quartz
-lastmod:
+date: 2023-09-14
 ---
 An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow.
 

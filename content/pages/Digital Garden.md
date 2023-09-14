@@ -1,3 +1,6 @@
+---
+date: 2023-09-14
+---
 A **digital garden** is a form of website where the author creates and curates ideas in public. 
 
 As they collect information and write, notes are published in various stages of completness so that others can benefit from what's there and then, without the burden of having to finish an article. 

@@ -1,5 +1,7 @@
 ---
-tags: MOC 
+tags:
+  - MOC
+date: 2023-09-14
 ---
 Lots of LEGO threaded in-an-out of this [[Digital Garden]].
 

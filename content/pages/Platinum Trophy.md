@@ -4,6 +4,7 @@ tags:
   - on/gaming
   - hobby-together
 description: To achieve a Platinum Trophy on a PlayStation means completing a set of trophies representative of fully completing the game.
+date: 2023-09-14
 ---
 ## What is a Platinum Trophy
 To achieve a **Platinum Trophy** on a PlayStation means completing a set of trophies representative of fully completing the game.
