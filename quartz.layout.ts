@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
       Mastodon: "https://aus.social/@dcbuchan",
       Flickr: "https://www.flickr.com/photos/142019185@N05/",
       LinkedIn: "https://www.linkedin.com/in/buchan/",
+      Github: "https://github.com/quantumgardener"
     },
   }),
 }
