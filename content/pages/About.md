@@ -1,12 +1,13 @@
 ---
 title: About
 date: 2023-09-14
+publishDate: 2023-09-16T15:20:00
 ---
 Welcome to The Quantum Garden, a site where I share what interests me in the hope you'll find it interesting as well.
 
 Time spent in the garden is all about cultivating possibilities in life. Often the possibility is already there and waiting to be seen.
 
-My name is David Buchan and if you need to contact me, send a message to [@dcbuchan@aus.social](https://@dcbuchan@aus.social). Or you can leave a comment at the bottom of this, or any other post. I'd love to hear from you.
+My name is David Buchan and if you need to contact me, send a message using one of the links at the bottom of this page. I'd love to hear from you.
 
 For how I came up with "Quantum Gardener" read [[Who is the Quantum Gardener|Who is the Quantum Gardener?]].
 
