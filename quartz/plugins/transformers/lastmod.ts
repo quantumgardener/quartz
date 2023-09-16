@@ -44,6 +44,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options> | und
                 modified ||= file.data.frontmatter.updated
                 modified ||= file.data.frontmatter["last-modified"]
                 published ||= file.data.frontmatter.publishDate
+                published ||= created
               } else if (source === "git") {
                 if (!repo) {
                   repo = new Repository(file.cwd)
