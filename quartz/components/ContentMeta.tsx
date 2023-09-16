@@ -10,10 +10,10 @@ export default (() => {
       const { text: timeTaken, words: _words } = readingTime(text)
 
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!))
-        //if (fileData.dates.created != fileData.dates.modified) {
-        //  segments.push("Modified" && formatDate(fileData.dates.modified))
-        //}
+        segments.push("Planted " + formatDate(getDate(cfg, fileData)!))
+        if (fileData.dates.created.getTime() < fileData.dates.published.getTime()) {
+          segments.push(" last tended " + formatDate(fileData.dates.published)!)
+        }
       }
 
       //segments.push(timeTaken)
