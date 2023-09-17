@@ -188,8 +188,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           const displayAnchor = anchor ? `#${slugAnchor(anchor)}` : ""
           const displayAlias = rawAlias ?? rawHeader?.replace("#", "|") ?? ""
           const embedDisplay = value.startsWith("!") ? "!" : ""
-          //console.log(fp.replaceAll(" ","-"))
-          if (plainSlugs.includes(fp.replaceAll(" ","-"))) {
+          // Only link pages that actually exist in the graph
+          if (plainSlugs.includes(fp.replaceAll(" ","-").toLowerCase())) {
             return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
           } else {
             const strippedAlias = displayAlias.slice(1)
@@ -263,7 +263,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
               }
 
               // internal link
-              const url = fp + anchor
+              const url = (fp + anchor).toLowerCase()
               return {
                 type: "link",
                 url,

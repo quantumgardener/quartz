@@ -10,7 +10,7 @@ Time spent in the garden is all about cultivating possibilities in life. Often t
 
 My name is David Buchan and if you need to contact me, send a message using one of the links at the bottom of this page. I'd love to hear from you.
 
-For how I came up with "Quantum Gardener" read [[Who is the Quantum Gardener|Who is the Quantum Gardener?]].
+For how I came up with "Quantum Gardener" read [[Who is the Quantum Gardener|Who is the Quantum Gardener?]]
 
 Currently working as an IT Strategy Consultant with an interest in how we use technology to hold meaningful and productive conversation.
 
