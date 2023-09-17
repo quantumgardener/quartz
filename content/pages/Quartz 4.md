@@ -3,7 +3,7 @@ tags:
   - the-garden-shed
 date: 2023-09-14
 growth: budding
-publishDate: 2023-09-17T19:51:00
+publishDate: 2023-09-17T20:09:00
 ---
 An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow.
 
@@ -12,7 +12,7 @@ An [[Obsidian]] to website publishing system that allows me to publish directly 
 [The Quantum Garden](https://quantumgardener.blog) moved to Quartz in September 2023.
 
 ## Customisations for *The Quantum Garden*
-The modifications I've made from [the original codebase](https://github.com/jackyzha0/quartz) are listed below with the file(s) where the change has been made. You're more than welcome to view them in-situ at the [site's Github repository](https://github.com/quantumgardener/qg.blog).
+The modifications I've made from [the original codebase](https://github.com/jackyzha0/quartz) are listed below with the file(s) where the change has been made. You're more than welcome to view them in-situ at the [site's Github repository](https://github.com/quantumgardener/qg.blog). The majority are to support [[Designing The Quantum Garden]] and others are purely informational/cosmetic.
 
 **Remove links to pages that don't exist** - I believe it's poor design to link to any pages that I can know don't exist.
 - `\quartz\plugins\transformers\ofm.ts`
