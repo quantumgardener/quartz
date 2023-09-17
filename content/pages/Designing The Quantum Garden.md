@@ -1,5 +1,5 @@
 ---
-date: 2023-09-17T12:42:00
+date: 2023-09-17T20:47:00
 growth: budding
 ---
 I have referred to my personal knowledge management system as a [[Digital Garden]] for several years now and it makes sense this online presence reflects that. Originally I used the term to mean tending the noise of digital records, but have now moved towards a place for the growing of ideas.
@@ -42,7 +42,7 @@ I'm totally rethinking that. To what I don't yet know. Here's what I suspect wil
 - Many previous blog posts may become pages that update over time
 - I may create a [[Now]] page and blog only to that with notification of major updates to the site
 
-I do know that before uploading any further historical blog posts, I should prepare the ground a little better and save myself some work.
+I do know that before [[Workflow for Importing my Old Blog Entries|uploading any further historical blog posts]], I should prepare the ground a little better and save myself some work.
 
 I will also evaluate what's currently there for better linking. Many of the blogs are somewhat stand-alone, even in my Obsidian vault.
 
