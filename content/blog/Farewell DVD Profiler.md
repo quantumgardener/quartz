@@ -15,7 +15,7 @@ Times have changed and I rarely place a disc into my [[Sony UBP-X700 4K Bluray p
 
 Streaming has had such an impact that last year I threw out 2/3 of my collection because there are viable streaming alternatives. The reality is, if I lost my movie collection, there are maybe a dozen titles I'd want to re-purchase. The only information I need to keep now is the record of what sleeve a movie is in.
 
-Lately I've been tracking books, gaming and movies in [Obsidian](https://obsidian.md). The reference to [[12 Angry Men]] above links to my notes on the movie[^12angrymen]. With information in DVD Profiler I have two information stores to manage. The only data I need now about my purchase of a movie is where I've stored it. So, sadly, after about 18 years, I'll generate a report of movies with their slot numbers for the final time and delete it from my PC and mobile.
+Lately I've been tracking books, gaming and movies in [[Obsidian]]. The reference to [[12 Angry Men]] above links to my notes on the movie[^12angrymen]. With information in DVD Profiler I have two information stores to manage. The only data I need now about my purchase of a movie is where I've stored it. So, sadly, after about 18 years, I'll generate a report of movies with their slot numbers for the final time and delete it from my PC and mobile.
 
 
 [^australia]: Mostly for the Australian version of a title.
