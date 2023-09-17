@@ -1,7 +1,6 @@
 ---
 tags:
   - on/pkm
-  - on/logseq
   - on/obsidian
   - digital-gardening
 date: 2023-07-01
