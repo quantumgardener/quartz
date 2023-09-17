@@ -53,6 +53,9 @@ Last night I was thinking about all the books, movies, video games I've been tra
 
 I asked myself why am I even recording all this. It's because I don't feel known. Someone who discovers my journals after I die could look at the list of my media consumption and somehow understand me. [[How ratings are applied]] would give them perfect insight into who I was. But, of course, it wouldn't. I'm wondering if I'd be better dumping all that overhead and simply listing my favourites and **WHY**[^2].
 
+## Design Already Implmented
+Leaf from Maggie's book
+
 
 [^1]: [A Brief History & Ethos of the Digital Garden](https://omnivore.app/quantumgardener/a-brief-history-ethos-of-the-digital-garden-18a977b1a72), retrieved 17 September 2023.
 [^2]: From my emotional reaction to the sentence, we can assume I have decided that. It feels more right to do it that way but I will do so in a controlled way.
