@@ -8,16 +8,41 @@ export default (() => {
     if (text) {
       const segments: string[] = []
       const { text: timeTaken, words: _words } = readingTime(text)
+      const growth = fileData.frontmatter?.growth ?? "seedling" 
+      
+      let faIcon = ""
+      
+      switch(growth.toLowerCase()) {
+        case "seedling":
+          faIcon = "seedling"
+          break
+        case "budding":
+          faIcon = "leaf"
+          break
+        case "evergreen":
+          faIcon = "tree"
+          break
+      }
+  
+      const growthClass = "fa-solid fa-" + faIcon
+      const growthLink = `/${growth}.html`
 
       if (fileData.dates) {
-        segments.push("Planted " + formatDate(getDate(cfg, fileData)!))
+        segments.push("planted " + formatDate(getDate(cfg, fileData)!))
         if (fileData.dates.created.getTime() < fileData.dates.published.getTime()) {
           segments.push(" last tended " + formatDate(fileData.dates.published)!)
         }
       }
 
-      //segments.push(timeTaken)
-      return <p class="content-meta">{segments.join(", ")}</p>
+      return (
+        <div class="popover-hint">
+        <p class="content-meta">
+          <article>
+          <i style="color:green" class={growthClass}></i> <a href={growthLink}>{growth.toUpperCase()}</a> | {segments.join(" | ")}
+          </article>
+        </p>
+        </div>
+      )
     } else {
       return null
     }
