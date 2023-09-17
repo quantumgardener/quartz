@@ -61,7 +61,8 @@ export function slugifyFilePath(fp: FilePath, excludeExt?: boolean): FullSlug {
     slug = slug.replace(/_index$/, "index")
   }
 
-  return (slug + ext) as FullSlug
+  // Convert slugs to lowercase
+  return (slug.toLowerCase() + ext?.toLowerCase()) as FullSlug
 }
 
 export function simplifySlug(fp: FullSlug): SimpleSlug {
