@@ -1,5 +1,6 @@
 ---
 date: 2023-09-14
+growth: evergreen
 ---
 The behaviour and decisions in my life are made in accordance with this mission statement; the essence of which is grounded in the principles of truth, beauty, goodness and unity.
 

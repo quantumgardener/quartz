@@ -1,5 +1,6 @@
 ---
 date: 2023-09-14
+growth: seedling
 ---
 Maps are ways to access notes quickly, in a context. Much more than just an index, they organise and relate, include searches/tags even for quick access.
 

@@ -1,5 +1,6 @@
 ---
 date: 2023-09-14
+growth: evergreen
 ---
 Standing on the edge of the garden you can see several intriguing landscapes spread out in front of you. Where shall we head?
 
