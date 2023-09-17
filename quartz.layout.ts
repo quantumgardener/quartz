@@ -25,7 +25,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents())
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.Graph({localGraph: {
+    showTags: false,
+  }, globalGraph: {
+    showTags: false,
+  }}), 
+    Component.Backlinks()
+  ],
   //right: [Component.Backlinks()]
 }
 
