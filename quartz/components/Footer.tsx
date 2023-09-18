@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
       <footer>
         <hr />
         <p>
-          © David C. Buchan 2002&ndash;{year}. Created with <a href="https://quartz.jzhao.xyz/">Quartz</a>.
+          © David C. Buchan 2002&ndash;{year}. Created with <a href="https://quartz.jzhao.xyz/">Quartz</a>.<a rel="me" href="https://aus.social/@dcbuchan"></a>
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => {
