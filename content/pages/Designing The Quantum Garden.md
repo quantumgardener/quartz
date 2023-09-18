@@ -52,6 +52,8 @@ I asked myself why am I even recording all this. It's because I don't feel known
 
 ## Design Still to Come
 - Likely replace main site URL as quantumgardener.info instead of quantumgardener.blog to better represent the site's broader view than just a blog.
+- Add a [[Recent Changes]] page
+- Move [[Landscapes]] from tags to a dedicated property type
 
 
 [^1]: [A Brief History & Ethos of the Digital Garden](https://omnivore.app/quantumgardener/a-brief-history-ethos-of-the-digital-garden-18a977b1a72), retrieved 17 September 2023.
