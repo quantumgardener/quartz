@@ -1,6 +1,7 @@
 ---
 date: 2023-09-17T20:47:00
 growth: budding
+publishDate: 2023-09-18T21:30:00
 ---
 I have referred to my personal knowledge management system as a [[Digital Garden]] for several years now and it makes sense this online presence reflects that. Originally I used the term to mean tending the noise of digital records, but have now moved towards a place for the growing of ideas.
 
@@ -36,15 +37,7 @@ It's not. I have to rethink how existing content is presented and work my way th
 The joy and wonder are in now understanding, that's perfectly ok. I don't have to get the garden website perfect the first time. It never will be and like a garden the visual aspect will change over time. Both plants (notes) and structure (landscaping) are all up for grabs to maximise the benefit of the knowledge shared.
 
 ### Blogging and RSS Feeds
-I held off moving to [[Quartz 4]] until the RSS Feed was improved. Until yesterday my mindset had been one of sharing content via blog posts, which need a RSS feed for distribution.
-
-I'm totally rethinking that. To what I don't yet know. Here's what I suspect will happen:
-- Many previous blog posts may become pages that update over time
-- I may create a [[Now]] page and blog only to that with notification of major updates to the site
-
-I do know that before [[Workflow for Importing my Old Blog Entries|uploading any further historical blog posts]], I should prepare the ground a little better and save myself some work.
-
-I will also evaluate what's currently there for better linking. Many of the blogs are somewhat stand-alone, even in my Obsidian vault.
+The move from blogging to digital gardening means I have made [[My Decision to Stop Blogging]]. My mind has been rearranging content and I'll begin doing so for real once I finalise where everything will land. It's not 100% simple as the writing style of a blog post is different from that which is moving towards an [[Evergreen]] note.
 
 ### Changing Obsidian's Structure
 My Obsidian Vault's internal structure does not need to change too much. Anything that is published here sits within a "Quartz" folder off the root. This is the only folder that [[Quartz 4]] considers when publishing and eliminates the risk of my suddenly publishing 30 years of private journal entries.

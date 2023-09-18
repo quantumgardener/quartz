@@ -3,7 +3,7 @@ tags:
   - the-garden-shed
 date: 2023-09-14
 growth: budding
-publishDate: 2023-09-17T20:09:00
+publishDate: 2023-09-18T19:21:00
 ---
 An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow.
 
@@ -24,7 +24,7 @@ The modifications I've made from [the original codebase](https://github.com/jack
 - `\quartz\plugins\transformers\ofm.ts`
 - `\quartz\util\path.ts`
 
-There is also a custom rule applied to Cloudflare to convert all incoming URLs to lower case for any off-site references.
+There is also a custom rule applied to Cloudflare to convert all incoming URLs to lower case for any off-site references except if the file is `/static/contentIndex.json` as that breaks Search.
 
 **Hide folder structure** -- The folder structure behind the site doesn't add as much value as good writing and linking.
 - `\quartz.layout.ts`
