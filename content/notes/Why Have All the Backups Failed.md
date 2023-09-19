@@ -5,8 +5,7 @@ tags:
   - on/pkm
   - the-garden-shed
 date: 2023-02-02
-aliases:
-  - why-have-all-the-backups-failed
+growth: evergreen
 ---
 I woke this morning to a slew of emails informing me of backups that had failed due to insufficient space on the target drive. Why had they all failed? Well, it was because one had succeeded.
 

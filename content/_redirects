@@ -2,5 +2,6 @@
 /2023/02/20/my-document-toolkit/ /pages/My-Document-Toolkit/
 /feed/ /index.xml 302
 /feed /index.xml 302
+/pages/* /notes/:splat 301
 /:year/:month/:day/*/ /blog/:splat 301
 /:year/:month/:day/* /blog/:splat 301

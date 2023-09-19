@@ -3,8 +3,7 @@ tags:
   - review
   - hobby-together
 date: 2023-02-02
-aliases:
-  - carrie-versus-carrie
+growth: evergreen
 ---
 This morning I finished _[[Carrie]]_ the book and this afternoon I watched the 1976 movie.
 

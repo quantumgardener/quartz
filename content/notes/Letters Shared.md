@@ -3,8 +3,7 @@ tags:
   - on/conversation
   - expand-your-way-of-being
 date: 2023-01-29
-aliases:
-  - letters-shared
+growth: evergreen
 ---
 ↖️ [[Letters with Jason]]
 

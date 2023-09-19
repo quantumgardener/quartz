@@ -7,6 +7,7 @@ date: 2023-07-11
 aliases:
   - will-sleep-come
 title: Will sleep come?
+growth: evergreen
 ---
 The [[Apnea-Hypopnea Index]] (AHI) is an average measure of how many times you have a full or partial loss of breath for more than 10 seconds. It's not hard to imagine this is not a good thing if it occurs too often.
 

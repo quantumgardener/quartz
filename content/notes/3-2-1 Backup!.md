@@ -3,8 +3,7 @@ date: 2022-11-20
 tags:
   - on/backups
   - the-garden-shed
-aliases:
-  - 3-2-1-backup
+growth: evergreen
 ---
 I want to talk about backups. They are important, and always have been. Unlike grabbing photo albums on the way of of the house during a fire, the right backup system means we can focus on saving the most important thing in the house - ourselves.
 
