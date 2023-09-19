@@ -25,7 +25,7 @@ export default (() => {
       }
   
       const growthClass = "fa-solid fa-" + faIcon
-      const growthLink = `/${growth}.html`
+      const growthLink = `/notes/${growth}.html`
 
       if (fileData.dates) {
         segments.push("planted " + formatDate(getDate(cfg, fileData)!))
