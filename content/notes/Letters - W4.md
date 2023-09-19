@@ -5,6 +5,7 @@ tags:
 date: 2023-07-02
 aliases:
   - letters-w4
+growth: evergreen
 ---
 ↖️ [[Letters with Jason]]
 

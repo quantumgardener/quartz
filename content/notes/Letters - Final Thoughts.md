@@ -6,6 +6,7 @@ tags:
 date: 2023-07-02
 aliases:
   - letters-final-thoughts
+growth: evergreen
 ---
 ↖️ [[Letters with Jason]]
 

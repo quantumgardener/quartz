@@ -6,6 +6,7 @@ tags:
 date: 2023-06-08
 aliases:
   - letters-w1
+growth: evergreen
 ---
 ↖️ [[Letters with Jason]]
 
