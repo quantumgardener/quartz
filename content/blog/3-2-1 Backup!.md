@@ -6,7 +6,6 @@ tags:
 aliases:
   - 3-2-1-backup
 ---
-
 I want to talk about backups. They are important, and always have been. Unlike grabbing photo albums on the way of of the house during a fire, the right backup system means we can focus on saving the most important thing in the house - ourselves.
 
 Today everyone will tell you to follow a 3-2-1 backup strategy.

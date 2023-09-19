@@ -1,7 +1,5 @@
 ---
-tags:
-  - on/blogging
-  - expand-your-way-of-being
+tags: []
 date: 2023-09-18T21:01:00
 growth: seedling
 ---

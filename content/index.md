@@ -9,7 +9,7 @@ Time spent in the garden is all about cultivating possibilities in life. Often t
 
 ## Getting Around the Garden
 > [!INFO]
-> The site design is currently evolving quickly and progress is being notes at [[Designing The Quantum Garden]].
+> The site design is currently evolving quickly and progress is being noted at [[Designing The Quantum Garden]].
 
 Where do you want to head first? There are many paths before you, and you are welcome to create your own. 
 
