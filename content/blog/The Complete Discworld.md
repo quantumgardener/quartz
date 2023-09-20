@@ -4,9 +4,8 @@ tags:
   - on/audiobooks
   - hobby-together
 date: 2023-02-26
-aliases:
-  - the-complete-discworld
 description: I'm listening to the complete discworld series of audiobooks. All 40 were released across 2022-23 and it will take me much, much longer to listen to them all.
+growth: budding
 ---
 ## My Listening Challenge
 I am listening my way through the complete [[Discworld]] series of audiobooks. All 40 books were released across 2022-23 and it will take me much, much longer to listen to them all.
@@ -17,6 +16,8 @@ This video explains the reasoning and process behind the new recordings.
 
 ## Listening is Another Way to Experience These Great Stories
 A story told via audiobook is quite different from a reading of words on the page, but not as different as a movie, play or TV adaptation. I’m thoroughly enjoying Rincewind, CMOT Dibbler, Nanny Ogg, Granny Weatherwax, multiple Archchancellors and ironically, Death all being brought to life by the talented voice actors on hand. Each actor generally takes on a series of books, and it was inspired to have Peter Serafinowicz play Death throughout.
+
+If interested, you can view my audiobook reading workflow in [[From Audible to my Ears]].
 
 ## Tracking My Progress
 This is the Discworld publication release order. Any books in **bold** have been listened to. Some are out of order because related books were released close together i.e., Wizards, Witches, Death series.
@@ -63,4 +64,3 @@ This is the Discworld publication release order. Any books in **bold** have been
 40. Raising Steam (2013)
 41. The Shepherd's Crown (2015)
 
-If interested, you can view my audiobook reading workflow in [[From Audible to my Ears]].
