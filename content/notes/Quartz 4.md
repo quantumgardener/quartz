@@ -17,10 +17,12 @@ flowchart TD
     A["/"] --> B(fa:fa-note-sticky notes)
     A --> C(fa:fa-square-rss blog)
     A --> D(fa:fa-boxes-stacked assets)   
+    A --> E(fa:fa-map mocs)
 ```
 - **[notes](/notes/index)** is the folder where most of the garden's content is kept.
 - **blog** holds transitional notes, relevant only to a point in time.
 - **assets** holds supporting images and attachments.
+- [mocs](/mocs/index) holds the site's [[Maps of Content]].
 
 ## Customisations for *The Quantum Garden*
 The modifications I've made from [the original codebase](https://github.com/jackyzha0/quartz) are listed below with the file(s) where the change has been made. You're more than welcome to view them in-situ at the [site's Github repository](https://github.com/quantumgardener/qg.blog). The majority are to support [[Designing The Quantum Garden]] and others are purely informational/cosmetic.
