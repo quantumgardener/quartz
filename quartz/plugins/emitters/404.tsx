@@ -5,15 +5,21 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { FilePath, FullSlug } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
-import { NotFound } from "../../components"
+import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer } from "../../components"
 import { defaultProcessedContent } from "../vfile"
+
 
 export const NotFoundPage: QuartzEmitterPlugin = () => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     pageBody: NotFound(),
-    beforeBody: [],
-    left: [],
+    beforeBody: [ArticleTitle()],
+    left: [
+      PageTitle(),
+      MobileOnly(Spacer()),
+      Search(),
+      Darkmode(),  
+    ],
     right: [],
   }
 
@@ -36,7 +42,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
         slug,
         text: "Not Found",
         description: "Not Found",
-        frontmatter: { title: "Not Found", tags: [] },
+        frontmatter: { title: "Page Not Found", tags: [] },
       })
       const componentData: QuartzComponentProps = {
         fileData: vfile.data,
