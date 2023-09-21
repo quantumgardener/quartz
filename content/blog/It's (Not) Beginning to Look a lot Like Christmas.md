@@ -7,7 +7,7 @@ tags:
   - on/mental-health
   - on/relaxation
   - on/overwhelm
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - its-not-beginning-to-look-a-lot-like-christmas
 ---

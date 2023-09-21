@@ -2,7 +2,7 @@
 title: How Covered is the Earth?
 tags:
   - on/moods/wonder
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-02-01
 aliases:
   - how-covered-is-the-earth

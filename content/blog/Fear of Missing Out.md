@@ -2,7 +2,7 @@
 date: 2022-10-23
 tags:
   - on/moods/anxiety
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - fear-of-missing-out
 ---

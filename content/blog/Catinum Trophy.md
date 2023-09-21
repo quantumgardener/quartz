@@ -3,8 +3,6 @@ tags:
   - on/gaming
   - hobby-together
 date: 2023-02-03
-aliases:
-  - catinum-trophy
 ---
 ![[vg_Stray.webp]]
 

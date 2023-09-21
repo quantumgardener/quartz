@@ -1,6 +1,6 @@
 ---
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - hobby-together
 date: 2023-05-14
 aliases:

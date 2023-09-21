@@ -1,5 +1,5 @@
 ---
-title: Expand Your Way of Being
+title: Expand My Way of Being
 ---
 ↖️ [[Landscapes]]
 

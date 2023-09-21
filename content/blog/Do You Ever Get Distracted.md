@@ -1,7 +1,7 @@
 ---
 title: Do you ever get distracted?
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-01-25
 aliases:
   - do-you-ever-get-distracted

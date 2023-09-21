@@ -3,7 +3,7 @@ tags:
   - on/gaming
   - on/conversation
   - on/body
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - hobby-together
 date: 2023-03-07
 aliases:

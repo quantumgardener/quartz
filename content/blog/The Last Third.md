@@ -4,7 +4,7 @@ date: 2022-11-02
 categories:
   - expand-your-way-of-being
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - the-last-third
 ---

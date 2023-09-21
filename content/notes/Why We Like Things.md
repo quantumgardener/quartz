@@ -2,7 +2,7 @@
 tags:
   - on/distinctions
   - on/assessments
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - the-garden-shed
 date: 2012-01-12
 aliases: 

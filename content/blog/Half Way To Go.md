@@ -2,7 +2,7 @@
 date: 2022-11-20
 tags:
   - on/moods/wonder
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - half-way-to-go
 ---

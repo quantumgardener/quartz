@@ -1,7 +1,7 @@
 ---
 tags:
   - letters
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-07-02
 aliases:
   - letters-w4

@@ -3,7 +3,7 @@ date: 2022-10-26
 tags:
   - on/learning
   - hobby-together
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - civilization-vi-failure
 ---

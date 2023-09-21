@@ -5,7 +5,7 @@ tags:
   - on/assessments
   - on/authority
   - review
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - hobby-together
 date: 2023-01-24
 aliases:

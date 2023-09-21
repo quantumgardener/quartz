@@ -51,3 +51,6 @@ There is also a custom rule applied to Cloudflare to convert all incoming URLs t
 
 **Display [[Seedling]], [[Budding]] or [[Evergreen]] status** -- Automated from a `growth` property on each page in preference to using tags because the purpose of the information is different.
 - `\quartz\components\ContentMeta.tsx`
+
+**Display .webp images** -- Include images for the new compressed web image format.
+- `\quartz\plugins\transformers\ofm.ts`

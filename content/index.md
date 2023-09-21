@@ -17,9 +17,8 @@ Standing here at the main gate you can see several intriguing [[Landscapes|lands
 
 Visit a landscape or learn a little more [[About|about me]]. Your choices of landscape are:
 
-- [[expand-your-way-of-being|Expand Your Way of Being]] 
+- [[expand-my-way-of-being|Expand My Way of Being]] 
 - [[hobby-together|Hobby Together]] 
 - [[productive-laziness|Productive Laziness]] 
-- [[digital-gardening|Digital Gardening]] 
 - [[the-garden-shed|The Garden Shed]] 
 

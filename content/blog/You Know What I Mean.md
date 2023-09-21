@@ -2,7 +2,7 @@
 title: You Know What I Mean?
 tags:
   - on/podcasts
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-03-13
 aliases:
   - you-know-what-i-mean

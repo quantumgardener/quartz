@@ -1,7 +1,7 @@
 ---
 date: 2022-11-22
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - the-perfect-mail-merge
 ---

@@ -4,7 +4,7 @@ date: 2022-11-18
 tags:
   - on/concernful-activity
   - on/concerns
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - whats-the-real-concern
 ---

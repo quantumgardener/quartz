@@ -1,7 +1,7 @@
 ---
 tags:
   - on/covid-19
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-03-25
 aliases:
   - covid-19-3-years-on

@@ -2,7 +2,7 @@
 tags:
   - on/pkm
   - on/obsidian
-  - digital-gardening
+  - the-garden-shed
 date: 2023-07-01
 aliases:
   - looking-into-logseq
@@ -26,3 +26,12 @@ There may be benefits in me transferring my GTD system at work into Logseq. I ca
 My personal use doesn't yet justify the effort required to transfer my data into Logseq compliant file structuring (I use folders for high-level organisation in Obsidian eg. keep my personal journal files separate) and to replace the queries. At least both use standalone files so there is a future path forward.
 
 I'm also capturing more into Obsidian than I write. Transferring to another tool is only going to take writing time away for negligible immediate benefit.
+
+---
+The decision is made. For my personal digital garden at least, and likely work as well, I will be staying with [[Obsidian]] and not progressing further with [[Logseq]].
+
+I put down my first observations in writing [[Looking into Logseq|earlier today]].
+
+Any database, and my collection of Obsidian pages is one of those, is only as good as the answers to the questions you ask of it. I don't think I can get Logseq to provide those answers due to subtle changes in the data structure. The effort involved far outweighs the benefits.
+
+Logseq is a great applications. It doesn't do what I need. Onward Obsidian! 

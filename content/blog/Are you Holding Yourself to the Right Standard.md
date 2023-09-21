@@ -1,7 +1,7 @@
 ---
 title: Are you holding yourself to the right standard?
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - on/standards
   - on/assessments
 date: 2023-03-02

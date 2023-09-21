@@ -6,7 +6,7 @@ tags:
   - on/moods
   - on/emotions
   - on/listening
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-02-06
 aliases:
   - dont-just-communicate-converse

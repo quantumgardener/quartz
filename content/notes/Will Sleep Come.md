@@ -2,7 +2,7 @@
 tags:
   - on/sleep
   - on/health
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2023-07-11
 aliases:
   - will-sleep-come

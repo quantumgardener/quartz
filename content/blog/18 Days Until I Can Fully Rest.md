@@ -2,11 +2,8 @@
 date: 2022-11-28
 tags:
   - on/mental-wellness
-  - expand-your-way-of-being
-aliases:
-  - 18-days-until-i-can-fully-rest
+  - expand-my-way-of-being
 ---
-
 I’m now down to 18 work days before I get 2 weeks off work over Christmas/New Year.
 
 It’s important that I relax and look after myself.

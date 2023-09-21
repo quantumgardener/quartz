@@ -1,6 +1,6 @@
 ---
 tags:
-  - expand-your-way-of-being
+  - expand-my-way-of-being
   - on/cultural-stories
 date: 2004-10-27
 aliases:

@@ -6,7 +6,7 @@ tags:
   - on/emotions
   - on/learning
   - on/body
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 date: 2002-07-29
 aliases:
   - coaching-in-action-review

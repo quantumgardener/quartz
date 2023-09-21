@@ -3,7 +3,7 @@ date: 2022-10-25
 categories: []
 tags:
   - on/moods/wonder
-  - expand-your-way-of-being
+  - expand-my-way-of-being
 aliases:
   - crazy-coincidence
 ---

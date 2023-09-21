@@ -2,7 +2,6 @@
 tags:
   - on/blogging
   - productive-laziness
-  - digital-gardening
 date: 2022-10-16
 growth: evergreen
 ---

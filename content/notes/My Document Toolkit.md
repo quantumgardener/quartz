@@ -1,6 +1,5 @@
 ---
 tags:
-  - digital-gardening
   - productive-laziness
   - the-garden-shed
 date: 2023-02-20
