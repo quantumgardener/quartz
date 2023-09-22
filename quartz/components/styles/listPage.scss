@@ -10,7 +10,7 @@ li.section-li {
   margin-bottom: 1em;
 
   & > .section {
-    display: grid;
+    display: block;
     /* grid-template-columns: 6em 3fr 1fr; */
     grid-template-columns: 1fr; 
 
