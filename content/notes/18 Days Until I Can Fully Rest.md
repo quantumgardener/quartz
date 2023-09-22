@@ -3,6 +3,9 @@ date: 2022-11-28
 tags:
   - on/mental-wellness
   - expand-my-way-of-being
+  - on/relaxation
+  - on/overwhelm
+growth: evergreen
 ---
 I’m now down to 18 work days before I get 2 weeks off work over Christmas/New Year.
 

@@ -54,3 +54,7 @@ There is also a custom rule applied to Cloudflare to convert all incoming URLs t
 
 **Display .webp images** -- Include images for the new compressed web image format.
 - `\quartz\plugins\transformers\ofm.ts`
+
+**Display tag icon** -- display tags with a icon rather than a `#`
+- `quartz\components\PageLiist.tsx`
+- `\quartz\components\TagList.tsx`

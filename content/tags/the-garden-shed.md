@@ -1,5 +1,6 @@
 ---
 title: The Garden Shed
+growth: seedling
 ---
 ↖️ [[Landscapes]]
 

@@ -1,5 +1,6 @@
 ---
 title: Productive Laziness
+growth: seedling
 ---
 ↖️ [[Landscapes]]
 

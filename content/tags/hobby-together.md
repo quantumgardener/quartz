@@ -1,7 +1,6 @@
 ---
 title: Hobby Together
-tags:
-  - MOC
+growth: seedling
 ---
 ↖️ [[Landscapes]]
 
@@ -15,5 +14,8 @@ I’m a gamer, a miniature painter, a role-player, a cross-stitcher and enjoyer 
 - Watch TV: [[+Unwatched TV]] [[+TV seasons I've finished]] | [[+Index of Series]]
 - Paint miniatures: [[Miniature Painting]] | [[Nagash]]
 - Play with [[LEGO]]
+
+## Reading
+- [[List of my Favourite Authors]]
 
 ---

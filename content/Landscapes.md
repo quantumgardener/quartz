@@ -4,7 +4,7 @@ growth: evergreen
 ---
 Standing on the edge of the garden you can see several intriguing landscapes spread out in front of you. Where shall we head?
 
-[[expand-my-way-of-being|Expand Your Way of Being]] — My Way of Being is more than the behaviour I show. It’s the total sum of how I engage with the world, make meaning from my environment and take action. Expanding my Way of Being by being a learner in the world creates new possibilities for me to move forward in life.
+[[expand-my-way-of-being|Expand My Way of Being]] — My Way of Being is more than the behaviour I show. It’s the total sum of how I engage with the world, make meaning from my environment and take action. Expanding my Way of Being by being a learner in the world creates new possibilities for me to move forward in life.
 
 [[hobby-together|Hobby Together]] — Here’s where I share my progress on whatever project currently takes my fancy, plus any relevant discussion on supporting technologies.
 
