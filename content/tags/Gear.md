@@ -1,0 +1,1 @@
+Here, "Gear" is a broad term referring to any type of technology I use in my life.

@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/photography
+  - photography
   - hobby-together
 date: 2023-08-24
 aliases:
@@ -15,7 +15,7 @@ My challenge has been working through the issues caused by both applications tou
 
 Here is my high-level process. The detail will come over the coming weeks.
 
-1. Copy RAW photos from my [[Canon 400D]] into Lightroom. Cull those I don't like and develop (edit) them. Once I've edited, move the photos into IMatch. No metadata beyond editing instructions is added in Lightroom.
+1. Copy RAW photos from my [[My Photography Gear|Canon 400D]] into Lightroom. Cull those I don't like and develop (edit) them. Once I've edited, move the photos into IMatch. No metadata beyond editing instructions is added in Lightroom.
 2. Copy JPEG/HEIC photos from the family's phones direct into IMatch. Cull those I don't want/need to keep.
 3. Add Metadata in IMatch for Event, Location and GPS, People and correct Dates.
 4. File away into my archive folder structure (YYYY\YYYY-MM).

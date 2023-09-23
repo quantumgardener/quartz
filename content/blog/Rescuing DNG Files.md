@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/photography
+  - photography
   - on/digital-asset-management
   - hobby-together
 date: 2023-08-13
