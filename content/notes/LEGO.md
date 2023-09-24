@@ -3,6 +3,8 @@ title: LEGO Map of Content
 date: 2023-09-14
 growth: evergreen
 description: Jumping off point for all things LEGO.
+tags:
+  - MOC
 ---
 Lots of LEGO threaded in-an-out of this [[Digital Garden]].
 

@@ -1,6 +1,7 @@
 ---
 tags:
   - expand-my-way-of-being
+  - on/learning
 date: 2023-02-19
 aliases:
   - rabbit-holes

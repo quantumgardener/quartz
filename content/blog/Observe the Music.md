@@ -3,7 +3,7 @@ title: Observe the music
 date: 2022-11-02
 tags:
   - expand-my-way-of-being
-  - on/listenting
+  - on/listening
 aliases:
   - observe-the-music
 ---
