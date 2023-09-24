@@ -7,6 +7,7 @@ import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
 import { pluralize } from "../../util/lang"
+import { FullSlug, resolveRelative } from "../../util/path"
 
 const numPages = 10
 function TagContent(props: QuartzComponentProps) {
@@ -29,6 +30,9 @@ function TagContent(props: QuartzComponentProps) {
       : // @ts-ignore
         toJsxRuntime(tree, { Fragment, jsx, jsxs, elementAttributeNameCase: "html" })
 
+  if(tag === "photography"){
+  console.log (tag)
+  console.log (fileData)}
   if (tag === "") {
     const tags = [...new Set(allFiles.flatMap((data) => data.frontmatter?.tags ?? []))]
     const tagItemMap: Map<string, QuartzPluginData[]> = new Map()
@@ -81,6 +85,18 @@ function TagContent(props: QuartzComponentProps) {
     return (
       <div class="popover-hint">
         <article>{content}</article>
+        <ul class="tags">
+                {fileData.frontmatter?.tags.map((tag) => (                  
+                  <li>
+                    <a
+                      class="internal tag-link"
+                      href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                    >
+                      <i class="fa-solid fa-tag"></i> {tag}
+                    </a>
+                  </li>
+                ))}
+              </ul>
         <p>{pluralize(pages.length, "item")} with this tag.</p>
         <div>
           <PageList {...listProps} />
