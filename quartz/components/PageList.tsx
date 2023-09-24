@@ -35,7 +35,6 @@ export function PageList({ cfg, fileData, allFiles, limit }: Props) {
     list = list.slice(0, limit)
   }
 
-  if(fileData.slug == "tags/photography") {console.log(fileData)}
   return (
     <ul class="section-ul">
       {list.map((page) => {
