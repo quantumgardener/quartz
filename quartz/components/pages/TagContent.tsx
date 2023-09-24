@@ -3,11 +3,10 @@ import { Fragment, jsx, jsxs } from "preact/jsx-runtime"
 import { toJsxRuntime } from "hast-util-to-jsx-runtime"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
-import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
+import { FullSlug, getAllSegmentPrefixes, simplifySlug, resolveRelative } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
 import { pluralize } from "../../util/lang"
-import { FullSlug, resolveRelative } from "../../util/path"
 
 const numPages = 10
 function TagContent(props: QuartzComponentProps) {
