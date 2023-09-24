@@ -10,7 +10,7 @@ I am awake. For a little under 6 weeks now I've been sleeping with a CPAP machin
 
 My attention has been everywhere. I've had more time in the day to think, so I have. 
 
-A lot of my time has been looking into landscape photography. Something made me revive my 17 year old Canon 400D DSLR. The lure of being a "photographer" is something that has always pulled at me. Of all pastimes, one that I felt I could be decent at. In 1999-2000 I lived in the UK and had the time to compose and take photos. That time was lost and I'm finding it again. I am also very much learning and time has been sunk into that as well. Throw in some [[Astrophotography]] and my mind has been well and truly occupied.
+A lot of my time has been looking into landscape photography. Something made me revive my 17 year old [[My Photography Gear|Canon 400D DSLR]]. The lure of being a "photographer" is something that has always pulled at me. Of all pastimes, one that I felt I could be decent at. In 1999-2000 I lived in the UK and had the time to compose and take photos. That time was lost and I'm finding it again. I am also very much learning and time has been sunk into that as well. Throw in some [[Astrophotography]] and my mind has been well and truly occupied.
 
 Never mind camera research to replace the 400D with a Canon R50.
 
