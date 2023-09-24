@@ -1,7 +1,7 @@
 ---
 date: 2023-09-17T20:47:00
 growth: budding
-publishDate: 2023-09-18T21:30:00
+publishDate: 2023-09-24T21:40:00
 ---
 I have referred to my personal knowledge management system as a [[Digital Garden]] for several years now and it makes sense this online presence reflects that. Originally I used the term to mean tending the noise of digital records, but have now moved towards a place for the growing of ideas.
 
@@ -46,14 +46,15 @@ Last night I was thinking about all the books, movies, video games I've been tra
 
 I asked myself why am I even recording all this. It's because I don't feel known. Someone who discovers my journals after I die could look at the list of my media consumption and somehow understand me. [[How ratings are applied]] would give them perfect insight into who I was. But, of course, it wouldn't. I'm wondering if I'd be better dumping all that overhead and simply listing my favourites and **WHY**[^2].
 
-## Design Already Implemented
-- Mimicking the use of [[Seedling]], [[Budding]] and [[Evergreen]] indicators as used by Maggie Appleton and others.
-- Convert all URLs to lowercase for future proofing.
 
-## Design Still to Come
-- Likely replace main site URL as quantumgardener.info instead of quantumgardener.blog to better represent the site's broader view than just a blog.
-- Add a [[Recent Changes]] page
-- Move [[Landscapes]] from tags to a dedicated property type
+## Note Metadata
+Each note has a growth status that indicates how "finished" it is. The growth values are [[Seedling]], [[Budding]] and [[Evergreen]]. As a note matures, the growth marker will be changed.
+
+[[Maps of Content]] are used extensively and are noted with the [MOC](/tags/moc) topic. Some topic pages are themselves maps of content.
+
+One or more topic flags will be added to each note. Even topic pages can have their own topics. This is all to aid navigation.
+
+Dates are used internally by me in [[Obsidian]] and are not displayed with notes. Dates tend to suggest blogging more than digital gardening. There is a risk that recent notes are seen as more important than their older siblings.
 
 
 [^1]: [A Brief History & Ethos of the Digital Garden](https://omnivore.app/quantumgardener/a-brief-history-ethos-of-the-digital-garden-18a977b1a72), retrieved 17 September 2023.
