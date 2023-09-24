@@ -35,6 +35,7 @@ export function PageList({ cfg, fileData, allFiles, limit }: Props) {
     list = list.slice(0, limit)
   }
 
+  if(fileData.slug == "tags/photography") {console.log(fileData)}
   return (
     <ul class="section-ul">
       {list.map((page) => {
@@ -56,7 +57,7 @@ export function PageList({ cfg, fileData, allFiles, limit }: Props) {
                 </p>
               </div>
             <ul class="tags">
-                {tags.map((tag) => (                  
+                {tags.filter((tag) => tag != fileData.slug?.split("tags/")[1]).map((tag) => (                  
                   <li>
                     <a
                       class="internal tag-link"
