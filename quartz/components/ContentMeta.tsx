@@ -3,7 +3,7 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 
 export default (() => {
-  function ContentMetadata({ cfg, fileData }: QuartzComponentProps) {
+  function ContentMetadata({ fileData, allFiles }: QuartzComponentProps) {
     const text = fileData.text
     if (text) {
       const segments: string[] = []
@@ -34,11 +34,28 @@ export default (() => {
         }
       } */
 
+      const landscapeLinks = []
+      for (const landscape of fileData.frontmatter?.landscapes) {
+        const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)
+        landscapeLinks.push([`/landscapes/${landscape}`, result?.frontmatter?.title.toUpperCase()])
+      }
+
       return (
         <div class="popover-hint">
         <p class="content-meta">
           <article>
-          <i style="color:green" class={growthClass}></i> <a href={growthLink}>{growth.toUpperCase()}</a> | {segments.join(" | ")}
+            <ul class="tags">
+              <li><i style="color:green" class={growthClass}></i> <a href={growthLink}>{growth.toUpperCase()}</a></li>
+           {landscapeLinks.map((link) => {
+            return (
+              <li>
+                &nbsp;|&nbsp;<i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp;
+                <a href={link[0]}>{link[1]}</a> 
+              </li>
+            )
+            })
+          }
+            </ul>
           </article>
         </p>
         </div>
