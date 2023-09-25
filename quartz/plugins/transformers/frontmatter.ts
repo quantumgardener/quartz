@@ -46,11 +46,22 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
 
             // slug them all!!
             data.tags = [...new Set(data.tags?.map((tag: string) => slugTag(tag)))] ?? []
+            
+            if (data.landscapes && !Array.isArray(data.landscapes)) {
+              data.landscapes = data.landscapes
+                .toString()
+                .split(",")
+                .map((landscape: string) => landscape.trim())
+            }
+
+            // slug them all!!
+            data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] ?? []
 
             // fill in frontmatter
             file.data.frontmatter = {
               title: file.stem ?? "Untitled",
               tags: [],
+              landscapes: [],
               ...data,
             }
           }
