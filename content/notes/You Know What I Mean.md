@@ -2,10 +2,9 @@
 title: You Know What I Mean?
 tags:
   - on/podcasts
-  - expand-my-way-of-being
 date: 2023-03-13
-aliases:
-  - you-know-what-i-mean
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 My daughter and her friend have started a podcast called "You Know What I Mean?”.
 

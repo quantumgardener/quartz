@@ -3,11 +3,10 @@ tags:
   - letters
   - on/conversation
   - on/habit
-  - expand-my-way-of-being
 date: 2023-06-17
-aliases:
-  - letters-w2
 growth: evergreen
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 ↖️ [[Letters with Jason]]
 

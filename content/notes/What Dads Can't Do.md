@@ -1,12 +1,10 @@
 ---
 tags:
-  - expand-my-way-of-being
   - on/cultural-stories
 date: 2004-10-27
-aliases:
-  - what-dads-cant-do
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
-
 My daughter is an avid reader and loves the library. This week she brought home a copy of ["What Dad's Can't Do"](https://douglaswood.com/product/what-dads-cant-do/) by Douglas Wood.
 
 Here's a summary from the website.

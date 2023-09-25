@@ -1,8 +1,9 @@
 ---
 tags:
   - on/gaming
-  - hobby-together
 date: 2023-02-03
+landscapes:
+  - "[[hobby-together]]"
 ---
 ![[vg_Stray.webp]]
 

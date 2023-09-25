@@ -2,6 +2,8 @@
 date: 2023-09-17T20:47:00
 growth: budding
 publishDate: 2023-09-24T21:40:00
+landscapes:
+  - "[[the-garden-shed]]"
 ---
 I have referred to my personal knowledge management system as a [[Digital Garden]] for several years now and it makes sense this online presence reflects that. Originally I used the term to mean tending the noise of digital records, but have now moved towards a place for the growing of ideas.
 
@@ -50,7 +52,7 @@ I asked myself why am I even recording all this. It's because I don't feel known
 ## Note Metadata
 Each note has a growth status that indicates how "finished" it is. The growth values are [[Seedling]], [[Budding]] and [[Evergreen]]. As a note matures, the growth marker will be changed.
 
-[[Maps of Content]] are used extensively and are noted with the [MOC](/tags/moc) topic. Some topic pages are themselves maps of content.
+[[Maps of Content]] are used extensively and are marked with the [MOC](/tags/moc) topic. Some topic pages are themselves maps of content.
 
 One or more topic flags will be added to each note. Even topic pages can have their own topics. This is all to aid navigation.
 

@@ -1,12 +1,11 @@
 ---
 tags:
   - review
-  - the-garden-shed
+  - gear
 date: 2023-01-05
-aliases:
-  - a-short-sennheiser-momentum-4-review
+landscapes:
+  - "[[hobby-together]]"
 ---
-
 For the last 4-5 years I've used my Sennheiser 4.50BTNC headphones every daty. The BTNC stands for Bluetooth and Noise Cancelling.
 
 Christmas just gone I was gifted a pair of Sennheiser Momentum 4 headphones. They are two generations newer and a level above the 4.50BTNCs.

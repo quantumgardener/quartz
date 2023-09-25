@@ -4,9 +4,8 @@ date: 2022-11-18
 tags:
   - on/concernful-activity
   - on/concerns
-  - expand-my-way-of-being
-aliases:
-  - whats-the-real-concern
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 I once heard the suggestion that a gravestone is more reflective of the people that commission it than the person who has died.
 

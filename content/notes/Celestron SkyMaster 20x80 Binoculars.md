@@ -2,9 +2,10 @@
 tags:
   - gear
   - astronomy
-  - hobby-together
 date: 2023-09-23T19:59:00
 description: I have some very beefy binoculars for stargazing.
+landscapes:
+  - "[[hobby-together]]"
 ---
 https://www.celestron.com/products/skymaster-20x80mm-porro-binoculars
 

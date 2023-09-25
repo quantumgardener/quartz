@@ -2,11 +2,12 @@
 tags:
   - on/distinctions
   - on/assessments
-  - expand-my-way-of-being
-  - the-garden-shed
 date: 2012-01-12
 aliases: 
 growth: evergreen
+landscapes:
+  - "[[expand-my-way-of-being]]"
+  - "[[the-garden-shed]]"
 ---
 I'm a couple of chapters into "[Start with Why](https://www.goodreads.com/book/show/7108725-start-with-why)" by Simon Sinek and he's already solved a problem I've been pondering. Well, not so much pondering as noting with curiosity. That is, why I love my new Macbook Pro.
 

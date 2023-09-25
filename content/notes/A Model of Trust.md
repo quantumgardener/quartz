@@ -1,10 +1,11 @@
 ---
 tags:
   - on/trust
-  - expand-my-way-of-being
 date: 2023-07-02
 aliases:
   - a-model-of-trust
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 ↖️ [[Ontology of the Human Observer]]
 

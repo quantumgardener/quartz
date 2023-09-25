@@ -1,9 +1,10 @@
 ---
 tags:
   - on/conversation
-  - expand-my-way-of-being
 date: 2023-01-29
 growth: evergreen
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 ↖️ [[Letters with Jason]]
 

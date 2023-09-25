@@ -2,9 +2,10 @@
 tags:
   - on/note-making
   - on/obsidian
-  - the-garden-shed
 date: 2023-09-14
 growth: seedling
+landscapes:
+  - "[[the-garden-shed]]"
 ---
 **Obsidian** is primarily a note-taking tool that uses [[Markdown]] files for speed and flexibility. The official site is https://obsidian.md/.
 

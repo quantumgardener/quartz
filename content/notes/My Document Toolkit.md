@@ -1,9 +1,10 @@
 ---
-tags:
-  - productive-laziness
-  - the-garden-shed
+tags: 
 date: 2023-02-20
 growth: budding
+landscapes:
+  - "[[hobby-together]]"
+  - "[[productive-laziness]]"
 ---
 I curate a lot of digital documentation for myself and my family. It is important to remove as much friction from the system. There are so many demands on our time, that the smallest resistance can easily provide an excuse to switch on _Australian Idol_ or _Survivor_ and do nothing.
 

@@ -3,8 +3,6 @@ tags:
   - expand-my-way-of-being
   - hobby-together
 date: 2023-04-02
-aliases:
-  - gaming-teaches-perspective
 description: Gaming teaches us the usefulness of chasing our perspective if what we are doing isn’t working for us. I use sim-racing to help explain.
 ---
 ↖️ [[Gaming Teaches]]

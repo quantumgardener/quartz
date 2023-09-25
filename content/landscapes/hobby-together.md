@@ -1,9 +1,10 @@
 ---
 title: Hobby Together
-growth: seedling
+date: 2023-09-25T11:11:00
+tags:
+  - MOC
+growth: budding
 ---
-↖️ [[Landscapes]]
-
 I’m a gamer, a miniature painter, a role-player, a cross-stitcher and enjoyer of good movies and TV at home. Here’s where I share my progress on whatever project currently takes my fancy, plus any relevant discussion on supporting technologies.
 
 ## I Want to...
@@ -17,5 +18,3 @@ I’m a gamer, a miniature painter, a role-player, a cross-stitcher and enjoyer 
 
 ## Reading
 - [[List of my Favourite Authors]]
-
----

@@ -4,8 +4,9 @@ tags:
   - on/learning
   - hobby-together
   - expand-my-way-of-being
-aliases:
-  - civilization-vi-failure
+landscapes:
+  - "[[expand-my-way-of-being]]"
+  - "[[hobby-together]]"
 ---
 
 On Sunday I started playing _[[Sid Meier's Civilization VI]]_. Today I lost badly and that’s ok because I was learning all the time.

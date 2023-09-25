@@ -5,8 +5,6 @@ tags:
   - on/obsidian
   - on/scripting
 date: 2023-04-16
-aliases:
-  - replacing-goodreads-with-obsidian
 ---
 I have been a Goodreads user for many, many years. It has provided me the means to track my reading activity alongside a list of books I want to read. The past few years I’ve been an avid Kindle reader, topping 20,000 pages read each year. Goodreads integration with the Kindle has made it very easy to mark a book started and finished.
 

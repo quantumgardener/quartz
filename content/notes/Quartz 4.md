@@ -1,9 +1,9 @@
 ---
-tags:
-  - the-garden-shed
+tags: 
 date: 2023-09-14
 growth: budding
 publishDate: 2023-09-24T21:26:00
+landscapes: "[[the-garden-shed]]"
 ---
 An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow.
 

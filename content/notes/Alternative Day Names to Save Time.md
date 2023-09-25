@@ -1,9 +1,10 @@
 ---
-tags:
-  - productive-laziness
+tags: 
 date: 2023-02-15
-aliases:
-  - alternative-day-names-to-save-time
+growth: evergreen
+landscapes:
+  - "[[productive-laziness]]"
+description: My proposed list of alternative day names to help us organise time easier and avoid confusion across the week.
 ---
 Suggested names to save time. Some are already in use which leads me to believe I’m onto something.
 

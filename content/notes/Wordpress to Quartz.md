@@ -1,12 +1,13 @@
 ---
 tags:
-  - the-garden-shed
   - on/blogging
   - on/quartz
 date: 2023-09-01
 aliases:
   - wordpress-to-quartz
 growth: evergreen
+landscapes:
+  - "[[the-garden-shed]]"
 ---
 For the last year or so I've been publishing my blog on Wordpress. I began using [Ulysses.app](https://ulysses.app) to write in Markdown and publish to Wordpress, then about March this year I started publishing directly from [[Obsidian]].
 

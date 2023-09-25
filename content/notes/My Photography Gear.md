@@ -2,12 +2,13 @@
 tags:
   - gear
   - photography
-  - hobby-together
 date: 2023-09-23T19:04:00
 growth: budding
 aliases:
   - Canon 400D
 description: A summary of my current photography gear (cameras, lenses and accessories). With a bit of a wishlist as well 😉.
+landscapes:
+  - "[[hobby-together]]"
 ---
 ## Camera
 I have a trusty [Canon 400D DSLR](https://en.wikipedia.org/wiki/Canon_EOS_400D) that was purchased in September 2006. I purchased it with a Canon EF-S 17-85mm f4/f5.6 lens.

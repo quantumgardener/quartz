@@ -1,9 +1,10 @@
 ---
 tags:
   - review
-  - hobby-together
 date: 2023-02-02
 growth: evergreen
+landscapes:
+  - "[[hobby-together]]"
 ---
 This morning I finished _[[Carrie]]_ the book and this afternoon I watched the 1976 movie.
 

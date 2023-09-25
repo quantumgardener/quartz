@@ -1,11 +1,10 @@
 ---
 tags:
   - on/LEGO
-  - hobby-together
 date: 2023-02-03
-aliases:
-  - building-the-batman-tumbler
 description: This is a record of my effort building the LEGO DC Batman Batmobile Tumbler (76240). It has a total 2049 pieces. Finished it is sized 16 cm (6”) high, 45 cm (17”) long and 25 cm (9”) wide.
+landscapes:
+  - "[[hobby-together]]"
 ---
 ![[lego_batman_01.webp]]
 

@@ -2,11 +2,10 @@
 tags:
   - letters
   - on/conversation
-  - expand-my-way-of-being
 date: 2023-07-02
-aliases:
-  - letters-final-thoughts
 growth: evergreen
+landscapes:
+  - "[[expand-my-way-of-being]]"
 ---
 ↖️ [[Letters with Jason]]
 

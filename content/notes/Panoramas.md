@@ -2,7 +2,8 @@
 growth: seedling
 tags:
   - photography
-  - hobby-together
+landscapes:
+  - "[[hobby-together]]"
 ---
 ## Tips to Shooting Panoramas
 Ideally use a tripod, but can be done handheld.
