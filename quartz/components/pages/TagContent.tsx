@@ -29,9 +29,6 @@ function TagContent(props: QuartzComponentProps) {
       : // @ts-ignore
         toJsxRuntime(tree, { Fragment, jsx, jsxs, elementAttributeNameCase: "html" })
 
-  if(tag === "photography"){
-  console.log (tag)
-  console.log (fileData)}
   if (tag === "") {
     const tags = [...new Set(allFiles.flatMap((data) => data.frontmatter?.tags ?? []))]
     const tagItemMap: Map<string, QuartzPluginData[]> = new Map()
