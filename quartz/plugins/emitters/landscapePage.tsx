@@ -42,7 +42,6 @@ export const LandscapePage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => 
       )
       // add base landscape
       landscapes.add("index")
-      console.log(landscapes)
 
       const landscapeDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
         [...landscapes].map((landscape) => {
