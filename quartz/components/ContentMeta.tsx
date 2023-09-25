@@ -26,13 +26,13 @@ export default (() => {
   
       const growthClass = "fa-solid fa-" + faIcon
       const growthLink = `/${growth}.html`
-
-      if (fileData.dates) {
+      
+      /*if (fileData.dates) {
         segments.push("planted " + formatDate(getDate(cfg, fileData)!))
         if (fileData.dates.created.getTime() < fileData.dates.published.getTime()) {
           segments.push(" last tended " + formatDate(fileData.dates.published)!)
         }
-      }
+      } */
 
       return (
         <div class="popover-hint">
