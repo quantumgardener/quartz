@@ -62,7 +62,7 @@ export function PageList({ cfg, fileData, allFiles, limit }: Props) {
                       class="internal tag-link"
                       href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
                     >
-                      <i class="fa-solid fa-tag"></i> {tag}
+                      <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{tag}
                     </a>
                   </li>
                 ))}
