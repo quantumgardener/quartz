@@ -82,17 +82,17 @@ function TagContent(props: QuartzComponentProps) {
       <div class="popover-hint">
         <article>{content}</article>
         <ul class="tags">
-                {fileData.frontmatter?.tags.map((tag) => (                  
-                  <li>
-                    <a
-                      class="internal tag-link"
-                      href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
-                    >
-                      <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{tag}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {fileData.frontmatter?.tags.map((tag) => (                  
+            <li>
+              <a
+                class="internal tag-link"
+                href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
+              >
+                <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{tag}
+              </a>
+            </li>
+          ))}
+        </ul>
         <p>{pluralize(pages.length, "item")} with this topic.</p>
         <div>
           <PageList {...listProps} />
