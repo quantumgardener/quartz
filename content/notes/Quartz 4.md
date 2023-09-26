@@ -73,3 +73,35 @@ Tag pages can themselves be tagged and show the list of their tags.
 ### Tag Pages Hide Their Tag Name from Linked Items
 If you are on a tag page, the list of notes with that tag no longer display the name of the page itself. It's completely redundant information.
 - `\quartz\components\PageLiist.tsx`
+
+### Landscape Index pages
+Add pages to index all notes within one or more [[Landscapes]].
+- `\quartz\quartz.config.ts`
+- `\quartz\components\index.ts`
+- `\quartz\components\ContentMeta.tsx`
+- `\quartz\components\pages\LandscapeContent.tsx`
+- `\quartz\plugins\emitters\index.ts`
+- `\quartz\plugins\emmiters\landscapePage.tsx`
+- `\quartz\plugins\transformers\frontmatter.ts`
+
+### Change tags folder to topics folder
+I prefer topics over tags. Possibly could have done this with a site redirect, but I like this way better. Fixes it at the root.
+- `\quartz\components\Explorer.tsx`
+- `\quartz\components\PageList.tsx`
+- `\quartz\components\RecentNotes.tsx`
+- `\quartz\components\TagList.tsx`
+- `\quartz\components\pages\LandscapeContent.tsx`
+- `\quartz\components\pages\TagContent.tsx`
+- `\quartz\components\scripts\graph.inline.ts`
+- `\quartz\plugins\emitters\folderPage.tsx`
+- `\quartz\plugins\emitters\tagPage.tsx`
+- `\quartz\plugins\transformers\ofm.ts`
+- `\quartz\util\path.test.ts`
+
+### Replace topic indicator for topics that don't have a dedicated note
+The default is to say "Topic: abcd". Now the [FontAwesome Message icon](https://fontawesome.com/icons/message?f=classic&s=regular) is displayed instead, and throughout the site for all topic labels.
+- `\quartz\components\Articles.tsx`
+- `\quartz\components\PageList.tsx`
+- `\quartz\components\TagList.tsx`
+- `\quartz\components\pages\LandscapeContent.tsx`
+- `\quartz\components\pages\TagContent.tsx`
