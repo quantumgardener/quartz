@@ -1,9 +1,12 @@
 ---
 date: 2022-11-28
 tags:
-  - on/mental-wellness
-  - on/relaxation
-  - on/overwhelm
+  - mental-wellness
+  - relaxation
+  - overwhelm
+  - mental-health
+  - health
+  - role/my-wellness
 growth: evergreen
 landscapes:
   - "[[expand-my-way-of-being]]"

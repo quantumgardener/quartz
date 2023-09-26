@@ -4,7 +4,7 @@ tags:
   - on/language
   - on/moods
   - on/emotions
-  - on/learning
+  - learning
   - on/body
 date: 2002-07-29
 landscapes:

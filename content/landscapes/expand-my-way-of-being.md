@@ -9,3 +9,4 @@ My Way of Being is more than the behaviour I show. It’s the total sum of how I
 
 ## Keeping Myself Healthy
 - [[18 Days Until I Can Fully Rest]]
+- [[The Indicators of my Impending Burnout]]

@@ -1,7 +1,7 @@
 ---
 tags:
-  - on/mental-health
-  - on/mental-wellness
+  - mental-health
+  - mental-wellness
 date: 2023-02-05
 landscapes:
   - "[[expand-my-way-of-being]]"

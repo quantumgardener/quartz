@@ -1,7 +1,7 @@
 ---
 tags:
   - on/sleep
-  - on/health
+  - health
 date: 2023-07-11
 aliases:
   - will-sleep-come

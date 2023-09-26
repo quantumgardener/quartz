@@ -45,12 +45,12 @@ export default (() => {
         <p class="content-meta">
           <article>
             <ul class="tags">
-              <li><i style="color:green" class={growthClass}></i> <a href={growthLink}>{growth.toUpperCase()}</a></li>
+              <li><i style="color:green" class={growthClass}></i> <a class="internal tag-link" href={growthLink}>{growth.toUpperCase()}</a></li>
            {landscapeLinks.map((link) => {
             return (
               <li>
-                &nbsp;|&nbsp;<i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp;
-                <a href={link[0]}>{link[1]}</a> 
+                &nbsp;&nbsp;<i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp;
+                <a class="internal tag-link" href={link[0]}>{link[1]}</a> 
               </li>
             )
             })

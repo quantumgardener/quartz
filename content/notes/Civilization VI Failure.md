@@ -1,14 +1,14 @@
 ---
 date: 2022-10-26
 tags:
-  - on/learning
-  - hobby-together
-  - expand-my-way-of-being
+  - learning
+  - learning-strategy
+  - video-game
 landscapes:
   - "[[expand-my-way-of-being]]"
-  - "[[hobby-together]]"
+growth: seedling
+description: On Sunday I started playing Sid Meier's Civilization VI. Today I lost badly and that’s ok because I was learning all the time.
 ---
-
 On Sunday I started playing _[[Sid Meier's Civilization VI]]_. Today I lost badly and that’s ok because I was learning all the time.
 
 Having played Civ II, IV and V in the past, I was familiar with the fundamental structure of the game. After my first attempt on Sunday afternoon it became clear I needed to go back to basics. I found some good tutorials on YouTube and a play through of a science victory scenario. All made perfect sense, so why today’s thumping?

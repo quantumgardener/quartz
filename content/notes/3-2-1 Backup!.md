@@ -1,7 +1,10 @@
 ---
 date: 2022-11-20
 tags:
-  - on/backups
+  - backup-strategy
+  - digital-asset-management
+  - software-use
+  - gear
 growth: evergreen
 landscapes:
   - "[[the-garden-shed]]"

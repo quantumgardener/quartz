@@ -1,16 +1,18 @@
 ---
-tags: 
+tags:
+  - metadata-strategy
+  - personal-knowledge-management
+  - digital-asset-management
+  - software-use
+  - gear
 date: 2023-02-20
 growth: budding
 landscapes:
-  - "[[hobby-together]]"
   - "[[productive-laziness]]"
 ---
 I curate a lot of digital documentation for myself and my family. It is important to remove as much friction from the system. There are so many demands on our time, that the smallest resistance can easily provide an excuse to switch on _Australian Idol_ or _Survivor_ and do nothing.
 
 At the moment I’m in one of those rare golden-ages where the tools I have at my disposal are working for me.
-
-> [!INFO] This list will change from time-to-time. 
 
 ## The Tools
 

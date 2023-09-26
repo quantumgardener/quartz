@@ -1,6 +1,8 @@
 ---
 tags:
   - review
+  - movie
+  - book
 date: 2023-02-02
 growth: evergreen
 landscapes:

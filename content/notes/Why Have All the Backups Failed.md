@@ -1,7 +1,7 @@
 ---
 title: Why Have All the Backups Failed?
 tags:
-  - on/backups
+  - backup-strategy
   - on/pkm
 date: 2023-02-02
 growth: evergreen
