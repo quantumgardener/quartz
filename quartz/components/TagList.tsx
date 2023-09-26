@@ -13,7 +13,7 @@ function TagList({ fileData }: QuartzComponentProps) {
           return (
             <li>
               <a href={linkDest} class="internal tag-link">
-                <i class="fa-solid fa-tag">&thinsp;</i>{display}
+                <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{display}
               </a>
             </li>
           )
