@@ -13,8 +13,6 @@ function TagContent(props: QuartzComponentProps) {
   const { tree, fileData, allFiles } = props
   const slug = fileData.slug
 
-  console.log(slug)
-
   if (!(slug?.startsWith("topics/") || slug === "topics")) {
     throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`)
   }
