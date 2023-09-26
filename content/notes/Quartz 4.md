@@ -2,12 +2,12 @@
 tags: 
 date: 2023-09-14
 growth: budding
-publishDate: 2023-09-24T21:26:00
-landscapes: "[[the-garden-shed]]"
+publishDate: 2023-09-26T10:41:00
+landscapes:
+  - "[[the-garden-shed]]"
+description: Overview of how I use Quartz to display this digital garden. Includes a list of customisations I've made.
 ---
-An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow.
-
-[Official site on Github](https://quartz.jzhao.xyz).
+An [[Obsidian]] to website publishing system that allows me to publish directly out of my [[Digital Garden]] and so retain the benefits of a single, frictionless workflow. The GitHub source is at  https://quartz.jzhao.xyz.
 
 [The Quantum Garden](https://quantumgardener.blog) moved to Quartz in September 2023.
 

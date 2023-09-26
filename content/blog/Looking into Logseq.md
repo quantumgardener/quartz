@@ -2,10 +2,9 @@
 tags:
   - on/pkm
   - on/obsidian
-  - the-garden-shed
 date: 2023-07-01
-aliases:
-  - looking-into-logseq
+landscapes:
+  - "[[the-garden-shed]]"
 ---
 [[Logseq]] has been appearing a lot in my Mastodon feed lately. Many sing its praises over [[Obsidian]] so with a slow afternoon at work yesterday I thought to take a look.
 
@@ -30,7 +29,7 @@ I'm also capturing more into Obsidian than I write. Transferring to another tool
 ---
 The decision is made. For my personal digital garden at least, and likely work as well, I will be staying with [[Obsidian]] and not progressing further with [[Logseq]].
 
-I put down my first observations in writing [[Looking into Logseq|earlier today]].
+I put down my first observations in writing earlier today.
 
 Any database, and my collection of Obsidian pages is one of those, is only as good as the answers to the questions you ask of it. I don't think I can get Logseq to provide those answers due to subtle changes in the data structure. The effort involved far outweighs the benefits.
 

@@ -61,7 +61,7 @@ function LandscapeContent(props: QuartzComponentProps) {
                 </h2>
                 {content && <p>{content}</p>}
                 <p>
-                  {pluralize(pages.length, "item")} in this xxlandscape.{" "}
+                  {pluralize(pages.length, "item")} in this landscape.{" "}
                   {pages.length > numPages && `Showing first ${numPages}.`}
                 </p>
                 <PageList limit={numPages} {...listProps} />
