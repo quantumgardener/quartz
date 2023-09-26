@@ -66,7 +66,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     if (showTags) {
       const localTags = details.tags
         .filter((tag) => !removeTags.includes(tag))
-        .map((tag) => simplifySlug(("tags/" + tag) as FullSlug))
+        .map((tag) => simplifySlug(("topics/" + tag) as FullSlug))
 
       tags.push(...localTags.filter((tag) => !tags.includes(tag)))
 
@@ -99,7 +99,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
 
   const graphData: { nodes: NodeData[]; links: LinkData[] } = {
     nodes: [...neighbourhood].map((url) => {
-      const text = url.startsWith("tags/") ? "#" + url.substring(5) : data[url]?.title ?? url
+      const text = url.startsWith("topics/") ? "#" + url.substring(5) : data[url]?.title ?? url
       return {
         id: url,
         text: text,
@@ -149,7 +149,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     const isCurrent = d.id === slug
     if (isCurrent) {
       return "var(--secondary)"
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
+    } else if (visited.has(d.id) || d.id.startsWith("topics/")) {
       return "var(--tertiary)"
     } else {
       return "var(--gray)"

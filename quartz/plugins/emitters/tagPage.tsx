@@ -49,7 +49,7 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
           return [
             tag,
             defaultProcessedContent({
-              slug: joinSegments("tags", tag) as FullSlug,
+              slug: joinSegments("topics", tag) as FullSlug,
               frontmatter: { title, tags: [] },
             }),
           ]
@@ -58,8 +58,8 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
 
       for (const [tree, file] of content) {
         const slug = file.data.slug!
-        if (slug.startsWith("tags/")) {
-          const tag = slug.slice("tags/".length)
+        if (slug.startsWith("topics/")) {
+          const tag = slug.slice("topics/".length)
           if (tags.has(tag)) {
             tagDescriptions[tag] = [tree, file]
           }
@@ -67,7 +67,7 @@ export const TagPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
       }
 
       for (const tag of tags) {
-        const slug = joinSegments("tags", tag) as FullSlug
+        const slug = joinSegments("topics", tag) as FullSlug
         const externalResources = pageResources(pathToRoot(slug), resources)
         const [tree, file] = tagDescriptions[tag]
         const componentData: QuartzComponentProps = {
