@@ -86,7 +86,7 @@ function LandscapeContent(props: QuartzComponentProps) {
               <li>
                 <a
                   class="internal tag-link"
-                  href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                  href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
                 >
                   <i class="fa-solid fa-tag"></i> {tag}
                 </a>

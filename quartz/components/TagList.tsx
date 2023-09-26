@@ -9,7 +9,7 @@ function TagList({ fileData }: QuartzComponentProps) {
       <ul class="tags">
         {tags.map((tag) => {
           const display = `${tag}`
-          const linkDest = baseDir + `/tags/${slugTag(tag)}`
+          const linkDest = baseDir + `/topics/${slugTag(tag)}`
           return (
             <li>
               <a href={linkDest} class="internal tag-link">

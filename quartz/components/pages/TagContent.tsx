@@ -13,11 +13,13 @@ function TagContent(props: QuartzComponentProps) {
   const { tree, fileData, allFiles } = props
   const slug = fileData.slug
 
-  if (!(slug?.startsWith("tags/") || slug === "tags")) {
+  console.log(slug)
+
+  if (!(slug?.startsWith("topics/") || slug === "topics")) {
     throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`)
   }
 
-  const tag = simplifySlug(slug.slice("tags/".length) as FullSlug)
+  const tag = simplifySlug(slug.slice("topics/".length) as FullSlug)
   const allPagesWithTag = (tag: string) =>
     allFiles.filter((file) =>
       (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag),
@@ -41,7 +43,7 @@ function TagContent(props: QuartzComponentProps) {
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {tags.length} total tags.</p>
+        <p>Found {tags.length} total topics.</p>
         <div>
           {tags.map((tag) => {
             const pages = tagItemMap.get(tag)!
@@ -50,7 +52,7 @@ function TagContent(props: QuartzComponentProps) {
               allFiles: pages,
             }
 
-            const contentPage = allFiles.filter((file) => file.slug === `tags/${tag}`)[0]
+            const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`)[0]
             const content = contentPage?.description
             return (
               <div>
@@ -61,7 +63,7 @@ function TagContent(props: QuartzComponentProps) {
                 </h2>
                 {content && <p>{content}</p>}
                 <p>
-                  {pluralize(pages.length, "item")} with this tag.{" "}
+                  {pluralize(pages.length, "item")} with this topic.{" "}
                   {pages.length > numPages && `Showing first ${numPages}.`}
                 </p>
                 <PageList limit={numPages} {...listProps} />
@@ -86,14 +88,14 @@ function TagContent(props: QuartzComponentProps) {
                   <li>
                     <a
                       class="internal tag-link"
-                      href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                      href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
                     >
                       <i class="fa-solid fa-tag"></i> {tag}
                     </a>
                   </li>
                 ))}
               </ul>
-        <p>{pluralize(pages.length, "item")} with this tag.</p>
+        <p>{pluralize(pages.length, "item")} with this topic.</p>
         <div>
           <PageList {...listProps} />
         </div>
