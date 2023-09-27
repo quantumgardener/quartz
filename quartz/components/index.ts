@@ -19,6 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import LandscapeContent from "./pages/LandscapeContent"
+import GrowthContent from "./pages/GrowthContent"
 
 export {
   ArticleTitle,
@@ -41,5 +42,6 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
-  LandscapeContent
+  LandscapeContent,
+  GrowthContent
 }
