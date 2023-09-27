@@ -6,9 +6,7 @@ const config: QuartzConfig = {
     pageTitle: "The Quantum Garden",
     enableSPA: false,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: null,
     baseUrl: "quantumgardener.info",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
