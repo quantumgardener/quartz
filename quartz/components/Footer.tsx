@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
       <footer>
         <hr />
         <p>
-          © David C. Buchan 2002&ndash;{year}. Created with <a href="https://quartz.jzhao.xyz/">Quartz</a>.<a rel="me" href="https://aus.social/@dcbuchan"></a>
+        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{year}. <a href="/privacy"><i class="fa-solid fa-lock"></i> Privacy</a>. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a>
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => {
