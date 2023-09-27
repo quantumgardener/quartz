@@ -41,7 +41,7 @@ function LandscapeContent(props: QuartzComponentProps) {
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {landscapes.length} total dddddlandscapes.</p>
+        <p>Found {landscapes.length} total landscapes.</p>
         <div>
           {landscapes.map((landscape) => {
             const pages = landscapeItemMap.get(landscape)!
