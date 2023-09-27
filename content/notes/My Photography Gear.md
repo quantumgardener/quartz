@@ -2,7 +2,7 @@
 tags:
   - gear
   - photography
-date: 2023-09-23T19:04:00
+date: 2023-09-27
 growth: budding
 aliases:
   - Canon 400D
@@ -47,6 +47,8 @@ The R50 provides:
 - 4K video recording
 - More pixels of the mega kind
 - Interface and technology that is 17 years further forward
+- Hi-res viewfinder
+- Lighter weight body
 
 ### Circular Polariser and Neutral Density Filters
 From what I've seen [Kase Filters](https://www.kaseaustralia.com.au) are the way to go. 67mm kit will work with my current and planned future lenses. Don't know how it steps up for other lenses with the Revolution series without needing to get the 82mm set. I need calculations to see if it's worth it.

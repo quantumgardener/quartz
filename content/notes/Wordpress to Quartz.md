@@ -1,10 +1,7 @@
 ---
 tags:
   - on/blogging
-  - on/quartz
 date: 2023-09-01
-aliases:
-  - wordpress-to-quartz
 growth: evergreen
 landscapes:
   - "[[the-garden-shed]]"
