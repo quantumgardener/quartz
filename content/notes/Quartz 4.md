@@ -2,7 +2,7 @@
 tags: 
 date: 2023-09-14
 growth: budding
-publishDate: 2023-09-26T10:41:00
+publishDate: 2023-09-27
 landscapes:
   - "[[the-garden-shed]]"
 description: Overview of how I use Quartz to display this digital garden. Includes a list of customisations I've made.
@@ -16,11 +16,17 @@ An [[Obsidian]] to website publishing system that allows me to publish directly 
 flowchart TD
     A["/"] --> B(fa:fa-note-sticky notes)
     A --> C(fa:fa-square-rss blog)
-    A --> D(fa:fa-boxes-stacked assets)   
+    A --> E(fa:fa-tree maturity)
+    A --> F(fa:fa-mountain-sun landscapes)
+    A --> D(fa:fa-lock assets)
+    A --> G(fa:fa-lock management)
 ```
 - **[notes](/notes/index)** is the folder where most of the garden's content is kept.
-- **blog** holds transitional notes, relevant only to a point in time.
-- **assets** holds supporting images and attachments.
+- **[blog](/blog/index)** holds transitional notes, relevant only to a point in time.
+- [maturity](/maturity/index) is the index of all note maturity levels.
+- [landscapes](/landscapes/index) is the index of all landscapes.
+- **assets** holds supporting images and attachments and is not publicly accessible.
+- **[[Quartz/management/index|Management]]** holds notes I use to support the site and requires [[Obsidian]] as queries are used. It's convenient to have them all together with the other notes.
 
 ## Customisations for *The Quantum Garden*
 The modifications I've made from [the original codebase](https://github.com/jackyzha0/quartz) are listed below with the file(s) where the change has been made. You're more than welcome to view them in-situ at the [site's Github repository](https://github.com/quantumgardener/qg.blog). The majority are to support [[Designing The Quantum Garden]] and others are purely informational/cosmetic.
@@ -105,3 +111,12 @@ The default is to say "Topic: abcd". Now the [FontAwesome Message icon](https://
 - `\quartz\components\TagList.tsx`
 - `\quartz\components\pages\LandscapeContent.tsx`
 - `\quartz\components\pages\TagContent.tsx`
+
+### Growth Maturity Index pages
+Add pages to index all notes with their maturity level of [[Seedling]], [[Budding]], or [[Evergreen]].
+- `\quartz\quartz.config.ts`
+- `\quartz\components\index.ts`
+- `\quartz\components\ContentMeta.tsx`
+- `\quartz\components\pages\GrowthContent.tsx`
+- `\quartz\plugins\emitters\index.ts`
+- `\quartz\plugins\emmiters\GrowthPage.tsx`
