@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/blogging
+  - blogging
 date: 2022-10-16
 growth: evergreen
 landscapes:

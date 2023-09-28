@@ -1,7 +1,7 @@
 ---
 title: Are you holding yourself to the right standard?
 tags:
-  - on/standards
+  - standards
   - on/assessments
 date: 2023-03-02
 landscapes:

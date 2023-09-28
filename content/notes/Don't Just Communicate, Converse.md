@@ -1,11 +1,9 @@
 ---
 tags:
   - on/basic-linguistic-acts
-  - on/communication
   - on/moods
   - on/emotions
   - on/listening
-  - expand-my-way-of-being
   - effective-conversation
 date: 2023-02-06
 landscapes:

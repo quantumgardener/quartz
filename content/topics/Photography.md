@@ -1,6 +1,5 @@
 ---
 tags:
-  - hobby-together
   - MOC
 growth: budding
 landscapes:

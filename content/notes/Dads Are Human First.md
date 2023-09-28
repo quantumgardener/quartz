@@ -1,6 +1,6 @@
 ---
 tags:
-  - expand-my-way-of-being
+  - standards
 date: 2023-02-12
 landscapes:
   - "[[expand-my-way-of-being]]"

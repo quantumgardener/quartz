@@ -1,4 +1,6 @@
 ---
+tags:
+  - frequently-quoted
 date: 2023-09-14
 growth: evergreen
 landscapes:
