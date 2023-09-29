@@ -5,7 +5,7 @@ tags:
   - digital-asset-management
   - software-use
   - gear
-growth: evergreen
+growth: "[[Evergreen]]"
 landscapes:
   - "[[the-garden-shed]]"
 ---

@@ -2,7 +2,7 @@
 tags:
   - blogging
 date: 2022-10-16
-growth: evergreen
+growth: "[[Evergreen]]"
 landscapes:
   - "[[productive-laziness]]"
 ---

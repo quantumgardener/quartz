@@ -4,7 +4,7 @@ tags:
 date: 2023-07-09
 landscapes:
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 This week I pulled my [[My Photography Gear|Canon 400D]] DSLR out of the cupboard and clicked the shutter button a few times. I'm through my camera gear and familiarising myself with everything again.
 

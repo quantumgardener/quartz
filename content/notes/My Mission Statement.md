@@ -2,7 +2,7 @@
 tags:
   - frequently-quoted
 date: 2023-09-14
-growth: evergreen
+growth: "[[Evergreen]]"
 landscapes:
   - "[[expand-my-way-of-being]]"
 ---

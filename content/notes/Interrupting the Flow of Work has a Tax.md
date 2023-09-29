@@ -3,7 +3,7 @@ date: 2022-07-10
 categories:
   - productive-laziness
 tags: []
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 
 Nobody likes interruptions (unless they are good news) but regardless, each interruption that occurs takes not only the time of the interruption itself but a little longer as you strive to get back to where you were beforehand.

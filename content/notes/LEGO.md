@@ -1,7 +1,7 @@
 ---
 title: LEGO Map of Content
 date: 2023-09-14
-growth: evergreen
+growth: "[[Evergreen]]"
 description: Jumping off point for all things LEGO.
 tags:
   - MOC

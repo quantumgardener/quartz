@@ -4,7 +4,7 @@ tags:
 date: 2023-02-16
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 Early 2000 and I was in London and a newly promoted manager within Arthur Andersen, Business Consulting division. During some new-manager training, we were encouraged to develop our own personal mission statement. I’d never considered such a thing before then. Business mission statements have always felt hollow to me (still do - more about marketing than actual values).
 

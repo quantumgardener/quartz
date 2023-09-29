@@ -1,6 +1,6 @@
 ---
 date: 2023-09-17T20:47:00
-growth: budding
+growth: "[[Budding]]"
 publishDate: 2023-09-29
 landscapes:
   - "[[the-garden-shed]]"

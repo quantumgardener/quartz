@@ -9,7 +9,7 @@ date: 2023-01-24
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 ![[vg_Forspoken.webp]]
 

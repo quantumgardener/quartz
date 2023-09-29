@@ -5,7 +5,7 @@ date: 2023-05-14
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 > [!INFO] This note is part of the [[Gaming Teaches]] series of observations about what gaming can teach me when its use as a lens on life.
 

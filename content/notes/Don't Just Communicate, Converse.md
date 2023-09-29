@@ -8,7 +8,7 @@ tags:
 date: 2023-02-06
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 When employees in the workplace complain about a lack of communication, what they really mean is a lack of conversation with a capital C.
 

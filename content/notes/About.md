@@ -2,7 +2,7 @@
 title: About
 date: 2023-09-14
 publishDate: 2023-09-16T15:20:00
-growth: budding
+growth: "[[Budding]]"
 ---
 Welcome to The Quantum Garden, a site where I share what interests me in the hope you'll find it interesting as well.
 

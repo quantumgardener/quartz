@@ -4,7 +4,7 @@ tags:
 date: 2023-09-28
 landscapes:
   - "[[hobby-together]]"
-growth: seedling
+growth: "[[Seedling]]"
 description: All things video games and the platforms I play on.
 ---
 All things video games.

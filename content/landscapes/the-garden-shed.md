@@ -1,6 +1,6 @@
 ---
 title: The Garden Shed
-growth: seedling
+growth: "[[Seedling]]"
 tags:
   - MOC
 ---

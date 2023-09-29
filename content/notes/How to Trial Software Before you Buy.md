@@ -5,7 +5,7 @@ tags:
 date: 2002-08-22
 landscapes:
   - "[[the-garden-shed]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 These days it is possible to trial most computer software before you buy it. But what does 'trial' actually mean.
 

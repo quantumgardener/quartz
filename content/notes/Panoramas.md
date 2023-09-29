@@ -1,5 +1,5 @@
 ---
-growth: seedling
+growth: "[[Seedling]]"
 tags:
   - photography
 landscapes:

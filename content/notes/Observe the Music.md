@@ -4,7 +4,7 @@ tags:
   - on/listening
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: budding
+growth: "[[Budding]]"
 ---
 Changing how we observe our world by becoming a different observer is powerful. A power that gives us more choice.
 

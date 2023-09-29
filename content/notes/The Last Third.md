@@ -6,7 +6,7 @@ tags:
   - coaching
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: seedling
+growth: "[[Seedling]]"
 ---
 Board members are elected for three terms, on a rolling basis.
 

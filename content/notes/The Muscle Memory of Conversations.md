@@ -7,7 +7,7 @@ date: 2023-03-07
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 This week I’ve returned to playing _[[Elden Ring]]_. Movement, combat and management of weapons, armour and spells, is all handled by a “controller”[^1]. Games will generally ease you into which button to press when but after a while you end up not having to think about what to do and you just do it.
 

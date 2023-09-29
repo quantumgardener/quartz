@@ -1,7 +1,7 @@
 ---
 tags: 
 date: 2023-02-15
-growth: evergreen
+growth: "[[Evergreen]]"
 landscapes:
   - "[[productive-laziness]]"
 description: My proposed list of alternative day names to help us organise time easier and avoid confusion across the week.

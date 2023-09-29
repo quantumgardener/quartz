@@ -1,6 +1,6 @@
 ---
 title: Productive Laziness
-growth: seedling
+growth: "[[Seedling]]"
 tags:
   - MOC
 ---

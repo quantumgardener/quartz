@@ -3,7 +3,7 @@ tags:
   - person
   - author
 date: 2023-09-21T21:29:00
-growth: seedling
+growth: "[[Seedling]]"
 ---
 What a writer. My first read of Brandon was the *[[Mistborn Trilogy]]* and from there I moved to *[[The Stormlight Archive]]* and despite each book in that series being 1000+ pages, I read the first 4 back-to-back.
 

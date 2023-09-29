@@ -3,7 +3,7 @@ tags:
   - gear
   - photography
 date: 2023-09-27
-growth: budding
+growth: "[[Budding]]"
 aliases:
   - Canon 400D
 description: A summary of my current photography gear (cameras, lenses and accessories). With a bit of a wishlist as well 😉.

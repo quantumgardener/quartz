@@ -1,7 +1,7 @@
 ---
 tags: []
 date: 2023-09-18T21:01:00
-growth: seedling
+growth: "[[Seedling]]"
 ---
 I have blogged on-and-off since 2002, always with the purpose of sharing. As a model of writing, there was pressure to perform and write something of value. My style has been to freely share what I know but there were times when I couldn't write because the topic was too close to work life.
 

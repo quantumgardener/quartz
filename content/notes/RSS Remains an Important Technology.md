@@ -7,7 +7,7 @@ tags:
   - frequently-quoted
 landscapes:
   - "[[productive-laziness]]"
-growth: seedling
+growth: "[[Seedling]]"
 ---
 I’ve written several times over the past 20 years that RSS feeds are important yet can be a hinderance as much as a help.
 

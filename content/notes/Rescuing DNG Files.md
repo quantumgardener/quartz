@@ -5,7 +5,7 @@ tags:
 date: 2023-08-13
 landscapes:
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 This afternoon, as I was importing DNG files into [[Lightroom]], I found way too many that it won't import. There is some kind of corruption in the DNG file. Likely caused by something I've done in the past converting from one format to another (and quite possibly back again).
 

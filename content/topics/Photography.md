@@ -1,7 +1,7 @@
 ---
 tags:
   - MOC
-growth: budding
+growth: "[[Budding]]"
 landscapes:
   - "[[hobby-together]]"
 ---

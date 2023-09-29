@@ -4,7 +4,7 @@ tags:
 date: 2004-10-27
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 My daughter is an avid reader and loves the library. This week she brought home a copy of ["What Dad's Can't Do"](https://douglaswood.com/product/what-dads-cant-do/) by Douglas Wood.
 

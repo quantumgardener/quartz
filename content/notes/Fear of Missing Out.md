@@ -6,7 +6,7 @@ tags:
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 FOMO generates extra dollars for the gaming industry, both PC/console gaming and board/tabletop games.
 

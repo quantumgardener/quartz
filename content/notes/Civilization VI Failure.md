@@ -6,7 +6,7 @@ tags:
   - video-game
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: seedling
+growth: "[[Seedling]]"
 description: On Sunday I started playing Sid Meier's Civilization VI. Today I lost badly and that’s ok because I was learning all the time.
 ---
 On Sunday I started playing _[[Sid Meier's Civilization VI]]_. Today I lost badly and that’s ok because I was learning all the time.

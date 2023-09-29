@@ -4,7 +4,7 @@ tags:
   - movie
   - book
 date: 2023-02-02
-growth: evergreen
+growth: "[[Evergreen]]"
 landscapes:
   - "[[hobby-together]]"
 ---

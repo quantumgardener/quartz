@@ -4,7 +4,7 @@ tags:
   - effective-conversation
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 We have a state election on [[2022-11-19|Saturday]]. One local candidate sent a letter to our household today. We have four that will be voting.
 

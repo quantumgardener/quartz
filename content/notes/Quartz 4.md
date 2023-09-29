@@ -2,7 +2,7 @@
 tags:
   - software-use
 date: 2023-09-14
-growth: budding
+growth: "[[Budding]]"
 publishDate: 2023-09-27
 landscapes:
   - "[[the-garden-shed]]"

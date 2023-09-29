@@ -3,8 +3,7 @@ date: 2023-09-27
 tags:
   - personal-knowledge-management
   - software-use
-  - gear
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 *Roam Research* is a note-taking tool that gained significantly in popularity by word-of-mouth in 2020. The key benefit comes from the way it treats blocks of text and [[Backlinks are Important]].
 

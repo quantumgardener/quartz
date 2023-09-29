@@ -1,5 +1,5 @@
 ---
-growth: evergreen
+growth: "[[Evergreen]]"
 date: 2023-09-27
 ---
 It has taken a few weeks and now *The Quantum Garden* is open to all visitors. I've learned a lot along the way as I moved from [[Wordpress to Quartz]] including:

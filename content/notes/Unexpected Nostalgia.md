@@ -5,7 +5,7 @@ date: 2012-05-20
 aliases:
   - they-gave-the-world-laughter
 landscapes: 
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 I love things that make me feel a strong sense of nostalgia. Many of us do. Yesterday I watched [The Muppets](http://www.imdb.com/title/tt1204342/) after missing it in the cinema earlier this year (twice in fact). My post on Facebook said it all.
 

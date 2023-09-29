@@ -6,7 +6,7 @@ date: 2023-06-24
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 With notice that Netflix has made a series of *[[The Three-Body Problem]]* I'm revisiting the novel as an audiobook. Though I read it first only 18 months ago, I only have the barest memory of the story. 
 

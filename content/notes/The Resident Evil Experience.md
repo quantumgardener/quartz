@@ -6,7 +6,7 @@ tags:
 date: 2023-03-04
 landscapes:
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 Today I spent some time playing the original *[[Resident Evil]]*. Games have evolved since 1996 in many more ways than graphics alone. To me it felt a lot like the text adventure _[[Zork I]]_ with graphics. The storytelling structure and gameplay is highly similar between the two. There isn’t enough there to keep me going and I’ve already deleted it.
 

@@ -2,9 +2,8 @@
 tags:
   - on/note-making
   - software-use
-  - gear
 date: 2023-09-14
-growth: seedling
+growth: "[[Seedling]]"
 landscapes:
   - "[[the-garden-shed]]"
 publishDate: 2023-09-29

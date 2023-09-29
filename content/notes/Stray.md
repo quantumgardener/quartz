@@ -6,7 +6,7 @@ tags:
 date: 2023-02-03
 landscapes:
   - "[[hobby-together]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 ![[vg_Stray.webp]]
 

@@ -5,7 +5,7 @@ tags:
   - book
 date: 2023-02-26
 description: I'm listening to the complete discworld series of audiobooks. All 40 were released across 2022-23 and it will take me much, much longer to listen to them all.
-growth: budding
+growth: "[[Budding]]"
 landscapes:
   - "[[hobby-together]]"
 ---

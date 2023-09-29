@@ -4,7 +4,7 @@ tags:
 date: 2023-06-05
 landscapes:
   - "[[expand-my-way-of-being]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 I'm reading  *[[Self-Discipline (book)|Self-Discipline: a guide to taking control of your mind, your time, and your life]]* by Mark Manson and it's given me cause to think about my habits. Following on from *[[The Power of Habit]]* by Charles Duhigg, he reminds us that habits are built from 
 

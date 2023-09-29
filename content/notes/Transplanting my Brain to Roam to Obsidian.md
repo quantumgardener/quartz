@@ -7,7 +7,7 @@ aliases:
   - transplanting-my-brain-to-roam-to-obsidian
 landscapes:
   - "[[the-garden-shed]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 In mid-2020 I was introduced to the exciting new note-taking application [[Roam Research]] and I transferred my notes and tasks into the database, making use of the powerful backlinking and cross-referencing features of the database. Prior to that I had been using a mix of [TheBrain](https://thebrain.com) (notes and links), [Omnifocus](https://www.omnigroup.com/omnifocus/) (tasks and projects) and [OneNote](https://www.onenote.com) (mobile and synced notes).
 

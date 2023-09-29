@@ -5,7 +5,7 @@ tags:
 date: 2023-07-01
 landscapes:
   - "[[the-garden-shed]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 [[Logseq]] has been appearing a lot in my Mastodon feed lately. Many sing its praises over [[Obsidian]] so with a slow afternoon at work yesterday I thought to take a look.
 

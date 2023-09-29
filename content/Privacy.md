@@ -1,6 +1,6 @@
 ---
 date: 2023-09-27
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 *quantumgardener.info* is cookie and tracker free.
 

@@ -4,9 +4,8 @@ tags:
   - personal-knowledge-management
   - digital-asset-management
   - software-use
-  - gear
 date: 2023-02-20
-growth: budding
+growth: "[[Budding]]"
 landscapes:
   - "[[productive-laziness]]"
 ---

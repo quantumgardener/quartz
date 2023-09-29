@@ -6,7 +6,7 @@ tags:
 date: 2023-04-25
 landscapes:
   - "[[productive-laziness]]"
-growth: evergreen
+growth: "[[Evergreen]]"
 ---
 For the last 2 weeks I’ve been working with metadata and the information that I want to track in [[Obsidian]]. As my digital garden, keeping information about the books I read, the movies I watch and the games I play, creates a full picture of my life (hey, maybe one day someone will be interested). 
 
