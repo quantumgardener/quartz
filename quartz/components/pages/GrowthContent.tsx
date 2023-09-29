@@ -42,7 +42,7 @@ function GrowthContent(props: QuartzComponentProps) {
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {growths.length} total notes with this status.</p>
+        <p>Found {pluralize(growths.length, "level")} of maturity.</p>
         <div>
           {growths.map((growth) => {
             const pages = growthItemMap.get(growth)!
@@ -51,21 +51,22 @@ function GrowthContent(props: QuartzComponentProps) {
               allFiles: pages,
             }
 
-            const contentPage = allFiles.filter((file) => file.slug === `growth/${growth}`)[0]
+            const contentPage = allFiles.filter((file) => file.slug === `maturity/${growth}`)[0]
             const content = contentPage?.description
+            const title = contentPage?.frontmatter?.title
             return (
               <div>
                 <h2>
-                  <a class="internal tag-link" href={`./${growth}`}>
-                    #{growth}
+                  <a class="internal tag-link" href={`/maturity/${growth}`}>
+                    {title}
                   </a>
                 </h2>
                 {content && <p>{content}</p>}
-                <p>
+                {/* <p>
                   {pluralize(pages.length, "item")} at this stage of growth.{" "}
                   {pages.length > numPages && `Showing first ${numPages}.`}
                 </p>
-                <PageList limit={numPages} {...listProps} />
+                <PageList limit={numPages} {...listProps} /> */}
               </div>
             )
           })}
@@ -94,7 +95,7 @@ function GrowthContent(props: QuartzComponentProps) {
               </li>
             ))}
         </ul>
-        <p>{pluralize(pages.length, "item")} at this stage of growth.</p>
+        <p>{pluralize(pages.length, "notes")} at this stage of growth.</p>
         <div>
           <PageList {...listProps} />
         </div>
