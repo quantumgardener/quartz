@@ -44,5 +44,11 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
   ],
-  right: [],
+  right: [Component.Graph({localGraph: {
+    showTags: false,
+  }, globalGraph: {
+    showTags: false,
+  }}), 
+    Component.Backlinks()
+  ],
 }
