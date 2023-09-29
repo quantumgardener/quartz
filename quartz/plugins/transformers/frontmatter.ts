@@ -57,6 +57,9 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             // slug them all!!
             data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] ?? []
 
+            data.growth = data.growth ? slugTag(data.growth) : "seedling"
+            console.log(data)            
+
             // fill in frontmatter
             file.data.frontmatter = {
               title: file.stem ?? "Untitled",
