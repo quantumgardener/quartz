@@ -30,6 +30,7 @@ function LandscapeContent(props: QuartzComponentProps) {
 
   if (landscape === "") {
     // Most likely this is the index page
+    console.log(slug)
     const landscapes = [...new Set(allFiles.flatMap((data) => data.frontmatter?.landscapes ?? []))]
     const landscapeItemMap: Map<string, QuartzPluginData[]> = new Map()
     for (const landscape of landscapes) {
@@ -52,19 +53,20 @@ function LandscapeContent(props: QuartzComponentProps) {
 
             const contentPage = allFiles.filter((file) => file.slug === `landscapes/${landscape}`)[0]
             const content = contentPage?.description
+            const title = contentPage?.frontmatter?.title
             return (
               <div>
                 <h2>
-                  <a class="internal tag-link" href={`./${landscape}`}>
-                    #{landscape}
+                  <a class="internal tag-link" href={`/landscapes/${landscape}`}>
+                    {title}
                   </a>
                 </h2>
                 {content && <p>{content}</p>}
-                <p>
+                {/* <p>
                   {pluralize(pages.length, "item")} in this landscape.{" "}
                   {pages.length > numPages && `Showing first ${numPages}.`}
                 </p>
-                <PageList limit={numPages} {...listProps} />
+                <PageList limit={numPages} {...listProps} /> */}
               </div>
             )
           })}
