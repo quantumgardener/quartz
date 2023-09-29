@@ -23,6 +23,9 @@ Jason and Robb set out to have a conversation purely for the sake of conversatio
 I’m jealous.
 
 ## Week 1 - 8 June 2023
+
+^ca7aaa
+
 Hi Jason,
 
 Friday night, the TV's on in the background, and I'm wondering where to start. 
@@ -70,6 +73,9 @@ Jason
 [^conversations]: How often do we forget that a conversation in public has audiences besides the interlocutor?
 
 ## Week 2 - 17 June 2023
+
+^d20e8d
+
 Hi Jason,
 
 Funny that you should say “You can’t dance with someone who walks on the floor with the purpose of making you look bad”. I think of conversation as a dance where both people have to be willing to move back and forth, even if there is a stumble from time to time. It’s also similar to something I’ve often said about trying out new things at work. “You can play by new rules if everyone insists on playing the old game.”
@@ -167,6 +173,9 @@ Thanks for chatting with me in June.
 Jason
 
 ## Final Thoughts
+
+^c5d5d0
+
 In 1988 I was an exchange student in Denmark. During my 12 months away I would have written and received over 150 letters in each direction, each penned by hand. Phone calls were expensive and had to be scheduled by letter in advance to cover off on the different timezone between Australia and Denmark.
 
 Since then, the only letters I have written involve business transactions in some way.
@@ -175,7 +184,7 @@ Throughout June 2023 Jason Becker and I wrote eight letters back-and-forth betwe
 
 Our letters were via email and we constrained ourselves to one each per week. The artificial timing matched the timing we would have expected if we lived in the same town instead of on opposite sites of the planet. I found that I wanted to rush the conversation forward faster, compounded partially by following Jason's blog and Mastodon posts. Email gave me the means which I ignored.
 
-There was something more than time involved in my desire to push forward. Our conversation felt like it was stuttering and couldn't get traction. To write a letter of meaningful length prevented the one line question or clarification that would occur in a face-to-face conversation. The conversation was transmit-receive-transmit rather than the dance of conversation we spoke of in [[Letters - W1]] and [[Letters - W2]].
+There was something more than time involved in my desire to push forward. Our conversation felt like it was stuttering and couldn't get traction. To write a letter of meaningful length prevented the one line question or clarification that would occur in a face-to-face conversation. The conversation was transmit-receive-transmit rather than the dance of conversation we spoke of in [[Letters with Jason#^ca7aaa|Week 1]] and [[Letters with Jason#^d20e8d|Week 2]].
 
 Beyond that initial exploration of why conversation was important to us and our participation in the exercise, I deliberately chose to stay out of the meta conversation about the letter writing and let that happen.
 

@@ -1,7 +1,7 @@
 ---
 date: 2023-09-17T20:47:00
 growth: budding
-publishDate: 2023-09-27
+publishDate: 2023-09-29
 landscapes:
   - "[[the-garden-shed]]"
 ---
@@ -51,7 +51,7 @@ I asked myself why am I even recording all this. It's because I don't feel known
 
 ## The Design as it Stands
 ### Nothing is Sacred
-This is a garden. Ideas flourish and others will die. I make no promises that a note, topic or anything else will be present tomorrow if it's there today.
+This is a garden. Ideas flourish and others will die. I make no promises that a note, topic or anything else will be present tomorrow if it's there today. [[Letters with Jason]] was originally six blog posts, and [[RSS Remains an Important Technology]] was four posts spanning 19 years. If combining content makes a better story I'll not hesitate. Notes that are clearly no longer relevant will be updated or deleted. 
 
 ### No Site Menu
 Flowing from the idea that [[Backlinks are Important]] the site is highly interconnected so the "standard" website menu is not required. Landing anywhere will allow easy navigation from one related note to another. And there is always search.
