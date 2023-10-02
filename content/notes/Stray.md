@@ -2,7 +2,6 @@
 tags:
   - video-game
   - review
-  - PlayStation-5-game
 date: 2023-02-03
 landscapes:
   - "[[hobby-together]]"
