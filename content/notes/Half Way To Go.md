@@ -1,7 +1,7 @@
 ---
 date: 2022-11-20
 tags:
-  - on/moods/wonder
+  - wonder
 landscapes:
   - "[[expand-my-way-of-being]]"
 growth: "[[Evergreen]]"

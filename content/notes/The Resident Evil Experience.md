@@ -1,8 +1,8 @@
 ---
 tags:
-  - on/gaming
-  - on/change
-  - on/perception
+  - gaming
+  - change
+  - perception
 date: 2023-03-04
 landscapes:
   - "[[hobby-together]]"

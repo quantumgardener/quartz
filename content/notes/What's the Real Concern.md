@@ -2,8 +2,8 @@
 title: What’s the Real Concern?
 date: 2022-11-18
 tags:
-  - on/concernful-activity
-  - on/concerns
+  - concernful-activity
+  - concernful-activity
 landscapes:
   - "[[expand-my-way-of-being]]"
 ---

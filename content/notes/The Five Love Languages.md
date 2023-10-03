@@ -1,7 +1,7 @@
 ---
 tags:
-  - on/relationships
-  - on/concerns
+  - relationships
+  - concernful-activity
 date: 2023-09-20T21:31:00
 landscapes:
   - "[[expand-my-way-of-being]]"

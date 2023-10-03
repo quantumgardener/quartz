@@ -1,7 +1,7 @@
 ---
 tags:
-  - on/pkm
-  - on/obsidian
+  - personal-knowledge-management
+  - obsidian
 date: 2021-01-28
 aliases:
   - transplanting-my-brain-to-roam-to-obsidian

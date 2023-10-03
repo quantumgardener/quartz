@@ -1,7 +1,7 @@
 ---
 date: 2022-11-02
 tags:
-  - on/listening
+  - listening
 landscapes:
   - "[[expand-my-way-of-being]]"
 growth: "[[Budding]]"

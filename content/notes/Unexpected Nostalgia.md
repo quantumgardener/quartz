@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/moods/wonder
+  - wonder
 date: 2012-05-20
 aliases:
   - they-gave-the-world-laughter

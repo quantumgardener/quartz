@@ -1,14 +1,11 @@
 ---
 tags:
-  - on/trust
+  - trust
 date: 2023-07-02
-aliases:
-  - a-model-of-trust
 landscapes:
   - "[[expand-my-way-of-being]]"
+growth: "[[Evergreen]]"
 ---
-↖️ [[Ontology of the Human Observer]]
-
 Trust involves making a ongoing series of [[Assessment|Assessments]] that you will take action which takes care of me, including not taking action to harm me.
 
 That someone "can be trusted" is not a matter of fact. Otherwise we would not have the situation where I believe someone is trustworthy, but you don't. If trust were fact, this situation could not exist. Nor could my trust in someone wax and wane over time.

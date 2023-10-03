@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/social-media
+  - social-media
 date: 2023-04-10
 landscapes: 
 growth: "[[Evergreen]]"

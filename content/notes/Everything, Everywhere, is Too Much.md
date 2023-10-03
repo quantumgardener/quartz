@@ -1,7 +1,7 @@
 ---
 tags:
   - mental-health
-  - on/commitment
+  - commitment
   - overwhelm
   - review
 date: 2023-02-11

@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/note-making
+  - note-making
   - software-use
 date: 2023-09-14
 growth: "[[Seedling]]"

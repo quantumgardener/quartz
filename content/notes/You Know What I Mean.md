@@ -1,7 +1,7 @@
 ---
 title: You Know What I Mean?
 tags:
-  - on/podcasts
+  - podcasts
 date: 2023-03-13
 landscapes:
   - "[[expand-my-way-of-being]]"

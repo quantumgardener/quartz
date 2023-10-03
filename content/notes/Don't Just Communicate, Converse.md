@@ -1,9 +1,9 @@
 ---
 tags:
-  - on/basic-linguistic-acts
-  - on/moods
-  - on/emotions
-  - on/listening
+  - basic-linguistic-acts
+  - moods
+  - emotions
+  - listening
   - effective-conversation
 date: 2023-02-06
 landscapes:

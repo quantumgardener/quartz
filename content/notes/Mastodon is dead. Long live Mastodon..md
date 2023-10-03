@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/mastodon
+  - social-media
 date: 2023-02-16
 landscapes:
   - "[[the-garden-shed]]"

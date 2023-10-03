@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/note-making
+  - note-making
   - personal-knowledge-management
 date: 2023-03-12
 landscapes:

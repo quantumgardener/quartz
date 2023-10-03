@@ -1,7 +1,7 @@
 ---
 tags:
-  - on/gaming
-  - on/body
+  - gaming
+  - body
   - effective-conversation
 date: 2023-03-07
 landscapes:

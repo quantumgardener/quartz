@@ -1,18 +1,19 @@
 ---
 profileName: Quantum Gardener
 tags:
-  - on/language
-  - on/moods
-  - on/emotions
+  - language
+  - moods
+  - emotions
   - learning
-  - on/body
+  - body
 date: 2002-07-29
 landscapes:
   - "[[expand-my-way-of-being]]"
+growth: "[[Evergreen]]"
 ---
 I walked to the middle of the circle holding my name tag in my hands. Turning around to face the other course participants I held up my name tag and declared in a voice from the centre of my being, "This is my name tag but this is me and I am legitimate!"
 
-It was late Sunday afternoon and I had just completed [Newfield Institute's](https://www.ontologicalcoaching.com.au) *Coaching in Action* program. A full-on three days of learning about the ontology of being. Language, emotion and body. My exposure to this field began in February when I met Alan Silcock, my now business partner and one of the contributors to this site. He had a way about him that was different to anything I'd ever seen in the business world. A grounding and sureness of purpose that was easy to work with. I subsequently learned that Al was a practitioner of Ontological Coaching. This gives him a way to understand himself through the continual self-observation of his actions against an understanding of the language he uses, the emotions and moods that he feels and the body that he lives in. It wasn't long before words and phrases like "listening", "preciseness of language", "request" and "ungrounded assessment" were part of my daily life as well. But to learn more, I attended Coaching in Action.
+It was late Sunday afternoon^[2002] and I had just completed [Newfield Institute's](https://www.ontologicalcoaching.com.au) *Coaching in Action* program. A full-on three days of learning about the ontology of being. Language, emotion and body. My exposure to this field began in February when I met Alan Silcock, my now business partner and one of the contributors to this site. He had a way about him that was different to anything I'd ever seen in the business world. A grounding and sureness of purpose that was easy to work with. I subsequently learned that Al was a practitioner of Ontological Coaching. This gives him a way to understand himself through the continual self-observation of his actions against an understanding of the language he uses, the emotions and moods that he feels and the body that he lives in. It wasn't long before words and phrases like "listening", "preciseness of language", "request" and "ungrounded assessment" were part of my daily life as well. But to learn more, I attended Coaching in Action.
 
 Coaching is a field slowly coming to prominence. It deals with who we are and how we can learn to change ourselves. It isn't mentoring, psychology or training. Rather, a coach uses their understanding of language, emotion and body to help a coachee achieve "breakdowns" and see a different view of the world. Our world is how we observe it and by changing that observation we can significantly change our world. For example, we often live in the assessments of others. That means our belief in what others think of us is so strong that it effects our behaviour and can often cause suffering. However, many of these assessments are "ungrounded", that is, we believe them without validity. Understanding they are in play makes it possible to eliminate the effect and so being living the way we want to and not how we think others want us to.
 

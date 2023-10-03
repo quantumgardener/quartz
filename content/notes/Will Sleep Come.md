@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/sleep
+  - sleep
   - health
 date: 2023-07-11
 aliases:

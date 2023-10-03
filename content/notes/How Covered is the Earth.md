@@ -1,7 +1,7 @@
 ---
 title: How Covered is the Earth?
 tags:
-  - on/moods/wonder
+  - wonder
 date: 2023-02-01
 landscapes:
   - "[[expand-my-way-of-being]]"

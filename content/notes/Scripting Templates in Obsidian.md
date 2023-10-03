@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/obsidian
+  - obsidian
   - coding
   - sample-code
 date: 2023-08-02

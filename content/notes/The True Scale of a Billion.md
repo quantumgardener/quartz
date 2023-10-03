@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/moods/wonder
+  - wonder
   - time
 date: 2023-01-26
 landscapes:

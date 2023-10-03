@@ -1,7 +1,7 @@
 ---
 tags:
   - reading
-  - on/obsidian
+  - obsidian
   - coding
   - sample-code
 date: 2023-04-16

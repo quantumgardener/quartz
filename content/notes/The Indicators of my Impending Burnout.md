@@ -7,10 +7,15 @@ date: 2023-02-12
 landscapes:
   - "[[expand-my-way-of-being]]"
 growth: "[[Evergreen]]"
+publishDate: 2023-10-03
 ---
 In October 2016 I attended a session for HR professionals where the topic of the day was mental wellness. The idea was someone could be mentally unwell but not necessarily mentally ill. The audience were asked to call out signs which could indicate a person was mentally unwell. I had 11/14 and found another 5 when I got home.
 
 Many of those have returned and are key indicators I was burning out, resulting a week’s leave under doctor’s orders. 
+
+Then in early February 2023, something similar happened. My doctor said I was “burnt out” and told me to take a week to begin recovery and planning for the future. Deep inside I knew it and likely have since the previous November (or earlier 😮) but didn’t want to admit it.
+
+The signs were there in my language, my moods/emotions, and my body. I was managing better than the time before, but not as well as I thought.
 
 I want to share my indicators in the hope they may assist others before they are too far down the path of mental unwellness. If you have any of the indicators below, or similar, please discuss with your health professional now. Don’t put it off. 
 

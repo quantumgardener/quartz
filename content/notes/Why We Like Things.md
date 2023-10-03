@@ -1,7 +1,7 @@
 ---
 tags:
-  - on/distinctions
-  - on/assessments
+  - distinctions
+  - assessments
 date: 2012-01-12
 aliases: 
 growth: "[[Evergreen]]"

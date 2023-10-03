@@ -1,9 +1,8 @@
 ---
-tags:
-  - on/covid-19
+tags: 
 date: 2023-03-25
-landscapes:
-  - "[[expand-my-way-of-being]]"
+landscapes: []
+growth: "[[Evergreen]]"
 ---
 It’s just over 3 years since the impact of Covid-19 entered my world. I’ve been reflecting this week and one idea has me horrified beyond the direct impact of Covid-19 itself.
 

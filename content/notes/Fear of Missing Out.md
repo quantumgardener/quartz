@@ -1,8 +1,8 @@
 ---
 date: 2022-10-23
 tags:
-  - on/moods/anxiety
-  - on/gaming
+  - anxiety
+  - gaming
 landscapes:
   - "[[expand-my-way-of-being]]"
   - "[[hobby-together]]"

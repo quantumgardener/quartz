@@ -1,6 +1,8 @@
 ---
 date: 2023-09-26
-tags: 
+tags:
+  - tv
+  - science-fiction
 growth: "[[Budding]]"
 landscapes:
   - "[[hobby-together]]"

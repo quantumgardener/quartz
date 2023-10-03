@@ -1,9 +1,9 @@
 ---
 title: Is Forspoken Spoken For?
 tags:
-  - on/assertions
-  - on/assessments
-  - on/authority
+  - assertions
+  - assessments
+  - authority
   - review
 date: 2023-01-24
 landscapes:

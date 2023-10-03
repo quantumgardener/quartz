@@ -2,7 +2,7 @@
 title: Why Have All the Backups Failed?
 tags:
   - backup-strategy
-  - on/pkm
+  - personal-knowledge-management
 date: 2023-02-02
 growth: "[[Evergreen]]"
 landscapes:

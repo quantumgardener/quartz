@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/pkm
+  - personal-knowledge-management
   - digital-asset-management
   - personal-knowledge-management
 date: 2023-04-25

@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/cultural-stories
+  - cultural-stories
 date: 2004-10-27
 landscapes:
   - "[[expand-my-way-of-being]]"

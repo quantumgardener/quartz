@@ -1,6 +1,6 @@
 ---
 tags:
-  - on/distinctions
+  - distinctions
   - review
 date: 2023-06-24
 landscapes:
