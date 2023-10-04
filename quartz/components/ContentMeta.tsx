@@ -3,7 +3,7 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 
 export default (() => {
-  function ContentMetadata({ fileData, allFiles }: QuartzComponentProps) {
+  function ContentMetadata({ cfg, fileData, displayClass, allFiles }: QuartzComponentProps) {
     const text = fileData.text
     if (text) {
       const segments: string[] = []

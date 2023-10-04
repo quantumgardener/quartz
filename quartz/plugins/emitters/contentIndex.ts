@@ -72,9 +72,9 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
       <link>${root}</link>
-      <description>${!!limit ? `Last ${limit} notes` : "Recent notes"} on ${
-        cfg.pageTitle
-      }</description>
+      <description>${!!limit ? `Last ${limit} notes` : "Recent notes"} on ${escapeHTML(
+        cfg.pageTitle,
+      )}</description>
       <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       ${items}
