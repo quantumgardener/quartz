@@ -18,6 +18,7 @@ import Footer from "./Footer"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
+import Breadcrumbs from "./Breadcrumbs"
 import LandscapeContent from "./pages/LandscapeContent"
 import GrowthContent from "./pages/GrowthContent"
 
@@ -42,6 +43,7 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
+  Breadcrumbs,
   LandscapeContent,
   GrowthContent
 }
