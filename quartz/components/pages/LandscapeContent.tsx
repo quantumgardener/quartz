@@ -30,7 +30,6 @@ function LandscapeContent(props: QuartzComponentProps) {
 
   if (landscape === "") {
     // Most likely this is the index page
-    console.log(slug)
     const landscapes = [...new Set(allFiles.flatMap((data) => data.frontmatter?.landscapes ?? []))]
     const landscapeItemMap: Map<string, QuartzPluginData[]> = new Map()
     for (const landscape of landscapes) {
