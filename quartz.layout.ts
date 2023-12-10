@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       Mastodon: {link: "https://aus.social/@dcbuchan", icon: "fa-brands fa-mastodon", iconcolor: "rgb(140, 141, 255)"},
-      "Subscribe (RSS)": {link: "https://aus.social/@dcbuchan", icon: "fa-solid fa-square-rss", iconcolor: "orange"},
+      "Subscribe (RSS)": {link: "https://quantumgardener.info/feed", icon: "fa-solid fa-square-rss", iconcolor: "orange"},
       Flickr: {link: "https://www.flickr.com/photos/dcbuchan/", icon: "fa-brands fa-flickr", iconcolor: "black"},
       Github: {link: "https://github.com/quantumgardener", icon: "fa-brands fa-github", iconcolor: "black"}
     },
