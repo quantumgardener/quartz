@@ -14,11 +14,12 @@ export default ((opts?: Options) => {
       <footer class={`${displayClass ?? ""}`}>
         <hr />
         <ul>
-          {Object.entries(links).map(([text, link]) => {
-            const fontclass = "fa-brands fa-" + text.toLowerCase()
+          {Object.entries(links).map(([text, detail]) => {
+            const fontclass = detail.icon
+            const iconstyle = "color: " + detail.iconcolor
             return (
             <li>
-              <a href={link}><i class={fontclass}></i> {text}</a>
+              <a href={detail.link}><i style={iconstyle} class={fontclass}></i> {text}</a>
             </li>
           )})}
           <li>|&nbsp;&nbsp;&nbsp;<a href="/privacy"><i class="fa-solid fa-lock"></i> Privacy</a></li>

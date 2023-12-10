@@ -7,10 +7,10 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      Mastodon: "https://aus.social/@dcbuchan",
-      Flickr: "https://www.flickr.com/photos/142019185@N05/",
-      LinkedIn: "https://www.linkedin.com/in/buchan/",
-      Github: "https://github.com/quantumgardener"
+      Mastodon: {link: "https://aus.social/@dcbuchan", icon: "fa-brands fa-mastodon", iconcolor: "rgb(140, 141, 255)"},
+      "Subscribe (RSS)": {link: "https://aus.social/@dcbuchan", icon: "fa-solid fa-square-rss", iconcolor: "orange"},
+      Flickr: {link: "https://www.flickr.com/photos/dcbuchan/", icon: "fa-brands fa-flickr", iconcolor: "black"},
+      Github: {link: "https://github.com/quantumgardener", icon: "fa-brands fa-github", iconcolor: "black"}
     },
   }),
 }
