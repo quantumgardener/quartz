@@ -189,31 +189,39 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
     },
     markdownPlugins() {
       const plugins: PluggableList = []
-      if (opts.wikilinks) {
-        plugins.push(() => {
-          return (tree: Root, _file) => {
-            findAndReplace(tree, wikilinkRegex, (value: string, ...capture: string[]) => {
-              let [rawFp, rawHeader, rawAlias] = capture
-              const fp = rawFp?.trim() ?? ""
-              const anchor = rawHeader?.trim() ?? ""
-              const alias = rawAlias?.slice(1).trim()
 
-              // embed cases
-              if (value.startsWith("!")) {
-                const ext: string = path.extname(fp).toLowerCase()
-                const url = slugifyFilePath(fp as FilePath)
-                if ([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg", ".webp"].includes(ext)) {
-                  const dims = alias ?? ""
-                  let [width, height] = dims.split("x", 2)
-                  width ||= "auto"
-                  height ||= "auto"
-                  return {
-                    type: "image",
-                    url,
-                    data: {
-                      hProperties: {
-                        width,
-                        height,
+      // regex replacements
+      plugins.push(() => {
+        return (tree: Root, file) => {
+          const replacements: [RegExp, string | ReplaceFunction][] = []
+          const base = pathToRoot(file.data.slug!)
+
+          if (opts.wikilinks) {
+            replacements.push([
+              wikilinkRegex,
+              (value: string, ...capture: string[]) => {
+                let [rawFp, rawHeader, rawAlias] = capture
+                const fp = rawFp?.trim() ?? ""
+                const anchor = rawHeader?.trim() ?? ""
+                const alias = rawAlias?.slice(1).trim()
+
+                // embed cases
+                if (value.startsWith("!")) {
+                  const ext: string = path.extname(fp).toLowerCase()
+                  const url = slugifyFilePath(fp as FilePath)
+                  if ([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg"].includes(ext)) {
+                    const dims = alias ?? ""
+                    let [width, height] = dims.split("x", 2)
+                    width ||= "auto"
+                    height ||= "auto"
+                    return {
+                      type: "image",
+                      url,
+                      data: {
+                        hProperties: {
+                          width,
+                          height,
+                        },
                       },
                     }
                   } else if ([".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)) {
@@ -263,19 +271,17 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
             ])
           }
 
-              // internal link
-              const url = (fp + anchor).toLowerCase()
-              return {
-                type: "link",
-                url,
-                children: [
-                  {
-                    type: "text",
-                    value: alias ?? fp,
-                  },
-                ],
-              }
-            })
+          if (opts.highlight) {
+            replacements.push([
+              highlightRegex,
+              (_value: string, ...capture: string[]) => {
+                const [inner] = capture
+                return {
+                  type: "html",
+                  value: `<span class="text-highlight">${inner}</span>`,
+                }
+              },
+            ])
           }
 
           if (opts.comments) {
@@ -348,7 +354,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
 
           mdastFindReplace(tree, replacements)
         }
-      };
+      })
 
       if (opts.callouts) {
         plugins.push(() => {
@@ -449,39 +455,6 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
         })
       }
 
-      if (opts.parseTags) {
-        plugins.push(() => {
-          return (tree: Root, file) => {
-            const base = pathToRoot(file.data.slug!)
-            findAndReplace(tree, tagRegex, (_value: string, tag: string) => {
-              // Check if the tag only includes numbers
-              if (/^\d+$/.test(tag)) {
-                return false
-              }
-              tag = slugTag(tag)
-              if (file.data.frontmatter && !file.data.frontmatter.tags.includes(tag)) {
-                file.data.frontmatter.tags.push(tag)
-              }
-
-              return {
-                type: "link",
-                url: base + `/topics/${tag}`,
-                data: {
-                  hProperties: {
-                    className: ["tag-link"],
-                  },
-                },
-                children: [
-                  {
-                    type: "text",
-                    value: `#${tag}`,
-                  },
-                ],
-              }
-            })
-          }
-        })
-      }
       return plugins
     },
     htmlPlugins() {

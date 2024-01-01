@@ -56,7 +56,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             }
 
             // slug them all!!
-            data.tags = [...new Set(data.tags?.map((tag: string) => slugTag(tag)))] ?? []
+            data.tags = [...new Set(data.tags?.map((tag: string) => slugTag(tag)))] 
             
             if (data.landscapes && !Array.isArray(data.landscapes)) {
               data.landscapes = data.landscapes
@@ -66,7 +66,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             }
 
             // slug them all!!
-            data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] ?? []
+            data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] 
 
             // Convert wikilink growth to plain slug value and default if missing
             data.growth = data.growth ? slugTag(data.growth) : "seedling"   
