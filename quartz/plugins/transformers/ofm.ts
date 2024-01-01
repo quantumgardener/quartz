@@ -260,7 +260,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                   ],
                 }
               },
-            ])
+            )
           }
 
               // internal link
