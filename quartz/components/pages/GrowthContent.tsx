@@ -95,7 +95,7 @@ function GrowthContent(props: QuartzComponentProps) {
               </li>
             ))}
         </ul>
-        <p>{pluralize(pages.length, "notes")} at this stage of growth.</p>
+        <p>{pluralize(pages.length, "note")} at this stage of growth.</p>
         <div>
           <PageList {...listProps} />
         </div>

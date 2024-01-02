@@ -64,6 +64,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
                 .split(",")
                 .map((landscape: string) => landscape.trim())
             }
+            console.log(data.landscapes)
 
             // slug them all!!
             data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] 
