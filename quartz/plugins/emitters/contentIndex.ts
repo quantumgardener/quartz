@@ -77,7 +77,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
       )}</description>
       <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
-      <atom:link href="https://quantumgardener.info/feed" rel="self" type="application/rss+xml" />
+      <atom:link href="https://quantumgardener.info/index.xml" rel="self" type="application/rss+xml" />
       ${items}
     </channel>
   </rss>`
