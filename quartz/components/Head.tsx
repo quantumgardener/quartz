@@ -32,7 +32,7 @@ export default (() => {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="alternate" type="application/rss+xml" title="The Quantum Garden" href="https://quantumgardener.info/feed/" />
         {css.map((href) => (
-          <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
+          <link key={href} href={href} rel="stylesheet" type="text/css"  />
         ))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
