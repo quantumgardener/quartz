@@ -5,4 +5,5 @@ export const escapeHTML = (unsafe: string) => {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;")
+    .replaceAll("../", "/")
 }
