@@ -12,9 +12,9 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     theme: {
       typography: {
-        header: "Roboto Condensed",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Roboto%20Condensed",
+        body: "Source%20ans%20Pro",
+        code: "IBM%20Plex%20Mono",
       },
       colors: {
         lightMode: {
