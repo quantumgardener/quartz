@@ -68,6 +68,7 @@ const config: QuartzConfig = {
         enableRSS: true,
         rssFullHtml: true,
         rssRootFolder: "blog",
+        rssLimit: 50
       }),
       Plugin.Assets(),
       Plugin.Static(),

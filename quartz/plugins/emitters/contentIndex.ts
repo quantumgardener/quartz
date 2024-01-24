@@ -63,7 +63,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
   </item>`
 
   const items = Array.from(idx)
-    .filter(([slug,content]) => slug.startsWith(`${rssRoot}`))
+    .filter(([slug]) => slug.startsWith(`${rssRoot}`))
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .slice(0, limit ?? idx.size)
     .join("")
@@ -123,8 +123,9 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
 
       if (opts?.enableRSS) {
         emitted.push(
-          await emit({
-            content: generateRSSFeed(cfg, linkIndex, opts.rssRootFolder!, opts.rssLimit),
+          await write({
+            ctx,
+            content: generateRSSFeed(cfg, linkIndex, opts.rssRootFolder, opts.rssLimit),
             slug: "index" as FullSlug,
             ext: ".xml",
           }),
