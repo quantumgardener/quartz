@@ -18,15 +18,15 @@ interface BreadcrumbOptions {
    */
   rootName: string
   /**
-   * wether to look up frontmatter title for folders (could cause performance problems with big vaults)
+   * Whether to look up frontmatter title for folders (could cause performance problems with big vaults)
    */
   resolveFrontmatterTitle: boolean
   /**
-   * Wether to display breadcrumbs on root `index.md`
+   * Whether to display breadcrumbs on root `index.md`
    */
   hideOnRoot: boolean
   /**
-   * Wether to display the current page in the breadcrumbs.
+   * Whether to display the current page in the breadcrumbs.
    */
   showCurrentPage: boolean
 }
@@ -69,9 +69,9 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       for (const file of allFiles) {
         if (file.slug?.endsWith("index")) {
           const folderParts = file.slug?.split("/")
-          if (folderParts) {
-            // 2nd last to exclude the /index
-            const folderName = folderParts[folderParts?.length - 2]
+          // 2nd last to exclude the /index
+          const folderName = folderParts?.at(-2)
+          if (folderName) {
             folderIndex.set(folderName, file)
           }
         }
@@ -104,13 +104,14 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       }
 
       // Add current file to crumb (can directly use frontmatter title)
-      if (options.showCurrentPage && slugParts.at(-1) === "") {
+      if (options.showCurrentPage && slugParts.at(-1) !== "index") {
         crumbs.push({
           displayName: fileData.frontmatter!.title,
           path: "",
         })
       }
     }
+
     return (
       <nav class={`breadcrumb-container ${displayClass ?? ""}`} aria-label="breadcrumbs">
         {crumbs.map((crumb, index) => (

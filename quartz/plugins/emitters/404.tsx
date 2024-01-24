@@ -7,6 +7,7 @@ import { FilePath, FullSlug } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
 import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer } from "../../components"
 import { defaultProcessedContent } from "../vfile"
+import { write } from "./helpers"
 
 
 export const NotFoundPage: QuartzEmitterPlugin = () => {
@@ -31,7 +32,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
     getQuartzComponents() {
       return [Head, Body, pageBody, Footer]
     },
-    async emit(ctx, _content, resources, emit): Promise<FilePath[]> {
+    async emit(ctx, _content, resources): Promise<FilePath[]> {
       const cfg = ctx.cfg.configuration
       const slug = "404" as FullSlug
 
@@ -54,7 +55,8 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
       }
 
       return [
-        await emit({
+        await write({
+          ctx,
           content: renderPage(slug, componentData, opts, externalResources),
           slug,
           ext: ".html",
