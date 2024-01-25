@@ -73,12 +73,19 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
       <link>https://${base}</link>
-      <description>${!!limit ? `Last ${limit} notes` : "Recent notes"} on ${escapeHTML(
-        cfg.pageTitle,
-      )}</description>
+      <description>A digital garden cultivating the possibilities of life.</description>
       <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <managingEditor>5wjw9aq33@mozmail.com</managingEditor>
+      <webMaster>5wjw9aq33@mozmail.com</webMaster>
       <atom:link href="https://quantumgardener.info/index.xml" rel="self" type="application/rss+xml" />
+      <lastBuildDate>${new Date()}</lastBuildDate>
+      <docs>https://www.rssboard.org/rss-specification</docs>
+      <image>
+        <url>https://${base}/static/qg-image.png</url>
+        <title>${escapeHTML(cfg.pageTitle)}</title>
+        <link>https://${base}</link>
+      </image>
       ${items}
     </channel>
   </rss>`
