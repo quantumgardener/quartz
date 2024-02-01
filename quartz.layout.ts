@@ -29,7 +29,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
     Component.DesktopOnly(Component.TableOfContents())
   ],
   right: [Component.Graph({localGraph: {
@@ -55,7 +54,6 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
   ],
   right: [Component.Graph({localGraph: {
     showTags: false,
