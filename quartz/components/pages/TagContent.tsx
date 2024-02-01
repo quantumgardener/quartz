@@ -26,7 +26,9 @@ function TagContent(props: QuartzComponentProps) {
     (tree as Root).children.length === 0
       ? fileData.description
       : htmlToJsx(fileData.filePath!, tree)
-
+  const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
+  const classes = ["popover-hint", ...cssClasses].join(" ")
+    
   if (tag === "") {
     const tags = [...new Set(allFiles.flatMap((data) => data.frontmatter?.tags ?? []))]
     const tagItemMap: Map<string, QuartzPluginData[]> = new Map()
