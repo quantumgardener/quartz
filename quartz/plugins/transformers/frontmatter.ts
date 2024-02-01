@@ -9,13 +9,34 @@ import { QuartzPluginData } from "../vfile"
 export interface Options {
   delims: string | string[]
   language: "yaml" | "toml"
-  oneLineTagDelim: string
 }
 
 const defaultOptions: Options = {
   delims: "---",
   language: "yaml",
-  oneLineTagDelim: ",",
+}
+
+function coalesceAliases(data: { [key: string]: any }, aliases: string[]) {
+  for (const alias of aliases) {
+    if (data[alias] !== undefined && data[alias] !== null) return data[alias]
+  }
+}
+
+function coerceToArray(input: string | string[]): string[] | undefined {
+  if (input === undefined || input === null) return undefined
+
+  // coerce to array
+  if (!Array.isArray(input)) {
+    input = input
+      .toString()
+      .split(",")
+      .map((tag: string) => tag.trim())
+  }
+
+  // remove all non-strings
+  return input
+    .filter((tag: unknown) => typeof tag === "string" || typeof tag === "number")
+    .map((tag: string | number) => tag.toString())
 }
 
 export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> = (userOpts) => {
@@ -23,8 +44,6 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
   return {
     name: "FrontMatter",
     markdownPlugins() {
-      const { oneLineTagDelim } = opts
-
       return [
         [remarkFrontmatter, ["yaml", "toml"]],
         () => {
@@ -87,9 +106,16 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
 
 declare module "vfile" {
   interface DataMap {
-    frontmatter: { [key: string]: any } & {
+    frontmatter: { [key: string]: unknown } & {
       title: string
-      tags: string[]
-    }
+    } & Partial<{
+        tags: string[]
+        aliases: string[]
+        description: string
+        publish: boolean
+        draft: boolean
+        enableToc: string
+        cssclasses: string[]
+      }>
   }
 }

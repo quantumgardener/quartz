@@ -33,9 +33,8 @@ function TagContent(props: QuartzComponentProps) {
     for (const tag of tags) {
       tagItemMap.set(tag, allPagesWithTag(tag))
     }
-
     return (
-      <div class="popover-hint">
+      <div class={classes}>
         <article>
           <p>{content}</p>
         </article>
@@ -77,7 +76,7 @@ function TagContent(props: QuartzComponentProps) {
     }
 
     return (
-      <div class="popover-hint">
+      <div class={classes}>
         <article>{content}</article>
         <ul class="tags">
           {fileData.frontmatter?.tags.map((tag) => (                  

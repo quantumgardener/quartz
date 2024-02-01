@@ -109,22 +109,23 @@ const calloutMapping: Record<string, keyof typeof callouts> = {
   idea: "idea",
 }
 
-function canonicalizeCallout(calloutName: string): keyof typeof callouts {
-  let callout = calloutName.toLowerCase() as keyof typeof calloutMapping
-  return calloutMapping[callout] ?? "note"
+function canonicalizeCallout(calloutName: string): keyof typeof calloutMapping {
+  const normalizedCallout = calloutName.toLowerCase() as keyof typeof calloutMapping
+  // if callout is not recognized, make it a custom one
+  return calloutMapping[normalizedCallout] ?? calloutName
 }
 
 export const externalLinkRegex = /^https?:\/\//i
 
 export const arrowRegex = new RegExp(/-{1,2}>/, "g")
 
-// !?               -> optional embedding
-// \[\[             -> open brace
-// ([^\[\]\|\#]+)   -> one or more non-special characters ([,],|, or #) (name)
-// (#[^\[\]\|\#]+)? -> # then one or more non-special characters (heading link)
-// (|[^\[\]\|\#]+)? -> | then one or more non-special characters (alias)
+// !?                -> optional embedding
+// \[\[              -> open brace
+// ([^\[\]\|\#]+)    -> one or more non-special characters ([,],|, or #) (name)
+// (#[^\[\]\|\#]+)?  -> # then one or more non-special characters (heading link)
+// (\|[^\[\]\#]+)? -> | then one or more non-special characters (alias)
 export const wikilinkRegex = new RegExp(
-  /!?\[\[([^\[\]\|\#]+)?(#+[^\[\]\|\#]+)?(\|[^\[\]\|\#]+)?\]\]/,
+  /!?\[\[([^\[\]\|\#]+)?(#+[^\[\]\|\#]+)?(\|[^\[\]\#]+)?\]\]/,
   "g",
 )
 const highlightRegex = new RegExp(/==([^=]+)==/, "g")
@@ -140,6 +141,9 @@ const tagRegex = new RegExp(/(?:^| )#((?:[-_\p{L}\p{Emoji}\d])+(?:\/[-_\p{L}\p{E
 const blockReferenceRegex = new RegExp(/\^([-_A-Za-z0-9]+)$/, "g")
 const ytLinkRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
 const videoExtensionRegex = new RegExp(/\.(mp4|webm|ogg|avi|mov|flv|wmv|mkv|mpg|mpeg|3gp|m4v)$/)
+const wikilinkImageEmbedRegex = new RegExp(
+  /^(?<alt>(?!^\d*x?\d*$).*?)?(\|?\s*?(?<width>\d+)(x(?<height>\d+))?)?$/,
+)
 
 export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> | undefined> = (
   userOpts,
@@ -229,10 +233,10 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                   const ext: string = path.extname(fp).toLowerCase()
                   const url = slugifyFilePath(fp as FilePath)
                   if ([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg", ".webp"].includes(ext)) {
-                    const dims = alias ?? ""
-                    let [width, height] = dims.split("x", 2)
-                    width ||= "auto"
-                    height ||= "auto"
+                    const match = wikilinkImageEmbedRegex.exec(alias ?? "")
+                    const alt = match?.groups?.alt ?? ""
+                    const width = match?.groups?.width ?? "auto"
+                    const height = match?.groups?.height ?? "auto"
                     return {
                       type: "image",
                       url,
@@ -240,6 +244,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                         hProperties: {
                           width,
                           height,
+                          alt,
                         },
                       },
                     }
@@ -325,8 +330,9 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                 }
 
                 tag = slugTag(tag)
-                if (file.data.frontmatter && !file.data.frontmatter.tags.includes(tag)) {
-                  file.data.frontmatter.tags.push(tag)
+                if (file.data.frontmatter) {
+                  const noteTags = file.data.frontmatter.tags ?? []
+                  file.data.frontmatter.tags = [...new Set([...noteTags, tag])]
                 }
 
                 return {
@@ -414,32 +420,31 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
               const match = firstLine.match(calloutRegex)
               if (match && match.input) {
                 const [calloutDirective, typeString, collapseChar] = match
-                const calloutType = canonicalizeCallout(
-                  typeString.toLowerCase() as keyof typeof calloutMapping,
-                )
+                const calloutType = canonicalizeCallout(typeString.toLowerCase())
                 const collapse = collapseChar === "+" || collapseChar === "-"
                 const defaultState = collapseChar === "-" ? "collapsed" : "expanded"
-                const titleContent =
-                  match.input.slice(calloutDirective.length).trim() || capitalize(calloutType)
+                const titleContent = match.input.slice(calloutDirective.length).trim()
+                const useDefaultTitle = titleContent === "" && restOfTitle.length === 0
                 const titleNode: Paragraph = {
                   type: "paragraph",
-                  children:
-                    restOfTitle.length === 0
-                      ? [{ type: "text", value: titleContent + " " }]
-                      : restOfTitle,
+                  children: [
+                    {
+                      type: "text",
+                      value: useDefaultTitle ? capitalize(calloutType) : titleContent + " ",
+                    },
+                    ...restOfTitle,
+                  ],
                 }
                 const title = mdastToHtml(titleNode)
 
-                const toggleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>`
+                const toggleIcon = `<div class="fold-callout-icon"></div>`
 
                 const titleHtml: Html = {
                   type: "html",
                   value: `<div
                   class="callout-title"
                 >
-                  <div class="callout-icon">${callouts[calloutType]}</div>
+                  <div class="callout-icon"></div>
                   <div class="callout-title-inner">${title}</div>
                   ${collapse ? toggleIcon : ""}
                 </div>`,
@@ -465,7 +470,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                 node.data = {
                   hProperties: {
                     ...(node.data?.hProperties ?? {}),
-                    className: `callout ${collapse ? "is-collapsible" : ""} ${
+                    className: `callout ${calloutType} ${collapse ? "is-collapsible" : ""} ${
                       defaultState === "collapsed" ? "is-collapsed" : ""
                     }`,
                     "data-callout": calloutType,
