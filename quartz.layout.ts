@@ -29,6 +29,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.Explorer(),
     Component.DesktopOnly(Component.TableOfContents())
   ],
   right: [Component.Graph({localGraph: {
@@ -49,6 +50,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.ContentMeta()
   ],
   left: [
+    Component.SiteLogo(),
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),

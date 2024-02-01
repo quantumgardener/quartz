@@ -5,7 +5,7 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { FilePath, FullSlug } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
-import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer } from "../../components"
+import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer, SiteLogo, Explorer } from "../../components"
 import { defaultProcessedContent } from "../vfile"
 import { write } from "./helpers"
 
@@ -16,10 +16,11 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
     pageBody: NotFound(),
     beforeBody: [ArticleTitle()],
     left: [
+      SiteLogo(),
       PageTitle(),
       MobileOnly(Spacer()),
       Search(),
-      Darkmode(),  
+      Darkmode(), 
     ],
     right: [],
   }
