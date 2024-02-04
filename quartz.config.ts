@@ -57,7 +57,7 @@ const config: QuartzConfig = {
         markdownLinkResolution: "shortest", 
         externalLinkIcon: false,
       }),
-      Plugin.Description(),
+      Plugin.Description({descriptionLength: 300}),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
