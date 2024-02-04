@@ -28,7 +28,7 @@ function LandscapeContent(props: QuartzComponentProps) {
       : // @ts-ignore
         toJsxRuntime(tree, { Fragment, jsx, jsxs, elementAttributeNameCase: "html" })
 
-  if (landscape === "") {
+  if (landscape === "" || slug.slice(-6) == "/index") {
     // Most likely this is the index page
     const landscapes = [...new Set(allFiles.flatMap((data) => data.frontmatter?.landscapes ?? []))]
     const landscapeItemMap: Map<string, QuartzPluginData[]> = new Map()
@@ -42,6 +42,7 @@ function LandscapeContent(props: QuartzComponentProps) {
           <p>{content}</p>
         </article>
         <p>Found {landscapes.length} total landscapes.</p>
+        <hr/>
         <div>
           {landscapes.map((landscape) => {
             const pages = landscapeItemMap.get(landscape)!

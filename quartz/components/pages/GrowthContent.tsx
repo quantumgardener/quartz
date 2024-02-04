@@ -29,20 +29,21 @@ function GrowthContent(props: QuartzComponentProps) {
       : // @ts-ignore
         toJsxRuntime(tree, { Fragment, jsx, jsxs, elementAttributeNameCase: "html" })
 
-  if (growth === "") {
+    if (growth === "" || slug.slice(-6) == "/index") {
     // Most likely this is the index page
-    const growths = [...new Set(allFiles.flatMap((data) => data.frontmatter?.growth ?? []))]
+    const growths = [...new Set(allFiles.flatMap((data) => data.frontmatter?.growth.toLowerCase() ?? []))]
     const growthItemMap: Map<string, QuartzPluginData[]> = new Map()
     for (const growth of growths) {
         growthItemMap.set(growth, allPagesWithGrowth(growth))
     }
-    
+
     return (
       <div class="popover-hint">
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {pluralize(growths.length, "level")} of maturity.</p>
+        <p>Found {pluralize(growths.length, "level")} of maturity.</p> 
+        <hr/>
         <div>
           {growths.map((growth) => {
             const pages = growthItemMap.get(growth)!

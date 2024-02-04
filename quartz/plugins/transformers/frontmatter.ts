@@ -88,7 +88,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] 
 
             // Convert wikilink growth to plain slug value and default if missing
-            data.growth = data.growth ? slugTag(data.growth) : "seedling"   
+            data.growth = data.growth ? slugTag(data.growth) : "Seedling"   
 
             // fill in frontmatter
             file.data.frontmatter = {
