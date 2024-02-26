@@ -1,7 +1,7 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 
-function ArticleTitle({ fileData, displayClass }: QuartzComponentProps) {
+const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   if (title) {
     if (title.startsWith("Topic: ")) {
@@ -13,6 +13,7 @@ function ArticleTitle({ fileData, displayClass }: QuartzComponentProps) {
     return null
   }
 }
+
 ArticleTitle.css = `
 .article-title {
   margin: 2rem 0 0 0;

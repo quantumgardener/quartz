@@ -1,6 +1,11 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
+/**
+ * Quartz 4.0 Configuration
+ *
+ * See https://quartz.jzhao.xyz/configuration for more information.
+ */
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "The Quantum Garden",
@@ -11,6 +16,7 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
+      cdnCaching: true,
       typography: {
         header: "Roboto%20Condensed",
         body: "Source%20ans%20Pro",
@@ -43,14 +49,17 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.TableOfContents(),
       Plugin.CreatedModifiedDate({
-        // you can add 'git' here for last modified from Git
-        // if you do rely on git for dates, ensure defaultDateType is 'modified'
         priority: ["frontmatter", "filesystem"],
       }),
       Plugin.Latex({ renderEngine: "katex" }),
-      Plugin.SyntaxHighlighting(),
+      Plugin.SyntaxHighlighting({
+        theme: {
+          light: "github-light",
+          dark: "github-dark",
+        },
+        keepBackground: false,
+      }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.CrawlLinks({ 

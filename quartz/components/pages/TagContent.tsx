@@ -1,15 +1,15 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "../types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
 import { FullSlug, getAllSegmentPrefixes, simplifySlug, resolveRelative } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
-import { pluralize } from "../../util/lang"
 import { htmlToJsx } from "../../util/jsx"
+import { i18n } from "../../i18n"
 
 const numPages = 10
-function TagContent(props: QuartzComponentProps) {
-  const { tree, fileData, allFiles } = props
+const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
+  const { tree, fileData, allFiles, cfg } = props
   const slug = fileData.slug
 
   if (!(slug?.startsWith("topics/") || slug === "topics")) {

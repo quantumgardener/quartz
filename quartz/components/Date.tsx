@@ -1,9 +1,10 @@
 import { GlobalConfiguration } from "../cfg"
+import { ValidLocale } from "../i18n"
 import { QuartzPluginData } from "../plugins/vfile"
 
 interface Props {
   date: Date
-  locale?: string
+  locale?: ValidLocale
 }
 
 export type ValidDateType = keyof Required<QuartzPluginData>["dates"]
