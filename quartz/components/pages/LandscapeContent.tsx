@@ -1,16 +1,15 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "../types"
-import { Fragment, jsx, jsxs } from "preact/jsx-runtime"
-import { toJsxRuntime } from "hast-util-to-jsx-runtime"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
 import { PageList } from "../PageList"
 import { FullSlug, getAllSegmentPrefixes, simplifySlug, resolveRelative } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
-import { pluralize } from "../../util/lang"
+import { htmlToJsx } from "../../util/jsx"
+import { i18n } from "../../i18n"
 
 const numPages = 10
 function LandscapeContent(props: QuartzComponentProps) {
-  const { tree, fileData, allFiles } = props
+  const { tree, fileData, allFiles, cfg } = props
   const slug = fileData.slug
   
   if (!(slug?.startsWith("landscapes/") || slug === "landscapes")) {
@@ -22,26 +21,31 @@ function LandscapeContent(props: QuartzComponentProps) {
     allFiles.filter((file) =>
       (file.frontmatter?.landscapes ?? []).flatMap(getAllSegmentPrefixes).includes(landscape),
     )
+
   const content =
     (tree as Root).children.length === 0
       ? fileData.description
-      : // @ts-ignore
-        toJsxRuntime(tree, { Fragment, jsx, jsxs, elementAttributeNameCase: "html" })
+      : htmlToJsx(fileData.filePath!, tree)
+  const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
+  const classes = ["popover-hint", ...cssClasses].join(" ")
 
-  if (landscape === "" || slug.slice(-6) == "/index") {
-    // Most likely this is the index page
-    const landscapes = [...new Set(allFiles.flatMap((data) => data.frontmatter?.landscapes ?? []))]
+  if (landscape === "/" || slug.slice(-6) == "/index") {
+    const landscapes = [
+      ...new Set(
+        allFiles.flatMap((data) => data.frontmatter?.landscapes ?? []).flatMap(getAllSegmentPrefixes),
+      ),
+    ].sort((a, b) => a.localeCompare(b))
     const landscapeItemMap: Map<string, QuartzPluginData[]> = new Map()
     for (const landscape of landscapes) {
         landscapeItemMap.set(landscape, allPagesWithLandscape(landscape))
     }
     
     return (
-      <div class="popover-hint">
+      <div class={classes}>
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {landscapes.length} total landscapes.</p>
+        <p>{i18n(cfg.locale).pages.landscapeContent.totalTags({ count: landscapes.length })}</p>
         <hr/>
         <div>
           {landscapes.map((landscape) => {
@@ -62,12 +66,21 @@ function LandscapeContent(props: QuartzComponentProps) {
                   </a>
                 </h2>
                 {content && <p>{content}</p>}
-                {/* <p>
-                  {pluralize(pages.length, "item")} in this landscape.{" "}
-                  {pages.length > numPages && `Showing first ${numPages}.`}
-                </p>
-                <PageList limit={numPages} {...listProps} /> */}
-              </div>
+                <div class="page-listing">
+                  <p>
+                    {i18n(cfg.locale).pages.landscapeContent.itemsUnderTag({ count: pages.length })}
+                    {pages.length > numPages && (
+                      <>
+                        {" "}
+                        <span>
+                          {i18n(cfg.locale).pages.landscapeContent.showingFirst({ count: numPages })}
+                        </span>
+                      </>
+                    )}
+                  </p>
+                  <PageList limit={numPages} {...listProps} />
+                </div>
+             </div>
             )
           })}
         </div>
@@ -81,9 +94,9 @@ function LandscapeContent(props: QuartzComponentProps) {
     }
 
     return (
-      <div class="popover-hint">
+      <div class={classes}>
         <article>{content}</article>
-        <ul class="tags">
+        {/* <ul class="tags">
             {fileData.frontmatter?.tags.map((tag) => (                  
               <li>
                 <a
@@ -94,10 +107,12 @@ function LandscapeContent(props: QuartzComponentProps) {
                 </a>
               </li>
             ))}
-        </ul>
-        <p>{pluralize(pages.length, "item")} in this landscape.</p>
-        <div>
-          <PageList {...listProps} />
+        </ul> */}
+        <div class="page-listing">
+          <p>{i18n(cfg.locale).pages.landscapeContent.itemsUnderTag({ count: pages.length })}</p>
+          <div>
+            <PageList {...listProps} />
+          </div>
         </div>
       </div>
     )

@@ -29,8 +29,12 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
   const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
   const classes = ["popover-hint", ...cssClasses].join(" ")
     
-  if (tag === "") {
-    const tags = [...new Set(allFiles.flatMap((data) => data.frontmatter?.tags ?? []))]
+  if (tag === "/") {
+    const tags = [
+      ...new Set(
+        allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
+      ),
+    ].sort((a, b) => a.localeCompare(b))
     const tagItemMap: Map<string, QuartzPluginData[]> = new Map()
     for (const tag of tags) {
       tagItemMap.set(tag, allPagesWithTag(tag))
@@ -40,7 +44,8 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
         <article>
           <p>{content}</p>
         </article>
-        <p>Found {tags.length} total topics.</p>
+        <p>{i18n(cfg.locale).pages.tagContent.totalTags({ count: tags.length })}</p>
+        <hr/>
         <div>
           {tags.map((tag) => {
             const pages = tagItemMap.get(tag)!
@@ -51,19 +56,29 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
 
             const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`)[0]
             const content = contentPage?.description
+            const title = contentPage?.frontmatter?.title
             return (
               <div>
                 <h2>
-                  <a class="internal tag-link" href={`../tags/${tag}`}>
-                    #{tag}
+                  <a class="internal tag-link" href={`../topics/${tag}`}>
+                    {tag}
                   </a>
                 </h2>
                 {content && <p>{content}</p>}
-                <p>
-                  {pluralize(pages.length, "note")} on this topic.{" "}
-                  {pages.length > numPages && `Showing first ${numPages}.`}
-                </p>
-                <PageList limit={numPages} {...listProps} />
+                <div class="page-listing">
+                  <p>
+                    {i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}
+                    {pages.length > numPages && (
+                      <>
+                        {" "}
+                        <span>
+                          {i18n(cfg.locale).pages.tagContent.showingFirst({ count: numPages })}
+                        </span>
+                      </>
+                    )}
+                  </p>
+                  <PageList limit={numPages} {...listProps} />
+                </div>
               </div>
             )
           })}
@@ -80,7 +95,7 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
     return (
       <div class={classes}>
         <article>{content}</article>
-        <ul class="tags">
+        {/* <ul class="tags">
           {fileData.frontmatter?.tags.map((tag) => (                  
             <li>
               <a
@@ -91,10 +106,12 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
               </a>
             </li>
           ))}
-        </ul>
-        <p>{pluralize(pages.length, "note")} on this topic.</p>
-        <div>
-          <PageList {...listProps} />
+        </ul> */}
+        <div class="page-listing">
+          <p>{i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}</p>
+          <div>
+            <PageList {...listProps} />
+          </div>
         </div>
       </div>
     )

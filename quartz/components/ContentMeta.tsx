@@ -11,11 +11,20 @@ export default (() => {
     if (text) {
       const segments: string[] = []
       const { text: timeTaken, words: _words } = readingTime(text)
-      const growth = fileData.frontmatter?.growth ?? "seedling" 
-      
+
+      let growth = ""
+      if( fileData.frontmatter?.growth != null) {
+        // We have a value in the form [[Growth]]
+        growth = fileData.frontmatter?.growth.slice(2,-2).toLowerCase()
+      } else {
+        // Assume seedling if not specified
+        growth = "seedling"
+      }
+
       let faIcon = ""
-      
-      switch(growth.toLowerCase()) {
+       
+      console.log(growth)
+      switch(growth) {
         case "seedling":
           faIcon = "seedling"
           break
@@ -37,10 +46,14 @@ export default (() => {
         }
       } */
 
+
       const landscapeLinks = []
-      for (const landscape of fileData.frontmatter?.landscapes) {
-        const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)
-        landscapeLinks.push([`/landscapes/${landscape}`, result?.frontmatter?.title.toUpperCase()])
+      if( fileData.frontmatter?.landscapes != null) {
+        for (const landscape of fileData.frontmatter?.landscapes) {
+          const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)
+
+          landscapeLinks.push([`/landscapes/${landscape}`, result?.frontmatter?.title.toUpperCase()])
+        }
       }
 
       return (

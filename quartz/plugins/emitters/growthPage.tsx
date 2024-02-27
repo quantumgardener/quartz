@@ -5,10 +5,18 @@ import BodyConstructor from "../../components/Body"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { ProcessedContent, defaultProcessedContent } from "../vfile"
 import { FullPageLayout } from "../../cfg"
-import { FilePath, FullSlug, getAllSegmentPrefixes, joinSegments, pathToRoot,} from "../../util/path"
+import {
+  FilePath,
+  FullSlug,
+  getAllSegmentPrefixes,
+  joinSegments,
+  pathToRoot,
+} from "../../util/path"
 import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { GrowthContent } from "../../components"
 import { write } from "./helpers"
+import { i18n } from "../../i18n"
+import DepGraph from "../../depgraph"
 
 export const GrowthPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
   const opts: FullPageLayout = {
@@ -26,6 +34,27 @@ export const GrowthPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
     name: "GrowthPage",
     getQuartzComponents() {
       return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer]
+    },
+    async getDependencyGraph(ctx, content, _resources) {
+      const graph = new DepGraph<FilePath>()
+
+      for (const [_tree, file] of content) {
+        const sourcePath = file.data.filePath!
+        const tags = (file.data.frontmatter?.growth ?? []).flatMap(getAllSegmentPrefixes)
+        // if the file has at least one tag, it is used in the tag index page
+        if (tags.length > 0) {
+          tags.push("index")
+        }
+
+        for (const tag of tags) {
+          graph.addEdge(
+            sourcePath,
+            joinSegments(ctx.argv.output, "tags", tag + ".html") as FilePath,
+          )
+        }
+      }
+
+      return graph
     },
     async emit(ctx, content, resources): Promise<FilePath[]> {
       const fps: FilePath[] = []
@@ -66,6 +95,7 @@ export const GrowthPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
         const externalResources = pageResources(pathToRoot(slug), resources)
         const [tree, file] = growthDescriptions[growth]
         const componentData: QuartzComponentProps = {
+          ctx,
           fileData: file.data,
           externalResources,
           cfg,
@@ -74,7 +104,7 @@ export const GrowthPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
           allFiles,
         }
 
-        const content = renderPage(slug, componentData, opts, externalResources)
+        const content = renderPage(cfg, slug, componentData, opts, externalResources)
         const fp = await write({
           ctx,
           content,

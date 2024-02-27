@@ -57,47 +57,28 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
               },
             })
 
-            // tag is an alias for tags
-            if (data.tag) {
-              data.tags = data.tag.toString()
-            }
-
-            // coerce title to string
-            if (data.title) {
+            if (data.title != null && data.title.toString() !== "") {
               data.title = data.title.toString()
             } else {
               data.title = file.stem ?? i18n(cfg.configuration.locale).propertyDefaults.title
             }
 
-            if (data.tags && !Array.isArray(data.tags)) {
-              data.tags = data.tags
-                .filter((tag: unknown) => typeof tag === "string" || typeof tag === "number")
-                .map((tag: string | number) => tag.toString())
-            }
+            const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
+            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
 
-            // slug them all!!
-            data.tags = [...new Set(data.tags?.map((tag: string) => slugTag(tag)))] 
             
-            if (data.landscapes && !Array.isArray(data.landscapes)) {
-              data.landscapes = data.landscapes
-                .toString()
-                .split(",")
-                .map((landscape: string) => landscape.trim())
-            }
+            const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
+            if (aliases) data.aliases = aliases
 
-            // slug them all!!
-            data.landscapes = [...new Set(data.landscapes?.map((landscape: string) => slugTag(landscape)))] 
+            const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
+            if (cssclasses) data.cssclasses = cssclasses
 
-            // Convert wikilink growth to plain slug value and default if missing
-            data.growth = data.growth ? slugTag(data.growth) : "Seedling"   
+            const landscapes = coerceToArray(coalesceAliases(data, ["landscapes", "landscape"]))
+            if (landscapes) data.landscapes = [...new Set(landscapes.map((landscape: string) => slugTag(landscape)))]
 
             // fill in frontmatter
-            file.data.frontmatter = {
-              title: file.stem ?? "Untitled",
-              tags: [],
-              landscapes: [],
-              ...data,
-            }
+            file.data.frontmatter = data as QuartzPluginData["frontmatter"]
+            
           }
         },
       ]

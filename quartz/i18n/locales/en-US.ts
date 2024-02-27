@@ -72,12 +72,27 @@ export default {
         count === 1 ? "1 item under this folder." : `${count} items under this folder.`,
     },
     tagContent: {
-      tag: "Tag",
-      tagIndex: "Tag Index",
+      tag: "",
+      tagIndex: "Topic Index",
       itemsUnderTag: ({ count }) =>
-        count === 1 ? "1 item with this tag." : `${count} items with this tag.`,
-      showingFirst: ({ count }) => `Showing first ${count} tags.`,
-      totalTags: ({ count }) => `Found ${count} total tags.`,
+        count === 1 ? "1 conversation about this topic." : `${count} conversations about this topic.`,
+      showingFirst: ({ count }) => `Showing first ${count} topics.`,
+      totalTags: ({ count }) => `Found ${count} total topics.`,
     },
-  },
+    landscapeContent: {
+      tag: "Landscape",
+      tagIndex: "Landscape Index",
+      itemsUnderTag: ({ count }) =>
+        count === 1 ? "1 view in this landscape." : `${count} views in this landscape.`,
+      showingFirst: ({ count }) => `Showing first ${count} views.`,
+      totalTags: ({ count }) => `Found ${count} total views.`,
+    },
+    growthContent: {
+      tag: "Growth",
+      tagIndex: "Growth Index",
+      itemsUnderTag: ({ count }) =>
+        count === 1 ? "1 plant growing happily." : `${count} plants growing happily.`,
+      showingFirst: ({ count }) => `Showing first ${count} plants.`,
+      totalTags: ({ count }) => `Found ${count} total plants.`,
+    },  },
 } as const satisfies Translation
