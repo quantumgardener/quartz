@@ -64,7 +64,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             }
 
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
-            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
+            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)).sort())]
 
             
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))

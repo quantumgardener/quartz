@@ -22,8 +22,7 @@ export default (() => {
       }
 
       let faIcon = ""
-       
-      console.log(growth)
+
       switch(growth) {
         case "seedling":
           faIcon = "seedling"
