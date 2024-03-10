@@ -29,9 +29,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.TableOfContents())
   ],
   right: [
+    Component.TableOfContents(),
     Component.Backlinks(),
     Component.Graph({localGraph: {
     showTags: false,
@@ -39,7 +39,6 @@ export const defaultContentPageLayout: PageLayout = {
     showTags: false,
   }})
   ],
-  //right: [Component.Backlinks()]
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
