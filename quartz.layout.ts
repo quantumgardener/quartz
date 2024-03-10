@@ -31,12 +31,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents())
   ],
-  right: [Component.Graph({localGraph: {
+  right: [
+    Component.Backlinks(),
+    Component.Graph({localGraph: {
     showTags: false,
   }, globalGraph: {
     showTags: false,
-  }}), 
-    Component.Backlinks()
+  }})
   ],
   //right: [Component.Backlinks()]
 }
@@ -55,11 +56,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
   ],
-  right: [Component.Graph({localGraph: {
+  right: [
+    Component.Backlinks(),
+    Component.Graph({localGraph: {
     showTags: false,
   }, globalGraph: {
     showTags: false,
-  }}), 
-    Component.Backlinks()
+  }})
   ],
 }
