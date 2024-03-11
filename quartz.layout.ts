@@ -22,7 +22,9 @@ export const defaultContentPageLayout: PageLayout = {
       hideOnRoot: false,
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ContentMeta({
+      showReadingTime: true,
+    }),
     Component.TagList(),
   ],
   left: [
@@ -48,7 +50,10 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
     Component.ArticleTitle(), 
-    Component.ContentMeta()
+    Component.ContentMeta({
+      showReadingTime: false,
+      showDate: false
+    }),
   ],
   left: [
     Component.SiteLogo(),

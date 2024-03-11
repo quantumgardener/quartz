@@ -12,3 +12,13 @@
         }
     }
 }
+
+a {
+    &.internal {
+      &.tag-link {
+        &::before {
+          content: "";
+        }
+      }
+    }
+}
