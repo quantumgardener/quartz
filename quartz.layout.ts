@@ -22,9 +22,7 @@ export const defaultContentPageLayout: PageLayout = {
       hideOnRoot: false,
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta({
-      showReadingTime: true,
-    }),
+    Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
@@ -52,7 +50,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.ArticleTitle(), 
     Component.ContentMeta({
       showReadingTime: false,
-      showDate: false
+      showDate: false,
+      showGrowth: false,
+      showLandscapes: false,
     }),
   ],
   left: [

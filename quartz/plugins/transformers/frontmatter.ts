@@ -99,6 +99,8 @@ declare module "vfile" {
         lang: string
         enableToc: string
         cssclasses: string[]
+        landscapes: string[]
+        growth: string
       }>
   }
 }

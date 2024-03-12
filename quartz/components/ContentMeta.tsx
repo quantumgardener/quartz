@@ -7,6 +7,7 @@ import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 
 
+
 interface ContentMetaOptions {
   /**
    * Whether to display reading time
@@ -14,18 +15,61 @@ interface ContentMetaOptions {
   showReadingTime: boolean
   showComma: boolean
   showDate: boolean
+  showGrowth: boolean
+  showLandscapes: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
   showComma: true,
-  showDate: true
+  showDate: true,
+  showGrowth: true,
+  showLandscapes: true,
 }
 
-function growthHTML(growth:string, growthClass:string, growthLink:string) {
+function growthHTML(growth: string) {
+
+  let newgrowth = ""
+
+  if( growth != null) {
+    // We have a value in the form [[Growth]]
+    newgrowth = growth.slice(2,-2).toLowerCase()
+  } else {
+    // Assume seedling if not specified
+    newgrowth = "seedling"
+  }
+
+  let faIcon = ""
+
+  switch(newgrowth) {
+    case "seedling":
+      faIcon = "seedling"
+      break
+    case "budding":
+      faIcon = "leaf"
+      break
+    case "evergreen":
+      faIcon = "tree"
+      break
+  }
+
+  const growthClass = "fa-solid fa-" + faIcon
+  const growthLink = `/maturity/${newgrowth}`
+
   return (
     <span>
-      <a class="internal tag-link" href={growthLink}><i style="color:green" class={growthClass}></i> {growth.toUpperCase()}</a>
+      <a class="internal tag-link" href={growthLink}><i style="color:green" class={growthClass}></i> {newgrowth.toUpperCase()}</a>
+    </span>
+  )
+}
+
+function landscapeHTML(landscape: string, title: string) {
+  
+  const url = `/landscapes/${landscape}`
+
+  return (
+    <span>
+      <a class="internal tag-link" href={url}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i> {title}</a>
     </span>
   )
 }
@@ -55,37 +99,18 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       // Start of my changes
 
-      let growth = ""
-      if( fileData.frontmatter?.growth != null) {
-        // We have a value in the form [[Growth]]
-        growth = fileData.frontmatter?.growth.slice(2,-2).toLowerCase()
-      } else {
-        // Assume seedling if not specified
-        growth = "seedling"
+      if (options.showGrowth) {
+        segments.push(growthHTML(fileData.frontmatter?.growth))
       }
 
-      let faIcon = ""
-
-      switch(growth) {
-        case "seedling":
-          faIcon = "seedling"
-          break
-        case "budding":
-          faIcon = "leaf"
-          break
-        case "evergreen":
-          faIcon = "tree"
-          break
+      if (options.showLandscapes) {
+        if ( fileData.frontmatter?.landscapes != null ) {
+          for (const landscape of fileData.frontmatter?.landscapes) {
+            const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)     
+            segments.push(landscapeHTML(landscape, result?.frontmatter?.title.toUpperCase()))
+          }
+        }
       }
-  
-      const growthClass = "fa-solid fa-" + faIcon
-      const growthLink = `/maturity/${growth}.html`
-
-      segments.push(growthHTML(
-        growth,
-        growthClass,
-        growthLink
-      ))
 
       // End of my changes
 
@@ -99,40 +124,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     } else {
       return null
     }
-
-      
-    //   const landscapeLinks = []
-    //   if( fileData.frontmatter?.landscapes != null) {
-    //     for (const landscape of fileData.frontmatter?.landscapes) {
-    //       const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)
-
-    //       landscapeLinks.push([`/landscapes/${landscape}`, result?.frontmatter?.title.toUpperCase()])
-    //     }
-    //   }
-
-    //   return (
-    //     <div class="popover-hint">
-    //     <p class="content-meta">
-    //       <article>
-    //         <ul class="tags">
-    //           <li><i style="color:green" class={growthClass}></i> <a class="internal tag-link" href={growthLink}>{growth.toUpperCase()}</a></li>
-    //        {landscapeLinks.map((link) => {
-    //         return (
-    //           <li>
-    //             &nbsp;&nbsp;<i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp;
-    //             <a class="internal tag-link" href={link[0]}>{link[1]}</a> 
-    //           </li>
-    //         )
-    //         })
-    //       }
-    //         </ul>
-    //       </article>
-    //     </p>
-    //     </div>
-    //   )
-    // } else {
-    //   return null
-    // }
   }
 
   ContentMetadata.css = style
