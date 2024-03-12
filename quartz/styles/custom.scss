@@ -22,15 +22,3 @@ a {
       }
     }
 } 
-
-.content-meta {
-  margin-top: 0.5em;
-  
-  &[show-comma="true"] {
-    > span:not(:last-child) {
-        &::after {
-        content: " ";
-      }
-    }
-  }
-}
