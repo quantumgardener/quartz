@@ -6,8 +6,6 @@ import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 
-
-
 interface ContentMetaOptions {
   /**
    * Whether to display reading time

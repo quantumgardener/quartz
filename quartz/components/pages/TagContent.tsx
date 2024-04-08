@@ -54,9 +54,15 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
               allFiles: pages,
             }
 
-            const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`)[0]
-            const content = contentPage?.description
+            const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`).at(0)
+
+            const root = contentPage?.htmlAst
+            const content =
+              !root || root?.children.length === 0
+                ? contentPage?.description
             const title = contentPage?.frontmatter?.title
+                : htmlToJsx(contentPage.filePath!, root)
+
             return (
               <div>
                 <h2>
