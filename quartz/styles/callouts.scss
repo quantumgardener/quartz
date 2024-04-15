@@ -115,6 +115,20 @@
     --callout-icon: var(--callout-icon-quote);
   }
 
+  &[data-callout="writing"] {
+    --color: #000000;
+    --border: #1c7202b2;
+    --bg: #1c72025b;
+    --callout-icon: var(--callout-icon-writing);
+  }
+
+  &[data-callout="landscape"] {
+    --color: #5C4033;
+    --border: #e4a61f9d;
+    --bg: #e4a51f65;
+    --callout-icon: var(--callout-icon-landscape);
+  }
+
   &.is-collapsed > .callout-title > .fold-callout-icon {
     transform: rotateZ(-90deg);
   }
