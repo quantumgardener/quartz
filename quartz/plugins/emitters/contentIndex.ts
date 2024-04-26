@@ -50,7 +50,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
 }
 
-function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: string, limit?: number): string {
+function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFolder: string, limit?: number): string {
   const base = cfg.baseUrl ?? ""
   const root = `https://${base}`
   const year = new Date().getFullYear()
@@ -64,7 +64,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRoot: s
   </item>`
 
   const items = Array.from(idx)
-    .filter(([slug]) => slug.startsWith(`${rssRoot}`))
+    .filter(([slug]) => slug.startsWith(`${rssRootFolder}`))
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .slice(0, limit ?? idx.size)
     .join("")
