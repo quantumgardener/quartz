@@ -34,7 +34,7 @@ const defaultOptions: Options = {
   enableRSS: true,
   rssLimit: 10,
   rssFullHtml: false,
-  includeEmptyFiles: false,
+  includeEmptyFiles: true,
   rssRootFolder: ""
 }
 
