@@ -34,7 +34,7 @@ const defaultOptions: Options = {
   enableRSS: true,
   rssLimit: 10,
   rssFullHtml: false,
-  includeEmptyFiles: true,
+  includeEmptyFiles: false,
   rssRootFolder: ""
 }
 
@@ -64,7 +64,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
   </item>`
 
   const items = Array.from(idx)
-    .filter(([slug]) => slug.startsWith(`${rssRootFolder}`))
+    .filter(([slug,content]) => slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .slice(0, limit ?? idx.size)
     .join("")
