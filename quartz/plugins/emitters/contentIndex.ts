@@ -83,7 +83,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
       <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
       <docs>https://www.rssboard.org/rss-specification</docs>
       <image>
-        <url>https://${base}/static/qg-image.png</url>
+        <url>https://${base}/static/qg-image.webp</url>
         <title>${escapeHTML(cfg.pageTitle)}</title>
         <link>https://${base}</link>
       </image>
