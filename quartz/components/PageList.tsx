@@ -1,6 +1,6 @@
 import { FullSlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
-import { Date, getDate } from "./Date"
+import { Date, getDate, formatDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
 
@@ -38,6 +38,11 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit }: Pr
   return (
     <ul class="section-ul">
       {list.map((page) => {
+
+        let pagedate:string = ""
+        if (page.dates) {
+          pagedate = formatDate(getDate(cfg, page)!, cfg.locale)
+        }
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
@@ -46,15 +51,19 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit }: Pr
           <li class="section-li">
             <hr/>
             <div class="desc">
-                <h3>
-                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                    {title}
-                  </a>
-                </h3>
-                <p>
-                    {description}
-                </p>
+              <div style="float:right">
+                <small>{pagedate}</small>
               </div>
+              <h3>
+                <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                  {title}
+                </a>
+              </h3>
+              
+              <p>
+                  {description}
+              </p>
+            </div>
             <ul class="tags">
                 {tags.filter((tag) => tag != fileData.slug?.split("topics/")[1]).map((tag) => (                  
                   <li>
