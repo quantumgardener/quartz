@@ -52,7 +52,6 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
 
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFolder: string, limit?: number): string {
   const base = cfg.baseUrl ?? ""
-  const root = `https://${base}`
   const year = new Date().getFullYear()
 
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
@@ -65,6 +64,16 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
 
   const items = Array.from(idx)
     .filter(([slug,content]) => slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
+    .sort(([_, f1], [__, f2]) => {
+      if (f1.date && f2.date) {
+        return f2.date.getTime() - f1.date.getTime()
+      } else if (f1.date && !f2.date) {
+        return -1
+      } else if (!f1.date && f2.date) {
+        return 1
+      }
+      return f1.title.localeCompare(f2.title)
+    })
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .slice(0, limit ?? idx.size)
     .join("")
