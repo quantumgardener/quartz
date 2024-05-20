@@ -83,7 +83,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates && options.showDate) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale) +",")
       }
 
       // Display reading time if enabled
@@ -98,14 +98,14 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       // Start of my changes
 
       if (options.showGrowth) {
-        segments.push(growthHTML(fileData.frontmatter?.growth))
+        segments.push(growthHTML(fileData.frontmatter?.growth as string))
       }
 
       if (options.showLandscapes) {
         if ( fileData.frontmatter?.landscapes != null ) {
           for (const landscape of fileData.frontmatter?.landscapes) {
             const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)     
-            segments.push(landscapeHTML(landscape, result?.frontmatter?.title.toUpperCase()))
+            segments.push(landscapeHTML(landscape, result?.frontmatter?.title.toUpperCase() as string))
           }
         }
       }
