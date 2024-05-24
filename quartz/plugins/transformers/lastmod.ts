@@ -50,6 +50,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options> | und
                 created ||= st.birthtimeMs
                 modified ||= st.mtimeMs
               } else if (source === "frontmatter" && file.data.frontmatter) {
+                created ||= file.data.frontmatter.datetime
                 created ||= file.data.frontmatter.date
                 modified ||= file.data.frontmatter.lastmod
                 modified ||= file.data.frontmatter.updated
