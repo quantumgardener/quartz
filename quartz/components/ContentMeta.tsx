@@ -13,7 +13,6 @@ interface ContentMetaOptions {
   showReadingTime: boolean
   showComma: boolean
   showDate: boolean
-  showGrowth: boolean
   showLandscapes: boolean
 }
 
@@ -21,44 +20,7 @@ const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
   showComma: true,
   showDate: true,
-  showGrowth: true,
   showLandscapes: true,
-}
-
-function growthHTML(growth: string) {
-
-  let newgrowth = ""
-
-  if( growth != null) {
-    // We have a value in the form [[Growth]]
-    newgrowth = growth.slice(2,-2).toLowerCase()
-  } else {
-    // Assume seedling if not specified
-    newgrowth = "seedling"
-  }
-
-  let faIcon = ""
-
-  switch(newgrowth) {
-    case "seedling":
-      faIcon = "seedling"
-      break
-    case "budding":
-      faIcon = "leaf"
-      break
-    case "evergreen":
-      faIcon = "tree"
-      break
-  }
-
-  const growthClass = "fa-solid fa-" + faIcon
-  const growthLink = `/maturity/${newgrowth}`
-
-  return (
-    <span>
-      <a class="internal tag-link" href={growthLink}><i style="color:green" class={growthClass}></i> {newgrowth.toUpperCase()}</a>
-    </span>
-  )
 }
 
 function landscapeHTML(landscape: string, title: string) {
@@ -99,12 +61,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           minutes: Math.ceil(minutes),
         })
         segments.push(displayedTime)
-      }
-
-      // Start of my changes
-
-      if (options.showGrowth) {
-        segments.push(growthHTML(fileData.frontmatter?.growth as string))
       }
 
       if (options.showLandscapes) {

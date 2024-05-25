@@ -8,4 +8,4 @@ export { Static } from "./static"
 export { ComponentResources } from "./componentResources"
 export { NotFoundPage } from "./404"
 export { LandscapePage } from "./landscapePage"
-export { GrowthPage } from "./growthPage"
+

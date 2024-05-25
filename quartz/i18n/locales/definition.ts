@@ -86,11 +86,5 @@ export interface Translation {
       showingFirst: (variables: { count: number }) => string
       totalTags: (variables: { count: number }) => string
     }
-    growthContent: {
-      tag: string
-      tagIndex: string
-      itemsUnderTag: (variables: { count: number }) => string
-      showingFirst: (variables: { count: number }) => string
-      totalTags: (variables: { count: number }) => string
-    }  }
+  }
 }

@@ -52,7 +52,6 @@ export const defaultListPageLayout: PageLayout = {
     Component.ContentMeta({
       showReadingTime: false,
       showDate: false,
-      showGrowth: false,
       showLandscapes: false,
     }),
   ],

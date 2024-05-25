@@ -87,12 +87,5 @@ export default {
       showingFirst: ({ count }) => `Showing first ${count} views.`,
       totalTags: ({ count }) => `Found ${count} total views.`,
     },
-    growthContent: {
-      tag: "Growth",
-      tagIndex: "Growth Index",
-      itemsUnderTag: ({ count }) =>
-        count === 1 ? "1 plant growing happily." : `${count} plants growing happily.`,
-      showingFirst: ({ count }) => `Showing first ${count} plants.`,
-      totalTags: ({ count }) => `Found ${count} total plants.`,
-    },  },
+  },
 } as const satisfies Translation

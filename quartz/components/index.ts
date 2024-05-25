@@ -20,7 +20,6 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import LandscapeContent from "./pages/LandscapeContent"
-import GrowthContent from "./pages/GrowthContent"
 import SiteLogo from "./SiteLogo"
 
 
@@ -47,6 +46,5 @@ export {
   NotFound,
   Breadcrumbs,
   LandscapeContent,
-  GrowthContent,
   SiteLogo
 }

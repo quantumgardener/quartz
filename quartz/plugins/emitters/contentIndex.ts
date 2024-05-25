@@ -86,7 +86,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
       <description>A digital garden cultivating the possibilities of life.</description>
       <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
-      <managingEditor>5wjw9aq33@mozmail.com (David Buchan)</managingEditor>
+      <managingEditor>qg.info@mail.buchan.org</managingEditor>
       <webMaster>5wjw9aq33@mozmail.com (David Buchan)</webMaster>
       <atom:link href="https://quantumgardener.info/index.xml" rel="self" type="application/rss+xml" />
       <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

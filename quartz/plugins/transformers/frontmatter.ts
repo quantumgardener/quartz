@@ -100,7 +100,6 @@ declare module "vfile" {
         enableToc: string
         cssclasses: string[]
         landscapes: string[]
-        growth: string
       }>
   }
 }
