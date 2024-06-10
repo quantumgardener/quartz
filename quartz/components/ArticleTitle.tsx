@@ -37,6 +37,7 @@ String.prototype.toTitleCase = function() {
 const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   if (title) {
+    //Don't convert to title case.
     //const workingTitle = title.toTitleCase()
     const workingTitle = title
     if (workingTitle.startsWith("Topic: ")) {
