@@ -37,7 +37,8 @@ String.prototype.toTitleCase = function() {
 const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   if (title) {
-    const workingTitle = title.toTitleCase()
+    //const workingTitle = title.toTitleCase()
+    const workingTitle = title
     if (workingTitle.startsWith("Topic: ")) {
       return <h1 class="article-title"><i class="fa-regular fa-message"></i>&nbsp;&nbsp;{workingTitle.replace("Topic: ","")}</h1>
     } else {
