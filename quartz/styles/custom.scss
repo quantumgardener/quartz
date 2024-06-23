@@ -45,3 +45,10 @@ a {
     --callout-icon: var(--callout-icon-landscape);
   }
 }
+
+footer {
+
+  & ul {
+    flex-flow: wrap;
+  }
+}
