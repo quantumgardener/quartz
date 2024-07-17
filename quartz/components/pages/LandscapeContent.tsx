@@ -8,7 +8,7 @@ import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
 
 const numPages = 10
-function LandscapeContent(props: QuartzComponentProps) {
+const LandscapeContent: QuartzComponent = (props: QuartzComponentProps) => {
   const { tree, fileData, allFiles, cfg } = props
   const slug = fileData.slug
   
