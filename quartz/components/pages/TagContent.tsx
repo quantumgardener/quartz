@@ -7,10 +7,10 @@ import { Root } from "hast"
 import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
 
-const numPages = 10
-const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
-  const { tree, fileData, allFiles, cfg } = props
-  const slug = fileData.slug
+interface TagContentOptions {
+  sort?: SortFn
+  numPages: number
+}
 
   if (!(slug?.startsWith("topics/") || slug === "topics")) {
     throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`)
@@ -85,18 +85,17 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
                   </p>
                   <PageList limit={numPages} {...listProps} />
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </div>
-    )
-  } else {
-    const pages = allPagesWithTag(tag)
-    const listProps = {
-      ...props,
-      allFiles: pages,
-    }
+      )
+    } else {
+      const pages = allPagesWithTag(tag)
+      const listProps = {
+        ...props,
+        allFiles: pages,
+      }
 
     return (
       <div class={classes}>
@@ -119,10 +118,9 @@ const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
             <PageList {...listProps} />
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}
 
 TagContent.css = style + PageList.css
 export default (() => TagContent) satisfies QuartzComponentConstructor
