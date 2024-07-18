@@ -392,10 +392,10 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     preview.replaceChildren(previewInner)
 
     // scroll to longest
-    const highlights = [...preview.querySelectorAll(".highlight")].sort(
-      (a, b) => b.innerHTML.length - a.innerHTML.length,
-    )
-    highlights[0]?.scrollIntoView({ block: "start" })
+    // const highlights = [...preview.querySelectorAll(".highlight")].sort(
+    //   (a, b) => b.innerHTML.length - a.innerHTML.length,
+    // )
+    // highlights[0]?.scrollIntoView({ block: "start" })
   }
 
   async function onType(e: HTMLElementEventMap["input"]) {
