@@ -15,6 +15,16 @@
     }
 }
 
+tbody,
+li,
+p {
+  line-height: 1.7rem;
+}
+
+figure[data-rehype-pretty-code-figure] {
+  line-height: 1.7rem;
+}
+
 a {
     &.internal {
       &.tag-link {
@@ -50,5 +60,12 @@ footer {
 
   & ul {
     flex-flow: wrap;
+  }
+}
+
+.footnotes {
+  & > ol > li > p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
   }
 }
