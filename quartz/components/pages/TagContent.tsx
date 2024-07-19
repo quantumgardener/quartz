@@ -1,7 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
-import { PageList } from "../PageList"
-import { FullSlug, getAllSegmentPrefixes, simplifySlug, resolveRelative } from "../../util/path"
+import { PageList, SortFn } from "../PageList"
+import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
 import { htmlToJsx } from "../../util/jsx"
@@ -11,6 +11,17 @@ interface TagContentOptions {
   sort?: SortFn
   numPages: number
 }
+
+const defaultOptions: TagContentOptions = {
+  numPages: 10,
+}
+
+export default ((opts?: Partial<TagContentOptions>) => {
+  const options: TagContentOptions = { ...defaultOptions, ...opts }
+
+  const TagContent: QuartzComponent = (props: QuartzComponentProps) => {
+    const { tree, fileData, allFiles, cfg } = props
+    const slug = fileData.slug
 
   if (!(slug?.startsWith("topics/") || slug === "topics")) {
     throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`)
@@ -28,7 +39,6 @@ interface TagContentOptions {
       : htmlToJsx(fileData.filePath!, tree)
   const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
   const classes = ["popover-hint", ...cssClasses].join(" ")
-    
   if (tag === "/") {
     const tags = [
       ...new Set(
@@ -57,7 +67,6 @@ interface TagContentOptions {
             const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`).at(0)
 
             const root = contentPage?.htmlAst
-            const title = contentPage?.frontmatter?.title
             const content =
               !root || root?.children.length === 0
                 ? contentPage?.description
@@ -74,17 +83,18 @@ interface TagContentOptions {
                 <div class="page-listing">
                   <p>
                     {i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}
-                    {pages.length > numPages && (
+                    {pages.length > options.numPages && (
                       <>
                         {" "}
                         <span>
-                          {i18n(cfg.locale).pages.tagContent.showingFirst({ count: numPages })}
+                          {i18n(cfg.locale).pages.tagContent.showingFirst({ count: options.numPages })}
                         </span>
                       </>
                     )}
                   </p>
-                  <PageList limit={numPages} {...listProps} />
+                  <PageList limit={options.numPages} {...listProps} />
                 </div>
+              </div>
               )
             })}
           </div>
@@ -118,9 +128,11 @@ interface TagContentOptions {
             <PageList {...listProps} />
           </div>
         </div>
+      </div>
       )
     }
   }
 
-TagContent.css = style + PageList.css
-export default (() => TagContent) satisfies QuartzComponentConstructor
+  TagContent.css = style + PageList.css
+  return TagContent
+}) satisfies QuartzComponentConstructor
