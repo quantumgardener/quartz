@@ -8,11 +8,11 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      Mastodon: {link: "https://aus.social/@dcbuchan", icon: "fa-brands fa-mastodon", iconcolor: "rgb(140, 141, 255)"},
-      "Subscribe (RSS)": {link: "https://quantumgardener.info/feed", icon: "fa-solid fa-square-rss", iconcolor: "orange"},
-      Flickr: {link: "https://www.flickr.com/photos/dcbuchan/", icon: "fa-brands fa-flickr", iconcolor: "black"},
-      Pixelfed: {link: "https://pixelfed.au/dcbuchan", icon: "fa-solid fa-photo-film", iconcolor: "black"},
-      Github: {link: "https://github.com/quantumgardener", icon: "fa-brands fa-github", iconcolor: "black"}
+      Mastodon: {link: "https://aus.social/@dcbuchan", icon: "fa-brands fa-mastodon"},
+      "Subscribe (RSS)": {link: "https://quantumgardener.info/feed", icon: "fa-solid fa-square-rss"},
+      Flickr: {link: "https://www.flickr.com/photos/dcbuchan/", icon: "fa-brands fa-flickr"},
+      Pixelfed: {link: "https://pixelfed.au/dcbuchan", icon: "fa-solid fa-photo-film"},
+      Github: {link: "https://github.com/quantumgardener", icon: "fa-brands fa-github"}
     },
   }),
 }
@@ -38,10 +38,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TableOfContents(),
     Component.Backlinks(),
     Component.Graph({localGraph: {
-    showTags: false,
-  }, globalGraph: {
-    showTags: false,
-  }})
+      showTags: false,
+      }, globalGraph: {
+      showTags: false,
+      }}),
+    Component.RecentNotes()
   ],
 }
 
