@@ -26,6 +26,8 @@ figure[data-rehype-pretty-code-figure] {
 }
 
 a {
+  font-weight: 600;
+
     &.internal {
       &.tag-link {
         &::before {
@@ -33,7 +35,15 @@ a {
         }
       }
     }
+
+    &.external .external-icon {
+      margin: 0 0.30em;
+    }
 } 
+
+.content-meta {
+  font-size: 0.9em;
+}
 
 .callout {
   border: 3px solid var(--border);  
@@ -67,5 +77,14 @@ footer {
   & > ol > li > p {
     font-size: 0.9rem;
     line-height: 1.2rem;
+  }
+}
+
+.backlinks,
+.graph,
+.recent-notes {
+  & > h3 {
+    margin: 0 0 0 0;
+    font-size: 1.3rem;
   }
 }

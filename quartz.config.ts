@@ -28,10 +28,10 @@ const config: QuartzConfig = {
         lightMode: {
           light: "#faf8f8",
           lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
+          gray: "black",
+          darkgray: "#2e2e2e",
           dark: "#2b2b2b",
-          secondary: "#284b63",
+          secondary: "#0C5183",
           tertiary: "#84a59d",
           highlight: "rgba(143, 159, 169, 0.15)",
           textHighlight: "#fff23688",
@@ -39,7 +39,7 @@ const config: QuartzConfig = {
         darkMode: {
           light: "#161618",
           lightgray: "#393639",
-          gray: "#646464",
+          gray: "#f4f4F4",
           darkgray: "#d4d4d4",
           dark: "#ebebec",
           secondary: "#7b97aa",
@@ -70,7 +70,7 @@ const config: QuartzConfig = {
       }),
       Plugin.CrawlLinks({ 
         markdownLinkResolution: "shortest", 
-        externalLinkIcon: false,
+        externalLinkIcon: true,
       }),
       Plugin.Description({descriptionLength: 300}),
     ],
