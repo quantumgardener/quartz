@@ -15,8 +15,10 @@
     padding: 0;
     line-height: normal;
   }
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  & {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
