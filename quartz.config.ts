@@ -20,9 +20,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Roboto%20Condensed",
-        body: "Source%20ans%20Pro",
-        code: "IBM%20Plex%20Mono",
+        header: "Roboto Condensed",
+        body: "Montserrat",
+        code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
