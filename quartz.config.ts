@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     enableSPA: false,
     enablePopovers: true,
     analytics: null,
-    locale: "en-US",
+    locale: "en-GB",
     baseUrl: "quantumgardener.info",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
