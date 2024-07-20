@@ -88,3 +88,32 @@ footer {
     font-size: 1.3rem;
   }
 }
+
+.backlinks,
+.recent-notes {
+  position: relative;
+
+  & > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+
+    & > li {
+
+      margin-bottom: 0.8rem;
+      line-height: 1rem;
+  
+      & > a {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.recent-notes {
+  & > ul > li > .meta {
+    font-size: 0.9rem;
+    color: var(----gray)
+  }
+}
+

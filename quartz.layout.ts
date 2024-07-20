@@ -1,3 +1,4 @@
+import { boolean } from "yargs"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
@@ -42,7 +43,11 @@ export const defaultContentPageLayout: PageLayout = {
       }, globalGraph: {
       showTags: false,
       }}),
-    Component.RecentNotes()
+    Component.RecentNotes({
+      title: "Recent blog posts",
+      limit: 4,
+      filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+    })
   ],
 }
 
