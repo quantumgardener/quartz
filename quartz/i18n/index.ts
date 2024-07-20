@@ -1,5 +1,6 @@
 import { Translation, CalloutTranslation } from "./locales/definition"
-import en from "./locales/en-US"
+import enUS from "./locales/en-US"
+import enGB from "./locales/en-GB"
 import fr from "./locales/fr-FR"
 import it from "./locales/it-IT"
 import ja from "./locales/ja-JP"
@@ -20,8 +21,8 @@ import fa from "./locales/fa-IR"
 import pl from "./locales/pl-PL"
 
 export const TRANSLATIONS = {
-  "en-US": en,
-  "en-GB": en,
+  "en-US": enUS,
+  "en-GB": enGB,
   "fr-FR": fr,
   "it-IT": it,
   "ja-JP": ja,
@@ -64,6 +65,7 @@ export const TRANSLATIONS = {
 } as const
 
 export const defaultTranslation = "en-US"
-export const i18n = (locale: ValidLocale): Translation => TRANSLATIONS[locale ?? defaultTranslation]
 export type ValidLocale = keyof typeof TRANSLATIONS
 export type ValidCallout = keyof CalloutTranslation
+export const i18n = (locale: ValidLocale): Translation => TRANSLATIONS[locale ?? defaultTranslation]
+
