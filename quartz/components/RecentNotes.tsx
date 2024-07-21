@@ -37,7 +37,7 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <div class={classNames(displayClass, "recent-notes")}>
-        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
+        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed"><i class="fa-solid fa-square-rss" color="var(--secondary)"></i></a></h3>
         <ul class="overflow">
           {pages.slice(0, opts.limit).map((page) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title

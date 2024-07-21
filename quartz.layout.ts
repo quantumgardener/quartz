@@ -31,9 +31,18 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     Component.SiteLogo(),
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
+    Component.MobileOnly(
+      Component.Spacer()
+    ),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "Recent blog posts",
+        limit: 5,
+        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+      })
+    ),
   ],
   right: [
     Component.TableOfContents(),
@@ -43,11 +52,13 @@ export const defaultContentPageLayout: PageLayout = {
       }, globalGraph: {
       showTags: false,
       }}),
-    Component.RecentNotes({
-      title: "Recent blog posts",
-      limit: 4,
-      filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
-    })
+    Component.MobileOnly(
+      Component.RecentNotes({
+        title: "Recent blog posts",
+        limit: 4,
+        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+      })
+    ),
   ],
 }
 
@@ -65,9 +76,18 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.SiteLogo(),
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
+    Component.MobileOnly(
+      Component.Spacer()
+    ),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "Recent blog posts",
+        limit: 5,
+        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+      })
+    ),
   ],
   right: [
     Component.Backlinks(),
@@ -75,6 +95,13 @@ export const defaultListPageLayout: PageLayout = {
     showTags: false,
   }, globalGraph: {
     showTags: false,
-  }})
+  }}),
+    Component.MobileOnly(
+      Component.RecentNotes({
+        title: "Recent blog posts",
+        limit: 4,
+        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+      })
+    ),
   ],
 }
