@@ -90,7 +90,8 @@ footer {
 }
 
 .backlinks,
-.recent-notes {
+.recent-notes,
+.toc {
   position: relative;
 
   & > ul {
@@ -113,7 +114,30 @@ footer {
 .recent-notes {
   & > ul > li > .meta {
     font-size: 0.9rem;
-    color: var(----gray)
+    color: var(--gray)
   }
 }
 
+.recent-notes {
+  & > h3 > a {
+    color: var(--secondary)
+  }
+}
+
+button#toc {
+
+  & h3 {
+      font-size: 1.3rem;
+  }
+}
+
+#toc-content {
+
+  & ul > li > a {
+    color: var(--secondary);
+
+    &.in-view {
+      opacity: 1;
+    }
+  }
+}
