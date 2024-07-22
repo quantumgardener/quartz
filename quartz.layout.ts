@@ -99,7 +99,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(
       Component.RecentNotes({
         title: "Recent blog posts",
-        limit: 4,
+        limit: 5,
         filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
       })
     ),
