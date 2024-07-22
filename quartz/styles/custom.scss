@@ -80,64 +80,85 @@ footer {
   }
 }
 
-.backlinks,
-.graph,
-.recent-notes {
+.graph {
   & > h3 {
     margin: 0 0 0 0;
     font-size: 1.3rem;
   }
 }
 
-.backlinks,
-.recent-notes,
-.toc {
+
+button#backlinks,
+button#recent-notes,
+button#toc {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+
+  & h3 {
+    font-size: 1.3rem;
+    display: inline-block;
+    margin: 0;
+  }
+
+  & .fold {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+  }
+
+  &.collapsed .fold {
+    transform: rotateZ(-90deg);
+  }
+}
+
+#backlinks-content,
+#recent-notes-content,
+#toc-content {
+  list-style: none;
+  overflow: hidden;
+  max-height: none;
+  transition: max-height 0.5s ease;
   position: relative;
 
-  & > ul {
+  &.collapsed > .overflow::after {
+    opacity: 0;
+  }
+
+  & ul {
     list-style: none;
-    padding: 0;
     margin: 0.5rem 0;
+    padding: 0;
 
     & > li {
-
       margin-bottom: 0.8rem;
       line-height: 1rem;
-  
+
       & > a {
+        color: var(--secondary);
         background-color: transparent;
+        transition:
+          0.5s ease opacity,
+          0.3s ease color;
       }
     }
   }
 }
 
-.recent-notes {
-  & > ul > li > .meta {
+#recent-notes-content {
+  & .meta {
     font-size: 0.9rem;
     color: var(--gray)
   }
 }
 
-.recent-notes {
-  & > h3 > a {
-    color: var(--secondary)
-  }
-}
-
-button#toc {
-
-  & h3 {
-      font-size: 1.3rem;
-  }
-}
-
 #toc-content {
-
-  & ul > li > a {
-    color: var(--secondary);
-
-    &.in-view {
-      opacity: 1;
-    }
+  &.in-view {
+    opacity: 1;
   }
 }
