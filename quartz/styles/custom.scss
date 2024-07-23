@@ -121,9 +121,8 @@ button#toc {
 #recent-notes-content,
 #toc-content {
   list-style: none;
-  overflow: hidden;
   max-height: none;
-  transition: max-height 0.5s ease;
+  transition: none; 
   position: relative;
 
   &.collapsed > .overflow::after {
@@ -136,15 +135,13 @@ button#toc {
     padding: 0;
 
     & > li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
       line-height: 1rem;
 
       & > a {
         color: var(--secondary);
         background-color: transparent;
-        transition:
-          0.5s ease opacity,
-          0.3s ease color;
+        transition: none;
       }
     }
   }
