@@ -18,7 +18,7 @@ const Backlinks: QuartzComponent = ({
   return (
     <div class={classNames(displayClass, "backlinks")}>
       <button type="button" id="backlinks" class={fileData.collapseToc ? "collapsed" : ""}>
-        <h3>{i18n(cfg.locale).components.backlinks.title}</h3>
+        <h3>{i18n(cfg.locale).components.backlinks.title} <a href="/notes/backlinks" style="color:var(--secondary)"><i class="fa-solid fa-circle-question"></i></a></h3>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
