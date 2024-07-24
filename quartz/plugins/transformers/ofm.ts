@@ -234,7 +234,6 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
         // replace all other wikilinks
         src = src.replace(wikilinkRegex, (value, ...capture) => {
           const [rawFp, rawHeader, rawAlias]: (string | undefined)[] = capture
-
           const [fp, anchor] = splitAnchor(`${rawFp ?? ""}${rawHeader ?? ""}`)
           const blockRef = Boolean(rawHeader?.match(/^#?\^/)) ? "^" : ""
           const displayAnchor = anchor ? `#${blockRef}${anchor.trim().replace(/^#+/, "")}` : ""
@@ -243,10 +242,13 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           // Only link pages that actually exist in the graph
           if (plainSlugs.includes(fp.replaceAll(" ","-").toLowerCase())) {
             return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
-          } else {
+          } else {            
             const strippedAlias = displayAlias.slice(1)
-            
-            return strippedAlias === "" ? fp : strippedAlias
+            if (anchor) {
+              return fp + "#" + strippedAlias
+            } else {
+              return fp ?? strippedAlias
+            }
           }
         })
       }
@@ -324,13 +326,19 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
 
                 // internal link
                 const url = fp + anchor
+                let displayText = ""
+                if (anchor) {
+                  displayText = fp + "#" + alias
+                } else {
+                  displayText = alias ?? fp
+                }
                 return {
                   type: "link",
                   url,
                   children: [
                     {
                       type: "text",
-                      value: alias ?? fp,
+                      value: displayText
                     },
                   ],
                 }
