@@ -23,6 +23,7 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs({
       hideOnRoot: false,
+      showCurrentPage: false
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
@@ -65,7 +66,10 @@ export const defaultContentPageLayout: PageLayout = {
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.Breadcrumbs({
+      hideOnRoot: false,
+      showCurrentPage: false,
+    }),
     Component.ArticleTitle(), 
     Component.ContentMeta({
       showReadingTime: false,
