@@ -245,7 +245,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           } else {            
             const strippedAlias = displayAlias.slice(1)
             if (anchor) {
-              return fp + "#" + strippedAlias
+              return `${fp}<span class="anchor-split"/>${strippedAlias}`
             } else {
               return fp ?? strippedAlias
             }
@@ -328,7 +328,12 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                 const url = fp + anchor
                 let displayText = ""
                 if (anchor) {
-                  displayText = fp + "#" + alias
+                  if (fp == file.data.frontmatter?.title) {
+                    // internal page line
+                    displayText = alias
+                  } else {
+                    displayText = `${fp}<span class="anchor-split"/>${alias}`
+                  }
                 } else {
                   displayText = alias ?? fp
                 }
@@ -337,7 +342,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                   url,
                   children: [
                     {
-                      type: "text",
+                      type: "html",
                       value: displayText
                     },
                   ],

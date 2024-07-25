@@ -167,3 +167,9 @@ button#toc {
     opacity: 1;
   }
 }
+
+.anchor-split:before {
+  opacity: 0.4;
+  content: " ❯ ";
+}
+
