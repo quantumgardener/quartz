@@ -173,3 +173,8 @@ button#toc {
   content: " ❯ ";
 }
 
+.footnotes {
+  & ol {
+    font-size: 0.8em;
+  }
+}
