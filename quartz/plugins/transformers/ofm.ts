@@ -234,11 +234,20 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
         // replace all other wikilinks
         src = src.replace(wikilinkRegex, (value, ...capture) => {
           const [rawFp, rawHeader, rawAlias]: (string | undefined)[] = capture
-          const [fp, anchor] = splitAnchor(`${rawFp ?? ""}${rawHeader ?? ""}`)
+          let [fp, anchor] = splitAnchor(`${rawFp ?? ""}${rawHeader ?? ""}`)
           const blockRef = Boolean(rawHeader?.match(/^#?\^/)) ? "^" : ""
           const displayAnchor = anchor ? `#${blockRef}${anchor.trim().replace(/^#+/, "")}` : ""
           const displayAlias = rawAlias ?? rawHeader?.replace("#", "|") ?? ""
           const embedDisplay = value.startsWith("!") ? "!" : ""
+
+          // Check for links coming in from Obsidian Dataview Serializer 
+          // https://github.com/dsebastien/obsidian-dataview-serializer?tab=readme-ov-file
+          // These have full path and .md extension
+          if (fp.slice(-3) == ".md") {
+            // We have a Dataview Serializer Path. Strip it down to filename without path or extension
+            fp = path.basename(fp).substring(0, path.basename(fp).lastIndexOf('.'))
+          }
+
           // Only link pages that actually exist in the graph
           if (plainSlugs.includes(fp.replaceAll(" ","-").toLowerCase())) {
             return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
