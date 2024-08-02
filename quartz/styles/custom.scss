@@ -11,6 +11,28 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+
+            &[alt*="left"],
+            &[alt*="media-cover"] {
+              float:left;
+              clear:left;
+              margin-right: 1.5rem;
+              margin-bottom: 1rem;
+              margin-top: 4px;
+            } 
+
+            &[alt*="right"] {
+              float:right;
+              clear:right;
+              margin-left: 1.5rem;
+              margin-bottom: 1rem;
+              margin-top: 4px;
+            } 
+
+            + em {
+              text-align: center;
+              padding-top: 1rem;
+            }
         }
     }
 }
@@ -178,3 +200,19 @@ button#toc {
     font-size: 0.8em;
   }
 }
+
+td {
+  vertical-align: top;
+
+  & ul {
+    list-style: none;
+    padding: 0px;
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+
+    & li {
+      padding: 0.2rem 0rem;
+    }
+  }
+}
+
