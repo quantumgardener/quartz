@@ -252,11 +252,11 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           if (plainSlugs.includes(fp.replaceAll(" ","-").toLowerCase())) {
             return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
           } else {            
-            const strippedAlias = displayAlias.slice(1)
+            const strippedAlias = displayAlias.split("|")[1]
             if (anchor) {
               return `${fp}<span class="anchor-split"/>${strippedAlias}`
             } else {
-              return fp ?? strippedAlias
+              return strippedAlias ?? fp
             }
           }
         })
@@ -281,7 +281,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                 const fp = rawFp?.trim() ?? ""
                 const anchor = rawHeader?.trim() ?? ""
                 const alias = rawAlias?.slice(1).trim()
-
+              
                 // embed cases
                 if (value.startsWith("!")) {
                   const ext: string = path.extname(fp).toLowerCase()
@@ -336,12 +336,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                 // internal link
                 const url = fp + anchor
                 let displayText = ""
+                let childType = "text"
                 if (anchor) {
                   if (fp == file.data.frontmatter?.title) {
                     // internal page line
                     displayText = alias
                   } else {
                     displayText = `${fp}<span class="anchor-split"/>${alias}`
+                    childType = "html"
                   }
                 } else {
                   displayText = alias ?? fp
@@ -351,7 +353,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                   url,
                   children: [
                     {
-                      type: "html",
+                      type: childType,
                       value: displayText
                     },
                   ],
