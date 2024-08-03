@@ -26,7 +26,9 @@ export const defaultContentPageLayout: PageLayout = {
       showCurrentPage: false
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ContentMeta({
+      showLandscapes: false,
+    }),
     Component.TagList(),
   ],
   left: [
