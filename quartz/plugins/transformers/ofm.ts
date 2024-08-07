@@ -243,8 +243,6 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           // Check for links coming in from Obsidian Dataview Serializer 
           // https://github.com/dsebastien/obsidian-dataview-serializer?tab=readme-ov-file
           // These have full path and .md extension
-          //if (fp.endsWith(".md") || (fp.startsWith("Quartz"))  ) {
-          //if (fp.endsWith(".md")) {
           if (fp.startsWith("Quartz")) {
               // We have a Dataview Serializer Path. Strip it down to filename without path or extension
               if (fp.endsWith(".md")) {
