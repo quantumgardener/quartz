@@ -8,7 +8,8 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
   const baseDir = new URL(`https://${cfg.baseUrl ?? pathToRoot(fileData.slug!)}`)
   return (
     <h1 class={classNames(displayClass, "page-title")}>
-      <a href={baseDir.href}>{title}</a>
+      {/* <a href={baseDir.href}>{title}</a> */}
+      <a href="/">{title}</a>
     </h1>
   )
 }
