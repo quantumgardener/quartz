@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
+import { formatDate } from "./Date"
 
 type FooterLink = {
   link: string,
@@ -11,8 +12,8 @@ interface Options {
 }
 
 export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const year = new Date().getFullYear()
+  const Footer: QuartzComponent = ({ cfg, allFiles, displayClass }: QuartzComponentProps) => {
+    const today: Date = new Date()
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
@@ -30,7 +31,8 @@ export default ((opts?: Options) => {
           )})}
         </ul>
         <p>
-        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{year}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a>
+        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{today.getFullYear()}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
+        <span class="site-metadata">Site pages: {allFiles.length}. Last update: {formatDate(today, cfg.locale)}.</span>
         </p>
       </footer>
     )
