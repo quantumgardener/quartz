@@ -66,7 +66,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                   {description}
               </p>
             </div>
-            <ul class="tags">
+            {/* <ul class="tags">
                 {tags.filter((tag) => tag != fileData.slug?.split("topics/")[1]).map((tag) => (                  
                   <li>
                     <a
@@ -77,7 +77,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
           </li>
         )
       })}
