@@ -249,6 +249,7 @@ export function renderPage(
       {pageResources.js
         .filter((resource) => resource.loadTime === "afterDOMReady")
         .map((res) => JSResourceToScriptElement(res))}
+      <script src="https://tinylytics.app/embed/hu_4fds9-JftYEbN61AN.js" defer></script>
     </html>
   )
 
