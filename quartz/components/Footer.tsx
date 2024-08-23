@@ -14,6 +14,17 @@ interface Options {
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ cfg, allFiles, displayClass }: QuartzComponentProps) => {
     const today: Date = new Date()
+    const localYear = today.toLocaleString(cfg.locale, {
+      timeZone: "Australia/Melbourne",
+      year: 'numeric',
+    })
+    const localToday = today.toLocaleString(cfg.locale, {
+      timeZone: "Australia/Melbourne",
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+    
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
@@ -31,8 +42,8 @@ export default ((opts?: Options) => {
           )})}
         </ul>
         <p>
-        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{today.getFullYear()}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
-        <span class="site-metadata">Site pages: {allFiles.length}. Last update: {formatDate(today, cfg.locale)}. <a href="/recent">Recently updated notes</a>.</span>
+        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
+        <span class="site-metadata">Site pages: {allFiles.length}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.</span>
         </p>
       </footer>
     )
