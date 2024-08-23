@@ -11,10 +11,7 @@ const config: QuartzConfig = {
     pageTitle: "The Quantum Garden",
     enableSPA: false,
     enablePopovers: true,
-    analytics: { 
-      provider: 'tinylytics', 
-      siteId: 'hu_4fds9-JftYEbN61AN'
-     },
+    analytics: null,
     locale: "en-AU",
     timezone: "Australia/Melbourne",
     baseUrl: "quantumgardener.info",
