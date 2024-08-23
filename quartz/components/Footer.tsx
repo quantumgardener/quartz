@@ -15,14 +15,13 @@ export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ cfg, allFiles, displayClass }: QuartzComponentProps) => {
     const today: Date = new Date()
     const localYear = today.toLocaleString(cfg.locale, {
-      timeZone: "Australia/Melbourne",
+      timeZone: cfg.timezone,
       year: 'numeric',
     })
     const localToday = today.toLocaleString(cfg.locale, {
-      timeZone: "Australia/Melbourne",
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+      timeZone: cfg.timezone,
+      dateStyle: "long",
+      timeStyle: "short"
     })
     
     const links = opts?.links ?? []

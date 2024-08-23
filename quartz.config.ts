@@ -15,7 +15,8 @@ const config: QuartzConfig = {
       provider: 'tinylytics', 
       siteId: 'hu_4fds9-JftYEbN61AN'
      },
-    locale: "en-GB",
+    locale: "en-AU",
+    timezone: "Australia/Melbourne",
     baseUrl: "quantumgardener.info",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
