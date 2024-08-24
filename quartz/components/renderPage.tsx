@@ -234,7 +234,6 @@ export function renderPage(
                 </div>
               </div>
               <Content {...componentData} />
-              <hr />
               <div class="page-footer">
                 {afterBody.map((BodyComponent) => (
                   <BodyComponent {...componentData} />
@@ -249,7 +248,7 @@ export function renderPage(
       {pageResources.js
         .filter((resource) => resource.loadTime === "afterDOMReady")
         .map((res) => JSResourceToScriptElement(res))}
-      <script src="https://tinylytics.app/embed/hu_4fds9-JftYEbN61AN.js" defer></script>
+      <script src="https://tinylytics.app/embed/hu_4fds9-JftYEbN61AN.js?hits&kudos=❤️&countries" defer></script>
     </html>
   )
 

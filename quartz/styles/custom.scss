@@ -2,11 +2,19 @@
 @use "./variables.scss" as *;
 @use "sass:color";
 
+@font-face {
+  font-family: NotoColorEmojiLimited;
+  unicode-range: U+1F1E6-1F1FF;
+  src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf);
+}
+
 h2 {
   clear: left;
 }
 
 .site-metadata {
+  padding-top: 0.5em;
+  line-height: 1.8em;
   font-size: smaller;
 }
 
@@ -244,3 +252,9 @@ button#toc {
   }
 }
 
+.flags {
+  font-family: 'NotoColorEmojiLimited', -apple-system, BlinkMacSystemFont, 
+  'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+  letter-spacing: 3px;
+}

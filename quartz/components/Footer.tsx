@@ -27,6 +27,7 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
+        <button class="tinylytics_kudos"></button>
         <hr />
         <ul>
           <li><a href="/notes/about"><i class="fa-solid fa-address-card"></i> About</a></li>
@@ -40,10 +41,11 @@ export default ((opts?: Options) => {
             </li>
           )})}
         </ul>
-        <p>
-        <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
-        <span class="site-metadata">Site pages: {allFiles.length}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.</span>
-        </p>
+        <div class="site-metadata">
+          <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
+          Site pages: {allFiles.length}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.<br/>
+          <a href="/total-unique-visitors">Total unique visitors</a>: <span class="tinylytics_hits"></span> from <span class="tinylytics_countries flags"></span>
+        </div>
       </footer>
     )
   }
