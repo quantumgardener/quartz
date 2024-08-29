@@ -48,14 +48,16 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
-
+        console.log (fileData.slug)
         return (
           <li class="section-li">
             <hr/>
             <div class="desc">
-              <div style="float:right">
+              { !fileData.slug!.startsWith("blog") && (
+                <div style="float:right">
                 <small>{pagedate}</small>
               </div>
+              )}
               <h3>
                 <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                   {title}
