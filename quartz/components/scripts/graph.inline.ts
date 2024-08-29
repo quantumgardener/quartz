@@ -112,7 +112,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     if (showTags) {
       const localTags = details.tags
         .filter((tag) => !removeTags.includes(tag))
-        .map((tag) => simplifySlug(("topics/" + tag) as FullSlug))
+        .map((tag) => simplifySlug(("topicss/" + tag) as FullSlug))
 
       tags.push(...localTags.filter((tag) => !tags.includes(tag)))
 
@@ -152,15 +152,13 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     }
   })
   const graphData: { nodes: NodeData[]; links: LinkData[] } = {
-    nodes: [...neighbourhood].map((url) => {
-      const text = url.startsWith("topics/") ? "#" + url.substring(5) : data[url]?.title ?? url
-      return {
-        id: url,
-        text: text,
-        tags: data.get(url)?.tags ?? [],
-      }
-    }),
-    links: links.filter((l) => neighbourhood.has(l.source) && neighbourhood.has(l.target)),
+    nodes,
+    links: links
+      .filter((l) => neighbourhood.has(l.source) && neighbourhood.has(l.target))
+      .map((l) => ({
+        source: nodes.find((n) => n.id === l.source)!,
+        target: nodes.find((n) => n.id === l.target)!,
+      })),
   }
 
   // we virtualize the simulation and use pixi to actually render it
@@ -196,9 +194,9 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const color = (d: NodeData) => {
     const isCurrent = d.id === slug
     if (isCurrent) {
-      return "var(--secondary)"
-    } else if (visited.has(d.id) || d.id.startsWith("topics/")) {
-      return "var(--tertiary)"
+      return computedStyleMap["--secondary"]
+    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
+      return computedStyleMap["--tertiary"]
     } else {
       return computedStyleMap["--gray"]
     }
