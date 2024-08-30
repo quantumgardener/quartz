@@ -49,7 +49,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
         const matches = fileData.slug!.match(new RegExp("\/", "g"))
-        const leaf = !fileData.slug!.startsWith("blog") || matches.length >= 3
+        const leaf = !fileData.slug!.startsWith("blog") || matches!.length >= 3
         return (
           <li class="section-li">
             <hr/>
