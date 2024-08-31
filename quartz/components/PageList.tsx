@@ -37,10 +37,11 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     list = list.slice(0, limit)
   }
 
+  console.log("aa", fileData.frontmatter?.title)  
   return (
     <ul class="section-ul">
       {list.map((page) => {
-
+        console.log(page.frontmatter?.title, allFiles.length);
         let pagedate:string = ""
         if (page.dates) {
           pagedate = formatDate(getDate(cfg, page)!, cfg.locale)
