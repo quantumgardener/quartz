@@ -96,7 +96,6 @@ export const defaultListPageLayout: PageLayout = {
     ),
   ],
   right: [
-    Component.Backlinks(),
     Component.MobileOnly(
       Component.RecentNotes({
         title: "Recent blog posts",
