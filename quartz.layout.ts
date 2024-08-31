@@ -97,11 +97,6 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [
     Component.Backlinks(),
-    Component.Graph({localGraph: {
-    showTags: false,
-  }, globalGraph: {
-    showTags: false,
-  }}),
     Component.MobileOnly(
       Component.RecentNotes({
         title: "Recent blog posts",
