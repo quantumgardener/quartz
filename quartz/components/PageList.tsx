@@ -1,8 +1,11 @@
-import { FullSlug, resolveRelative } from "../util/path"
+import path from "path"
+import { stripSlashes, simplifySlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
-import { Date, getDate, formatDate } from "./Date"
+import { getDate, formatDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
+import { Data } from "vfile"
+import { i18n } from "../i18n"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
@@ -30,17 +33,30 @@ type Props = {
   sort?: SortFn
 } & QuartzComponentProps
 
-export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort }: Props) => {
+
+export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, folderFiles, limit, sort }: Props) => {
   const sorter = sort ?? byDateAndAlphabetical(cfg)
-  let list = allFiles.sort(sorter)
+  let list = folderFiles.sort(sorter)
   if (limit) {
     list = list.slice(0, limit)
   }
 
+  function countChildPages(folder: Data) {
+    const folderSlug = stripSlashes(simplifySlug(folder.slug!))
+    return allFiles.filter((file) => {
+      const fileSlug = stripSlashes(simplifySlug(file.slug!))
+      const prefixed = fileSlug.startsWith(folderSlug) && fileSlug !== folderSlug
+      const folderParts = folderSlug.split(path.posix.sep)
+      const fileParts = fileSlug.split(path.posix.sep)
+      const isDirectChild = fileParts.length === folderParts.length + 1
+      return prefixed && isDirectChild
+    })
+  }
+
   return (
     <ul class="section-ul">
-      {list.map((page) => {
-
+      {list.map((page: Data) => {
+        const children = countChildPages(page);
         let pagedate:string = ""
         if (page.dates) {
           pagedate = formatDate(getDate(cfg, page)!, cfg.locale)
@@ -48,7 +64,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
-
+        const matches = fileData.slug!.match(new RegExp("\/", "g"))
+        const leaf = !fileData.slug!.startsWith("blog") || matches!.length >= 3
         return (
           <li class="section-li">
             <hr/>

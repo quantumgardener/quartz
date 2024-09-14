@@ -39,7 +39,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     const listProps = {
       ...props,
       sort: options.sort,
-      allFiles: allPagesInFolder,
+      folderFiles: allPagesInFolder,
     }
 
     const content =

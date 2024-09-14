@@ -78,6 +78,7 @@ export default ((userOpts?: Partial<Options>) => {
               )
             })}
           </ul>
+          <a href="/blog">Read more&hellip;</a>
           {opts.linkToMore && remaining > 0 && (
             <p>
               <a href={resolveRelative(fileData.slug!, opts.linkToMore)}>

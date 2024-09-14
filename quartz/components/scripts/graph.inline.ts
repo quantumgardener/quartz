@@ -112,7 +112,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     if (showTags) {
       const localTags = details.tags
         .filter((tag) => !removeTags.includes(tag))
-        .map((tag) => simplifySlug(("topics/" + tag) as FullSlug))
+        .map((tag) => simplifySlug(("topicss/" + tag) as FullSlug))
 
       tags.push(...localTags.filter((tag) => !tags.includes(tag)))
 
