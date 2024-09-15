@@ -70,18 +70,9 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, folderFiles
           <li class="section-li">
             <hr/>
             <div class="desc">
-              { leaf && (
-                <div style="float:right">
-                  <small>{pagedate}</small>
-                </div>
-              )}
-              { !leaf && (
-                  <div style="float:right">
-                    {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
-                      count: children.length,
-                    })}
-                  </div>
-              )}
+              <div style="float:right">
+                <small>{pagedate}</small>
+              </div>
               <h3>
                 <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                   {title}

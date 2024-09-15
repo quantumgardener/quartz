@@ -152,13 +152,15 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     }
   })
   const graphData: { nodes: NodeData[]; links: LinkData[] } = {
-    nodes,
-    links: links
-      .filter((l) => neighbourhood.has(l.source) && neighbourhood.has(l.target))
-      .map((l) => ({
-        source: nodes.find((n) => n.id === l.source)!,
-        target: nodes.find((n) => n.id === l.target)!,
-      })),
+    nodes: [...neighbourhood].map((url) => {
+      const text = url.startsWith("topics/") ? "#" + url.substring(5) : data[url]?.title ?? url
+      return {
+        id: url,
+        text: text,
+        tags: data.get(url)?.tags ?? [],
+      }
+    }),
+    links: links.filter((l) => neighbourhood.has(l.source) && neighbourhood.has(l.target)),
   }
 
   // we virtualize the simulation and use pixi to actually render it
@@ -194,9 +196,9 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const color = (d: NodeData) => {
     const isCurrent = d.id === slug
     if (isCurrent) {
-      return computedStyleMap["--secondary"]
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
-      return computedStyleMap["--tertiary"]
+      return "var(--secondary)"
+    } else if (visited.has(d.id) || d.id.startsWith("topics/")) {
+      return "var(--tertiary)"
     } else {
       return computedStyleMap["--gray"]
     }
@@ -549,6 +551,19 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const slug = e.detail.url
   addToVisited(simplifySlug(slug))
   await renderGraph("graph-container", slug)
+
+  // Function to re-render the graph when the theme changes
+  const handleThemeChange = () => {
+    renderGraph("graph-container", slug)
+  }
+
+  // event listener for theme change
+  document.addEventListener("themechange", handleThemeChange)
+
+  // cleanup for the event listener
+  window.addCleanup(() => {
+    document.removeEventListener("themechange", handleThemeChange)
+  })
 
   const container = document.getElementById("global-graph-outer")
   const sidebar = container?.closest(".sidebar") as HTMLElement
