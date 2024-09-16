@@ -2,12 +2,13 @@ import { Root } from "hast"
 import { GlobalConfiguration } from "../../cfg"
 import { getDate } from "../../components/Date"
 import { escapeHTML } from "../../util/escape"
-import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug } from "../../util/path"
+import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug, getAllSegmentPrefixes } from "../../util/path"
 import { QuartzEmitterPlugin } from "../types"
 import { toHtml } from "hast-util-to-html"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
+import { Content } from "../../components"
 
 export type ContentIndex = Map<FullSlug, ContentDetails>
 export type ContentDetails = {
@@ -61,9 +62,10 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
     <description>${content.richContent ?? content.description}</description>
     <pubDate>${content.date?.toUTCString()}</pubDate>
   </item>`
-
+//(f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
+//slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
   const items = Array.from(idx)
-    .filter(([slug,content]) => slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
+    .filter(([slug,content]) => slug.startsWith(`notes`) && Boolean((content.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog')))
     .sort(([_, f1], [__, f2]) => {
       if (f1.date && f2.date) {
         return f2.date.getTime() - f1.date.getTime()
@@ -87,7 +89,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, rssRootFol
       <copyright>© David C. Buchan 2002-${year}</copyright>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <managingEditor>qg.info@mail.buchan.org</managingEditor>
-      <webMaster>5wjw9aq33@mozmail.com (David Buchan)</webMaster>
+      <webMaster>qg.info@mail.buchan.org (David Buchan)</webMaster>
       <atom:link href="https://quantumgardener.info/index.xml" rel="self" type="application/rss+xml" />
       <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
       <docs>https://www.rssboard.org/rss-specification</docs>
