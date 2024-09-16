@@ -1,6 +1,7 @@
 import { boolean } from "yargs"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { getAllSegmentPrefixes } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -43,7 +44,8 @@ export const defaultContentPageLayout: PageLayout = {
       Component.RecentNotes({
         title: "Recent blog posts",
         limit: 5,
-        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+        showTags: false,
+        filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
       })
     ),
   ],
