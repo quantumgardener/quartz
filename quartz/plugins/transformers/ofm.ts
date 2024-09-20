@@ -238,21 +238,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
           const displayAlias = rawAlias ?? rawHeader?.replace("#", "|") ?? ""
           const embedDisplay = value.startsWith("!") ? "!" : ""
 
-          // Check for links coming in from Obsidian Dataview Serializer 
-          // https://github.com/dsebastien/obsidian-dataview-serializer?tab=readme-ov-file
-          // These have full path and .md extension
-          // if (fp.startsWith("Quartz")) {
-          //     // We have a Dataview Serializer Path. Strip it down to filename without path or extension
-          //     if (fp.endsWith(".md")) {
-          //       fp = path.basename(fp).substring(0, path.basename(fp).lastIndexOf('.'))
-          //     }
-          //     if (fp.endsWith(".webp")) {
-          //       fp = path.basename(fp)
-          //     }
-          // }
-
           // Only link pages that actually exist in the graph
-          if (plainSlugs.includes(fp.replaceAll(" ","-").toLowerCase())) {
+          if (plainSlugs.includes(fp.replaceAll(" ","-").replaceAll("&","-and-").toLowerCase())) {
             return `${embedDisplay}[[${fp}${displayAnchor}${displayAlias}]]`
           } else {            
             const strippedAlias = displayAlias.split("|")[1]
