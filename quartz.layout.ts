@@ -52,11 +52,11 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.TableOfContents(),
     Component.Backlinks(),
-    Component.Graph({localGraph: {
-      showTags: false,
-      }, globalGraph: {
-      showTags: false,
-      }}),
+    // Component.Graph({localGraph: {
+    //   showTags: false,
+    //   }, globalGraph: {
+    //   showTags: false,
+    //   }}),
     Component.MobileOnly(
       Component.RecentNotes({
         title: "Recent blog posts",
