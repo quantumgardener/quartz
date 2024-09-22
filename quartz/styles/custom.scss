@@ -268,3 +268,37 @@ button#toc {
   'Segoe UI Emoji', 'Segoe UI Symbol';
   letter-spacing: 3px;
 }
+
+// Create a list of fixed column width classes
+
+article {
+
+  @each $width in 100, 150, 200, 250, 300, 350, 400 {
+    &.firstcol-#{$width} {
+      th,
+      td {
+        &:first-child {
+          width: #{$width}px;
+        }
+      }
+    }
+
+    &.secondcol-#{$width} {
+      th,
+      td {
+        &:nth-child(2) {
+          width: #{$width}px;
+        }
+      }
+    }
+
+    &.lastcol-#{$width} {
+      th,
+      td {
+        &:last-child {
+          width: #{$width}px;
+        }
+      }
+    }
+  }
+}
