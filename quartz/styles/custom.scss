@@ -236,12 +236,14 @@ button#toc {
     & th {
       padding-left: 0.4rem;
       padding-bottom: 0;
+      min-width: auto;
     }
 
     & td {
       vertical-align: top;
       padding-left: 0.4rem;
       padding-right: 0.4rem;
+      min-width: auto;
 
       & img {
         margin-block-start: 0.2rem;
@@ -273,12 +275,13 @@ button#toc {
 
 article {
 
-  @each $width in 100, 150, 200, 250, 300, 350, 400 {
+  @each $width in 20, 100, 150, 200, 250, 300, 350, 400 {
     &.firstcol-#{$width} {
       th,
       td {
         &:first-child {
           width: #{$width}px;
+          min-width: auto;
         }
       }
     }
