@@ -41,9 +41,10 @@ export default ((opts?: Options) => {
           )})}
         </ul>
         <div class="site-metadata">
-          <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. <a rel="me" href="https://aus.social/@dcbuchan"></a><br />
-          Site pages: {allFiles.length}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.<br/>
-          <a href="/total-unique-visitors">Total unique visitors</a>: <span class="tinylytics_hits"></span> from <span class="tinylytics_countries flags"></span>
+          <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}<br />
+          Last update: {localToday}. <a href="/recent">Recently updated notes</a>.<br/>
+          {allFiles.length} site pages created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>.<br/>
+          <a rel="me" href="https://aus.social/@dcbuchan"></a> <span class="tinylytics_hits"></span> <a href="/total-unique-visitors">total unique visitors</a>.
         </div>
       </footer>
     )
