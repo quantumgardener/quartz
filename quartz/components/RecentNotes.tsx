@@ -77,8 +77,8 @@ export default ((userOpts?: Partial<Options>) => {
                 </li>
               )
             })}
-          </ul>
-          <a href="/blog">Read more&hellip;</a>
+            <li style="padding-top:1rem; font-style:italic">
+            <a href="/blog">Read more&hellip;</a>
           {opts.linkToMore && remaining > 0 && (
             <p>
               <a href={resolveRelative(fileData.slug!, opts.linkToMore)}>
@@ -86,6 +86,9 @@ export default ((userOpts?: Partial<Options>) => {
               </a>
             </p>
           )}
+            </li>
+          </ul>
+          
         </div>
       </div>
     )
