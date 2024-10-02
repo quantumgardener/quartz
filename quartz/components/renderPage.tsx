@@ -213,6 +213,9 @@ export function renderPage(
   )
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
+  const emailSubject = encodeURIComponent("Comment on \"" + componentData.fileData.frontmatter?.title + "\"")
+  const emailBody = encodeURIComponent("Hi. Thanks for your comment on my content. David.")
+  const emailHref = `mailto:qg.info@mail.buchan.org?subject=${emailSubject}&body=${emailBody}`
   const doc = (
     <html lang="en-au">
       <Head {...componentData} />
@@ -234,6 +237,12 @@ export function renderPage(
                 </div>
               </div>
               <Content {...componentData} />
+              <div id="engage">
+                <button class="tinylytics_kudos"></button>&nbsp;
+                {
+                  <button id="emailComment"><a href={emailHref}><i class="fa-solid fa-envelope"></i> Comment</a></button>
+                }
+              </div>
               <div class="page-footer">
                 {afterBody.map((BodyComponent) => (
                   <BodyComponent {...componentData} />

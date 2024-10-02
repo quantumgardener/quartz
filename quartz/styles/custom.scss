@@ -214,6 +214,19 @@ button#toc {
   }
 }
 
+div#engage {
+  display: flex;
+  align-items: stretch;
+}
+button#emailComment {
+  flex: 0 1 auto;
+  width: auto;
+
+  & a {
+    font-weight: normal;
+  }
+}
+
 .anchor-split:before {
   opacity: 0.4;
   content: " ❯ ";

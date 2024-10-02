@@ -26,7 +26,7 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <button class="tinylytics_kudos"></button>
+        
         <hr />
         <ul>
           <li><a href="/notes/about"><i class="fa-solid fa-address-card"></i> About</a></li>
