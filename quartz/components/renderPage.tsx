@@ -212,10 +212,13 @@ export function renderPage(
     </div>
   )
 
+  
+
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
-  const emailSubject = encodeURIComponent("Comment on \"" + componentData.fileData.frontmatter?.title + "\"")
+  const subject = encodeURIComponent("Comment on \"" + componentData.fileData.frontmatter?.title + "\"")
   const emailBody = encodeURIComponent("Hi. Thanks for your comment on my content. David.")
-  const emailHref = `mailto:qg.info@mail.buchan.org?subject=${emailSubject}&body=${emailBody}`
+  const emailHref = `mailto:qg.info@mail.buchan.org?subject=${subject}&body=${emailBody}`
+  const mastodonText = `@dcbuchan ${subject} `
   const doc = (
     <html lang="en-au">
       <Head {...componentData} />
@@ -238,7 +241,14 @@ export function renderPage(
               </div>
               <Content {...componentData} />
               <div id="engage">
-                <button class="tinylytics_kudos"></button>&nbsp;
+                <button class="tinylytics_kudos"></button>
+                {
+                  <button id="mastodonComment">
+                    <a onclick="MastodonShare(event);" data-src={mastodonText}>
+                      <i class="fa-brands fa-mastodon"></i> Comment
+                    </a>
+                  </button>
+                }          
                 {
                   <button id="emailComment"><a href={emailHref}><i class="fa-solid fa-envelope"></i> Comment</a></button>
                 }
@@ -251,6 +261,20 @@ export function renderPage(
             </div>
             {RightComponent}
             <Footer {...componentData} />
+            <script dangerouslySetInnerHTML={{ __html: `
+            function MastodonShare(event) {
+              const target = event.currentTarget;
+              const src = target.getAttribute("data-src");
+              const domain = prompt("Thanks for you comment on my content.\\nEnter your Mastodon domain to go to your site.", "mastodon.social");
+
+              if (!domain) {
+                return;
+              }
+
+              const url = 'https://' + domain + '/share?text=' + src; //encodeURIComponent(src);
+              window.open(url, '_blank');
+            }
+          `}} />
           </Body>
         </div>
       </body>

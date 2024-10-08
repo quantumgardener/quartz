@@ -218,9 +218,11 @@ div#engage {
   display: flex;
   align-items: stretch;
 }
-button#emailComment {
+button#emailComment,
+button#mastodonComment {
   flex: 0 1 auto;
   width: auto;
+  margin-left: 0.5rem;
 
   & a {
     font-weight: normal;
