@@ -9,6 +9,7 @@ import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
 import { Content } from "../../components"
+import { emailComment } from "../../util/comment"
 
 export type ContentIndex = Map<FullSlug, ContentDetails>
 export type ContentDetails = {
@@ -55,13 +56,18 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
   const base = cfg.baseUrl ?? ""
   const year = new Date().getFullYear()
 
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
-    <title>${escapeHTML(content.title)}</title>
-    <link>https://${joinSegments(base, encodeURI(slug))}</link>
-    <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
-    <description>${content.richContent ?? content.description}</description>
-    <pubDate>${content.date?.toUTCString()}</pubDate>
-  </item>`
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
+    const inviteComment = escapeHTML(`<p><a href="${emailComment(content.title)}">Email a comment</a></p>`);
+    const description = content.richContent ? `${content.richContent}${inviteComment}` : `${content.description}${inviteComment}`;
+
+    return `<item>
+        <title>${escapeHTML(content.title)}</title>
+        <link>https://${joinSegments(base, encodeURI(slug))}</link>
+        <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
+        <description>${description}</description>
+        <pubDate>${content.date?.toUTCString()}</pubDate>
+      </item>`;
+  }
 //(f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
 //slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
   const items = Array.from(idx)
