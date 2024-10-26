@@ -94,8 +94,8 @@ declare module "vfile" {
         tags: string[]
         aliases: string[]
         description: string
-        publish: boolean
-        draft: boolean
+        publish: boolean | string
+        draft: boolean | string
         lang: string
         enableToc: string
         cssclasses: string[]

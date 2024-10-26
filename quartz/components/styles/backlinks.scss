@@ -34,7 +34,7 @@
 
   & > .overflow {
     height: auto;
-    @media all and ($desktop) {
+    @media all and not ($desktop) {
       height: 250px;
     }
 

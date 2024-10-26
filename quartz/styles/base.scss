@@ -157,7 +157,7 @@ a {
     column-gap: #{map-get($desktopGrid, columnGap)};
     row-gap: #{map-get($desktopGrid, rowGap)};
     grid-template-areas: #{map-get($desktopGrid, templateAreas)};
-    @media all and ($desktop) {
+    @media all and ($tablet) {
       grid-template-columns: #{map-get($tabletGrid, templateColumns)};
       grid-template-rows: #{map-get($tabletGrid, templateRows)};
       column-gap: #{map-get($tabletGrid, columnGap)};
@@ -172,7 +172,7 @@ a {
       grid-template-areas: #{map-get($mobileGrid, templateAreas)};
     }
 
-    @media all and ($desktop) {
+    @media all and not ($desktop) {
       padding: 0 1rem;
     }
     @media all and ($mobile) {
@@ -191,7 +191,7 @@ a {
 
     & .sidebar.left {
       z-index: 1;
-      grid-area: sidebar-left;
+      grid-area: grid-sidebar-left;
       flex-direction: column;
       @media all and ($mobile) {
         gap: 0;
@@ -206,14 +206,14 @@ a {
     }
 
     & .sidebar.right {
-      grid-area: sidebar-right;
+      grid-area: grid-sidebar-right;
       margin-right: 0;
       flex-direction: column;
       @media all and ($mobile) {
         margin-left: inherit;
         margin-right: inherit;
       }
-      @media all and ($desktop) {
+      @media all and not ($desktop) {
         position: initial;
         height: unset;
         width: 100%;
@@ -233,7 +233,7 @@ a {
     }
 
     & .page-header {
-      grid-area: page-header;
+      grid-area: grid-header;
       margin: $topSpacing 0 0 0;
       @media all and ($mobile) {
         margin-top: 0;
@@ -242,11 +242,11 @@ a {
     }
 
     & .center > article {
-      grid-area: page-center;
+      grid-area: grid-center;
     }
 
-    & .page-footer {
-      grid-area: page-footer;
+    & footer {
+      grid-area: grid-footer;
     }
 
     & .center,
@@ -255,10 +255,11 @@ a {
       min-width: 100%;
       margin-left: auto;
       margin-right: auto;
-      @media all and ($desktop) {
+      @media all and ($tablet) {
         margin-right: 0;
       }
       @media all and ($mobile) {
+        margin-right: 0;
         margin-left: 0;
       }
     }
