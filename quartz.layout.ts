@@ -41,30 +41,22 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Recent blog posts",
-        limit: 5,
-        showTags: false,
-        filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
-      })
+      Component.TableOfContents(),
     ),
   ],
   right: [
-    Component.TableOfContents(),
     Component.Backlinks(),
     // Component.Graph({localGraph: {
     //   showTags: false,
     //   }, globalGraph: {
     //   showTags: false,
     //   }}),
-    Component.MobileOnly(
-      Component.RecentNotes({
-        title: "Recent blog posts",
-        limit: 4,
-        filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
-      })
-    ),
-  ],
+    Component.RecentNotes({
+      title: "Recent blog posts",
+      limit: 4,
+      filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
+    })
+],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
