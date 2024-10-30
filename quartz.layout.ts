@@ -81,21 +81,12 @@ export const defaultListPageLayout: PageLayout = {
     ),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Recent blog posts",
-        limit: 5,
-        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
-      })
-    ),
-  ],
+    ],
   right: [
-    Component.MobileOnly(
-      Component.RecentNotes({
-        title: "Recent blog posts",
-        limit: 5,
-        filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
-      })
-    ),
+    Component.RecentNotes({
+      title: "Recent blog posts",
+      limit: 5,
+      filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+    })
   ],
 }

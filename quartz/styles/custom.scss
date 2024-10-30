@@ -164,7 +164,7 @@ button#toc {
   align-items: center;
 
   & h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     display: inline-block;
     margin: 0;
   }
@@ -199,12 +199,13 @@ button#toc {
 
     & > li {
       margin-bottom: 0.5rem;
-      line-height: 1rem;
+      line-height: 1rem;    
 
       & > a {
         color: var(--secondary);
         background-color: transparent;
         transition: none;
+        padding: 0;
       }
     }
   }
@@ -333,3 +334,14 @@ article {
 #engage {
   padding-top: 1rem;
 }
+
+
+// .search {
+
+//   min-width: auto;
+//   max-width: auto;
+
+//   & > .search-button {
+//     width: auto;
+//   }
+// }

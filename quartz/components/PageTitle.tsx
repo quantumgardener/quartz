@@ -16,7 +16,7 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
 
 PageTitle.css = `
 .page-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 `
