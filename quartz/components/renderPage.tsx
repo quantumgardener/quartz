@@ -3,9 +3,9 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement, isFullSlug } from "../util/path"
 import { visit } from "unist-util-visit"
-import { Root, Element, ElementContent } from "hast"
+import { Root, Element, ElementContent, RootContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { emailComment, mastodonComment } from "../util/comment"
@@ -20,6 +20,22 @@ interface RenderComponents {
   right: QuartzComponent[]
   footer: QuartzComponent
 }
+
+function transformSelfReference(element: ElementContent | RootContent, slug: FullSlug) {
+  // Replace all page self-reference links with a custom style. Do not want to
+  // show links to the same page.
+  if (element.type === 'element') {
+    if (element.tagName === 'a' && element.properties['data-slug'] === slug) {
+      element.tagName = 'span';
+      element.properties = { className: 'self-link' };
+    }
+    
+    // Recursively call transformSelfReference on children
+    element.children.forEach(child => transformSelfReference(child, slug));
+  }
+}
+
+
 
 const headerRegex = new RegExp(/h[1-6]/)
 export function pageResources(
@@ -64,6 +80,10 @@ export function renderPage(
   // make a deep copy of the tree so we don't remove the transclusion references
   // for the file cached in contentMap in build.ts
   const root = clone(componentData.tree) as Root
+
+  // Replace all page self-reference links with a custom style. Do not want to
+  // show links to the same page.
+  root.children.forEach( child => { transformSelfReference(child, slug) })
 
   // process transcludes in componentData
   visit(root, "element", (node, _index, _parent) => {

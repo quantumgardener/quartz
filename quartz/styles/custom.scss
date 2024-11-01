@@ -345,3 +345,11 @@ article {
 //     width: auto;
 //   }
 // }
+
+
+span {
+  &.self-link {
+    font-weight: bold;
+    font-variant-caps: small-caps;
+  }
+}
