@@ -43,9 +43,7 @@ export default (() => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="alternate" type="application/rss+xml" title="The Quantum Garden" href="https://quantumgardener.info/feed/" />
-        {css.map((href) => (
-          <link key={href} href={href} rel="stylesheet" type="text/css"  />
-        ))}
+        {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
