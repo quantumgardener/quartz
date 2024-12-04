@@ -307,7 +307,7 @@ button#mastodonComment {
 
 article {
 
-  @each $width in 20, 100, 150, 200, 250, 300, 350, 400 {
+  @each $width in 20, 50, 100, 150, 200, 250, 300, 350, 400 {
     &.firstcol-#{$width} {
       th,
       td {
