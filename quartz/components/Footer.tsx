@@ -42,7 +42,7 @@ export default ((opts?: Options) => {
         </ul>
         <div class="site-metadata">
           <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.<br/>
-          {allFiles.length} site pages created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>.<br/>
+          {allFiles.length} site pages created with <a href="https://obsidian.md">Obsidian</a> and <a href="https://quartz.jzhao.xyz/">Quartz</a>. 
           <a rel="me" href="https://aus.social/@dcbuchan"></a> <span class="tinylytics_hits"></span> <a href="/total-unique-visits">total unique visits</a>.
         </div>
       </footer>
