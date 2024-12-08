@@ -73,6 +73,10 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
             if (cssclasses) data.cssclasses = cssclasses
 
+            if (cssclasses) data.cssclasses = cssclasses
+
+            const socialImage = coalesceAliases(data, ["socialImage", "image", "cover"])
+
             const landscapes = coerceToArray(coalesceAliases(data, ["landscapes", "landscape"]))
             if (landscapes) data.landscapes = [...new Set(landscapes.map((landscape: string) => slugTag(landscape)))]
 
@@ -99,7 +103,9 @@ declare module "vfile" {
         lang: string
         enableToc: string
         cssclasses: string[]
+        socialImage: string
         landscapes: string[]
+        comments: boolean | string
       }>
   }
 }

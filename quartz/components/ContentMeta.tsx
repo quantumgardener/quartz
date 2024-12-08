@@ -1,4 +1,4 @@
-import { Date, getDate } from "./Date"
+import { Date, getDate, formatDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
@@ -18,7 +18,7 @@ interface ContentMetaOptions {
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
-  showComma: true,
+  showComma: false,
   showDate: true,
   showLandscapes: true,
 }
@@ -45,12 +45,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates && options.showDate) {
-        const created = formatDate(getDate(cfg, fileData)!, cfg.locale) 
-        const modifed = formatDate(fileData.dates?.modified, cfg.locale)
-        if (created == modifed) {
-          segments.push(`${created},`)
+        if (fileData.dates?.created.getTime() == fileData.dates?.modified.getTime()) {
+          segments.push(`${formatDate(fileData.dates?.created,cfg.locale)} | `)
         } else {
-          segments.push(`${created} [updated ${modifed}],`)
+          segments.push(`${formatDate(fileData.dates?.modified,cfg.locale)} [original ${formatDate(fileData.dates?.created,cfg.locale)}] | `)
         }
       }
 
@@ -73,8 +71,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       }
 
       // End of my changes
-
-      const segmentsElements = segments.map((segment) => <span>{segment}</span>)
 
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
