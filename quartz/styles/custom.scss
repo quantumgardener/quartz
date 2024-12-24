@@ -66,6 +66,7 @@ a {
   font-weight: 600;
 
     &.internal {
+      background-color: transparent;
       &.tag-link {
         &::before {
           content: "";
