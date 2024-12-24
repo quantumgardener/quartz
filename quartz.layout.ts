@@ -53,7 +53,7 @@ export const defaultContentPageLayout: PageLayout = {
     //   }}),
     Component.RecentNotes({
       title: "Recent blog posts",
-      limit: 4,
+      limit: 8,
       filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
     })
 ],
@@ -85,7 +85,7 @@ export const defaultListPageLayout: PageLayout = {
   right: [
     Component.RecentNotes({
       title: "Recent blog posts",
-      limit: 5,
+      limit: 8,
       filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
     })
   ],
