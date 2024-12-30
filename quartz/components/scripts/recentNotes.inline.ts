@@ -1,10 +1,13 @@
 function toggleRecentNotes(this: HTMLElement) {
-  const collapsed = this.classList.toggle("collapsed")
   const content = this.nextElementSibling as HTMLElement | undefined
   if (!content) return
   content.classList.toggle("collapsed")
-  content.style.maxHeight = content.style.maxHeight === "0px" ? content.scrollHeight + "px" : "0px"
-  content.style.overflow = collapsed ? "hidden" : "visible"
+  if (content.classList.contains("collapsed")) { 
+    content.style.maxHeight = "0px"; 
+    content.style.overflow = "hidden"; 
+  } else { 
+    content.style.maxHeight = content.scrollHeight + "px"; 
+    content.style.overflow = "visible"; }
 }
 
 function setupRecentNotes() {

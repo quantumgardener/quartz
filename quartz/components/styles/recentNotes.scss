@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .recent-notes {
   & > h3 {
     margin: 0.5rem 0 0 0;
@@ -20,5 +22,17 @@
         opacity: 0.6;
       }
     }
+  }
+
+  & > .overflow {
+    height: auto;
+    @media all and not ($desktop) {
+      height: 250px;
+    }
+
+    &:after {
+      display: none;
+    }
+    
   }
 }
