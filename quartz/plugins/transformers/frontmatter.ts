@@ -97,6 +97,9 @@ declare module "vfile" {
     } & Partial<{
         tags: string[]
         aliases: string[]
+        modified: string
+        created: string
+        published: string
         description: string
         publish: boolean | string
         draft: boolean | string
