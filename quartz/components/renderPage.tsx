@@ -10,6 +10,12 @@ import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { emailComment, mastodonComment } from "../util/comment"
 
+// @ts-ignore
+import mermaidScript from "./scripts/mermaid.inline"
+import mermaidStyle from "./styles/mermaid.inline.scss"
+import { QuartzPluginData } from "../plugins/vfile"
+
+
 interface RenderComponents {
   head: QuartzComponent
   header: QuartzComponent[]
