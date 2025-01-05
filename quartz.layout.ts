@@ -39,7 +39,6 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.Darkmode(),
     Component.DesktopOnly(
       Component.TableOfContents(),
     ),
@@ -80,7 +79,6 @@ export const defaultListPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.Darkmode(),
     ],
   right: [
     Component.RecentNotes({
