@@ -197,8 +197,6 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="alternate" type="application/rss+xml" title="The Quantum Garden" href="https://quantumgardener.info/feed/" />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
