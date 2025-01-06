@@ -205,6 +205,10 @@ export function joinSegments(...args: string[]): string {
     joined = joined + "/"
   }
 
+  // Fix error where // is introduced causing problems on the 404 page.
+  if (joined.startsWith("//")) {
+    joined = joined.slice(1)
+  }
   return joined
 }
 
