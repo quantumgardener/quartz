@@ -51,7 +51,7 @@ export interface Translation {
     search: {
       title: string
       searchBarPlaceholder: string
-    }
+    },
     tableOfContents: {
       title: string
     }

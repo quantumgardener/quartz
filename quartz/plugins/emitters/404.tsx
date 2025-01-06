@@ -22,7 +22,6 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
       PageTitle(),
       MobileOnly(Spacer()),
       Search(),
-      Darkmode(), 
     ],
     right: [],
   }

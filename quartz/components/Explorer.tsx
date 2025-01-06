@@ -7,6 +7,7 @@ import { ExplorerNode, FileNode, Options } from "./ExplorerNode"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
+import zhCN from "../i18n/locales/zh-CN"
 
 // Options interface defined in `ExplorerNode` to avoid circular dependency
 const defaultOptions = {
@@ -49,7 +50,52 @@ export default ((userOpts?: Partial<Options>) => {
   function constructFileTree(allFiles: QuartzPluginData[]) {
     // Construct tree from allFiles
     fileTree = new FileNode("")
-    allFiles.forEach((file) => fileTree.add(file))
+    // allFiles.forEach((file) => fileTree.add(file)})
+
+    const menu = [
+      { slug: 'notes/humanity-in-the-workplace' },
+      { 
+        slug: 'notes/expand-my-way-of-being', 
+        children: [
+          { slug: 'notes/way-of-being'},
+          { slug: 'notes/acceptance'}
+        ]
+      },
+      { slug: 'notes/productive-laziness'},
+      { 
+        slug: 'notes/hobby-together',
+        children: [
+          { slug: 'notes/photography'},
+          { slug: 'notes/imatch-to-socials' }
+        ]
+      }
+    ]
+
+    const parseMenu = (items, parent: FileNode = null, depth = 1) => {
+      items.forEach(item => {
+        item.parent = parent
+        item.depth = depth
+        
+        let node: FileNode
+
+        const matchedFile: QuartzPluginData = allFiles.filter((file) => file.slug === item.slug)[0]
+        if (matchedFile) {
+          node = new FileNode(item.slug, undefined, matchedFile, item.depth)
+          if (parent) {
+            parent.children.push(node)
+          } else {
+            fileTree.children.push(node)
+          }
+          if (item.children) {
+            parseMenu(item.children, node, item.depth + 1)
+          }
+        } else {
+          console.error(`Missing menu item '${item.slug}`)
+        }
+      })
+    }
+
+    parseMenu(menu)
 
     // Execute all functions (sort, filter, map) that were provided (if none were provided, only default "sort" is applied)
     if (opts.order) {

@@ -1,4 +1,4 @@
-import { boolean } from "yargs"
+import { note } from "@clack/prompts"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { getAllSegmentPrefixes } from "./quartz/util/path"
@@ -38,6 +38,24 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(
       Component.Spacer()
     ),
+    // Component.Explorer({
+    //   title: "Points of Interest",
+    //   folderClickBehavior: "link",
+    //   folderDefaultState: "open",
+    //   mapFn: (node) => {
+    //     // dont change name of root node
+    //     if (node.depth > 0) {
+    //       // set emoji for file/folder
+    //       if (node.children.length == 0) {
+    //         node.displayName = "📄 " + node.displayName
+    //       } else {
+    //         node.displayName = "📁 " + node.displayName
+    //       }
+    //     }
+    //   },
+    //   sortFn: undefined,
+    //   order: ["filter", "sort", "map"]
+    // }),
     Component.Search(),
     Component.DesktopOnly(
       Component.TableOfContents(),
