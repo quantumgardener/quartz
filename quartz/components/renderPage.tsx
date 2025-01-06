@@ -55,7 +55,8 @@ export function pageResources(
   const resources: StaticResources = {
     css: [
       {
-        content: joinSegments(baseDir, "index.css"),
+        //content: joinSegments(baseDir, "index.css"),
+        content: "/index.css", // Fix missing CSS for 404 page
       },
       ...staticResources.css,
     ],
