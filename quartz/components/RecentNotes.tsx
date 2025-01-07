@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
-import style from "./styles/recentNotes.scss"
+import style from "./styles/common-navigation.scss"
 import { Date, getDate } from "./Date"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
@@ -40,8 +40,12 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <div class={classNames(displayClass, "recent-notes")}>
-        <button type="button" id="recent-notes" class={fileData.collapseToc ? "collapsed" : ""}>
-        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed" style="color:var(--secondary)"><i class="fa-solid fa-square-rss"></i></a></h3>
+        <button 
+          type="button" 
+          id="recent-notes" 
+          class={fileData.collapseToc ? "collapsed" : ""}
+        >
+        <h2>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed" style="color:var(--secondary)"><i class="fa-solid fa-square-rss"></i></a></h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -58,7 +62,7 @@ export default ((userOpts?: Partial<Options>) => {
         </svg>
         </button>
         <div id="recent-notes-content">
-          <ul class="overflow">
+          <ul class="overflow" id="recent-notes-ul">
             {pages.slice(0, opts.limit).map((page) => {
               const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
               const tags = page.frontmatter?.tags ?? []

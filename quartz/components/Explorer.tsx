@@ -1,5 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import explorerStyle from "./styles/explorer.scss"
+import explorerStyle from "./styles/common-navigation.scss"
 
 // @ts-ignore
 import script from "./scripts/explorer.inline"
@@ -52,26 +52,46 @@ export default ((userOpts?: Partial<Options>) => {
     fileTree = new FileNode("")
     // allFiles.forEach((file) => fileTree.add(file)})
 
-    const menu = [
+    interface MenuItem {
+      slug: string;
+      children?: MenuItem[];
+      name?: string,
+      parent?: FileNode;
+      depth?: number;
+    }
+
+    const menu: MenuItem[] = [
       { slug: 'notes/humanity-in-the-workplace' },
       { 
         slug: 'notes/expand-my-way-of-being', 
         children: [
           { slug: 'notes/way-of-being'},
-          { slug: 'notes/acceptance'}
+          { slug: 'notes/basic-moods-of-life'}
         ]
       },
-      { slug: 'notes/productive-laziness'},
+      { 
+        slug: 'notes/productive-laziness',
+        children: [
+          { slug: 'notes/personal-knowledge-management'}
+        ]
+      },
       { 
         slug: 'notes/hobby-together',
         children: [
           { slug: 'notes/photography'},
+          { slug: 'notes/video-gaming'},
           { slug: 'notes/imatch-to-socials' }
         ]
+      },
+      { slug: 'projects',
+        children: [
+          { slug: 'notes/100-hours-learning-affinity-photo'}
+        ]
+
       }
     ]
 
-    const parseMenu = (items, parent: FileNode = null, depth = 1) => {
+    const parseMenu = (items: MenuItem[], parent: FileNode | undefined = undefined, depth = 0) => {
       items.forEach(item => {
         item.parent = parent
         item.depth = depth
@@ -96,7 +116,7 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     parseMenu(menu)
-
+  
     // Execute all functions (sort, filter, map) that were provided (if none were provided, only default "sort" is applied)
     if (opts.order) {
       // Order is important, use loop with index instead of order.map()
@@ -142,12 +162,12 @@ export default ((userOpts?: Partial<Options>) => {
           aria-controls="explorer-content"
           aria-expanded={opts.folderDefaultState === "open"}
         >
-          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
+          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title} <a href="/notes/landscapes" style="color:var(--secondary)"><i class="fa-solid fa-circle-question"></i></a></h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="5 8 14 8"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             stroke-width="2"

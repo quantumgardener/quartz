@@ -38,25 +38,23 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(
       Component.Spacer()
     ),
-    // Component.Explorer({
-    //   title: "Points of Interest",
-    //   folderClickBehavior: "link",
-    //   folderDefaultState: "open",
-    //   mapFn: (node) => {
-    //     // dont change name of root node
-    //     if (node.depth > 0) {
-    //       // set emoji for file/folder
-    //       if (node.children.length == 0) {
-    //         node.displayName = "📄 " + node.displayName
-    //       } else {
-    //         node.displayName = "📁 " + node.displayName
-    //       }
-    //     }
-    //   },
-    //   sortFn: undefined,
-    //   order: ["filter", "sort", "map"]
-    // }),
     Component.Search(),
+    Component.Explorer({
+      title: "Menu (Landscapes)",
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+      mapFn: (node) => {
+        // dont change name of root node
+        // set emoji for file/folder
+        if (node.children.length == 0) {
+          node.displayName = "📄 " + node.displayName
+        } else {
+          node.displayName = "📁 " + node.displayName
+        }
+      },
+      sortFn: undefined,
+      order: ["filter", "sort", "map"]
+    }),
     Component.DesktopOnly(
       Component.TableOfContents(),
     ),
