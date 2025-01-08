@@ -1,24 +1,24 @@
+const notesbufferPx = 150
+
 function toggleRecentNotes(this: HTMLElement) {
+  this.classList.toggle("collapsed")
+  this.setAttribute(
+    "aria-expanded",
+    this.getAttribute("aria-expanded") === "true" ? "false" : "true",
+  )
   const content = this.nextElementSibling as HTMLElement | undefined
   if (!content) return
   content.classList.toggle("collapsed")
-  if (content.classList.contains("collapsed")) { 
-    content.style.maxHeight = "0px"; 
-    content.style.overflow = "hidden"; 
-  } else { 
-    content.style.maxHeight = content.scrollHeight + "px"; 
-    content.style.overflow = "visible"; }
 }
 
 function setupRecentNotes() {
-  const recentnotes = document.getElementById("recent-notes")
-  if (recentnotes) {
-    const collapsed = recentnotes.classList.contains("collapsed")
-    const content = recentnotes.nextElementSibling as HTMLElement | undefined
+  const recent = document.getElementById("recent-notes")
+  if (recent) {
+    const collapsed = recent.classList.contains("collapsed")
+    const content = recent.nextElementSibling as HTMLElement | undefined
     if (!content) return
-    content.style.maxHeight = collapsed ? "0px" : content.scrollHeight + "px"
-    recentnotes.addEventListener("click", toggleRecentNotes)
-    window.addCleanup(() => recentnotes.removeEventListener("click", toggleRecentNotes))
+    recent.addEventListener("click", toggleRecentNotes)
+    window.addCleanup(() => recent.removeEventListener("click", toggleRecentNotes))
   }
 }
 

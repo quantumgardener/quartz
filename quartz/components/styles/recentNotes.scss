@@ -1,38 +1,46 @@
 @use "../../styles/variables.scss" as *;
 
-.recent-notes {
+.backlinks {
+  flex-direction: column;
+  /*&:after {
+      pointer-events: none;
+      content: "";
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      background: linear-gradient(transparent 0px, var(--light));
+    }*/
+
   & > h3 {
-    margin: 0.5rem 0 0 0;
     font-size: 1rem;
+    margin: 0;
   }
 
-  & > ul.recent-ul {
+  & > ul {
     list-style: none;
-    margin-top: 1rem;
-    padding-left: 0;
+    padding: 0;
+    margin: 0.5rem 0;
 
     & > li {
-      margin: 1rem 0;
-      .section > .desc > h3 > a {
+      & > a {
         background-color: transparent;
-      }
-
-      .section > .meta {
-        margin: 0 0 0.5rem 0;
-        opacity: 0.6;
       }
     }
   }
 
   & > .overflow {
     height: auto;
-    @media all and not ($desktop) {
-      height: 250px;
-    }
-
+    
     &:after {
       display: none;
     }
     
+    @media all and not ($desktop) {
+      height: 250px;
+    }
   }
 }

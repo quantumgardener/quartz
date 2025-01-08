@@ -39,9 +39,6 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.DesktopOnly(
-      Component.TableOfContents(),
-    ),
     Component.MyExplorer({
       title: "Menu (Landscapes)",
       folderClickBehavior: "link",
@@ -50,20 +47,23 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
+    Component.DesktopOnly(
+      Component.TableOfContents(),
+    ),
     Component.Backlinks({
       hideWhenEmpty: false
+    }),
+    Component.RecentNotes({
+      title: "Recent blog posts",
+      limit: 8,
+      filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
     }),
     // Component.Graph({localGraph: {
     //   showTags: false,
     //   }, globalGraph: {
     //   showTags: false,
     //   }}),
-    // Component.RecentNotes({
-    //   title: "Recent blog posts",
-    //   limit: 8,
-    //   filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
-    // })
-],
+  ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
