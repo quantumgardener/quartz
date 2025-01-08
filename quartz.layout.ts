@@ -39,38 +39,30 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.Explorer({
-      title: "Menu (Landscapes)",
-      folderClickBehavior: "link",
-      folderDefaultState: "open",
-      mapFn: (node) => {
-        // dont change name of root node
-        // set emoji for file/folder
-        if (node.children.length == 0) {
-          node.displayName = "📄 " + node.displayName
-        } else {
-          node.displayName = "📁 " + node.displayName
-        }
-      },
-      sortFn: undefined,
-      order: ["filter", "sort", "map"]
-    }),
     Component.DesktopOnly(
       Component.TableOfContents(),
     ),
+    Component.MyExplorer({
+      title: "Menu (Landscapes)",
+      folderClickBehavior: "link",
+      sortFn: undefined,
+      order: ["filter", "sort", "map"]
+    }),
   ],
   right: [
-    Component.Backlinks(),
+    Component.Backlinks({
+      hideWhenEmpty: false
+    }),
     // Component.Graph({localGraph: {
     //   showTags: false,
     //   }, globalGraph: {
     //   showTags: false,
     //   }}),
-    Component.RecentNotes({
-      title: "Recent blog posts",
-      limit: 8,
-      filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
-    })
+    // Component.RecentNotes({
+    //   title: "Recent blog posts",
+    //   limit: 8,
+    //   filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
+    // })
 ],
 }
 

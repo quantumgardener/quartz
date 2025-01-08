@@ -2,14 +2,11 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
-import style from "./styles/common-navigation.scss"
+import style from "./styles/recentNotes.scss"
 import { Date, getDate } from "./Date"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { classNames } from "../util/lang"
-
-// @ts-ignore
-import script from "./scripts/recentNotes.inline"
 
 interface Options {
   title?: string
@@ -40,65 +37,57 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <div class={classNames(displayClass, "recent-notes")}>
-        <button 
-          type="button" 
-          id="recent-notes" 
-          class={fileData.collapseToc ? "collapsed" : ""}
-        >
-        <h2>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed" style="color:var(--secondary)"><i class="fa-solid fa-square-rss"></i></a></h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="fold"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-        </button>
-        <div id="recent-notes-content">
-          <ul class="overflow" id="recent-notes-ul">
-            {pages.slice(0, opts.limit).map((page) => {
-              const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
-              const tags = page.frontmatter?.tags ?? []
+        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
+        <ul class="recent-ul">
+          {pages.slice(0, opts.limit).map((page) => {
+            const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+            const tags = page.frontmatter?.tags ?? []
 
-              return (
-                <li>
+            return (
+              <li class="recent-li">
+                <div class="section">
+                  <div class="desc">
+                    <h3>
                       <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                        {title}</a><br/>
-                        {page.dates && (
-                      <span class="meta">
-                        <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                      </span>
-                    )}
-                      
-                    
-                </li>
-              )
-            })}
-            <li style="padding-top:1rem; font-style:italic">
-            <a href="/blog">Archive&hellip;</a>
-          {opts.linkToMore && remaining > 0 && (
-            <p>
-              <a href={resolveRelative(fileData.slug!, opts.linkToMore)}>
-                {i18n(cfg.locale).components.recentNotes.seeRemainingMore({ remaining })}
-              </a>
-            </p>
-          )}
-            </li>
-          </ul>
-          
-        </div>
+                        {title}
+                      </a>
+                    </h3>
+                  </div>
+                  {page.dates && (
+                    <p class="meta">
+                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                    </p>
+                  )}
+                  {opts.showTags && (
+                    <ul class="tags">
+                      {tags.map((tag) => (
+                        <li>
+                          <a
+                            class="internal tag-link"
+                            href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                          >
+                            {tag}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+        {opts.linkToMore && remaining > 0 && (
+          <p>
+            <a href={resolveRelative(fileData.slug!, opts.linkToMore)}>
+              {i18n(cfg.locale).components.recentNotes.seeRemainingMore({ remaining })}
+            </a>
+          </p>
+        )}
       </div>
     )
   }
 
   RecentNotes.css = style
-  RecentNotes.afterDOMLoaded = script
   return RecentNotes
 }) satisfies QuartzComponentConstructor

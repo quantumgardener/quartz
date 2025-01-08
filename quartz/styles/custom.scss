@@ -159,76 +159,92 @@ footer {
   }
 }
 
-button#backlinks,
-button#recent-notes,
-button#toc {
-  background-color: transparent;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  padding: 0;
-  color: var(--dark);
-  display: flex;
-  align-items: center;
+// // button#backlinks,
+// // button#recent-notes,
+// // button#toc {
+// //   background-color: transparent;
+// //   border: none;
+// //   text-align: left;
+// //   cursor: pointer;
+// //   padding: 0;
+// //   color: var(--dark);
+// //   display: flex;
+// //   align-items: center;
 
-  & h3 {
-    font-size: 1.1rem;
-    display: inline-block;
-    margin: 0;
-  }
+// //   & h3 {
+// //     font-size: 1.1rem;
+// //     display: inline-block;
+// //     margin: 0;
+// //   }
 
-  & .fold {
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-    opacity: 0.8;
-  }
+// //   & .fold {
+// //     margin-left: 0.5rem;
+// //     transition: transform 0.3s ease;
+// //     opacity: 0.8;
+// //   }
 
-  &.collapsed .fold {
-    transform: rotateZ(-90deg);
+// //   &.collapsed .fold {
+// //     transform: rotateZ(-90deg);
+// //   }
+// // }
+
+// #backlinks-content,
+// #recent-notes-content,
+// #toc-content {
+//   list-style: none;
+//   max-height: none;
+//   transition: none; 
+//   position: relative;
+
+//   &.collapsed > .overflow::after {
+//     opacity: 0;
+//   }
+
+//   & ul {
+//     list-style: none;
+//     margin: 0.5rem 0;
+//     padding: 0;
+
+//     & > li {
+//       margin-bottom: 0.5rem;
+//       line-height: 1rem;    
+
+//       & > a {
+//         color: var(--secondary);
+//         background-color: transparent;
+//         transition: none;
+//         padding: 0;
+//       }
+//     }
+//   }
+// }
+
+// #recent-notes-content {
+//   & .meta {
+//     font-size: 0.8rem;
+//     color: var(--gray)
+//   }
+// }
+
+// #toc-content {
+//   &.in-view {
+//     opacity: 1;
+//   }
+// }
+
+#explorer-content {
+  & ul > li > a {
+    color: var(--secondary);
   }
 }
 
-#backlinks-content,
-#recent-notes-content,
 #toc-content {
-  list-style: none;
-  max-height: none;
-  transition: none; 
-  position: relative;
+  & ul > li > a {
+    color: var(--secondary);
 
-  &.collapsed > .overflow::after {
-    opacity: 0;
-  }
-
-  & ul {
-    list-style: none;
-    margin: 0.5rem 0;
-    padding: 0;
-
-    & > li {
-      margin-bottom: 0.5rem;
-      line-height: 1rem;    
-
-      & > a {
-        color: var(--secondary);
-        background-color: transparent;
-        transition: none;
-        padding: 0;
-      }
+    &.in-view {
+      opacity: 1;
     }
-  }
-}
-
-#recent-notes-content {
-  & .meta {
-    font-size: 0.8rem;
-    color: var(--gray)
-  }
-}
-
-#toc-content {
-  &.in-view {
-    opacity: 1;
   }
 }
 

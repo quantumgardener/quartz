@@ -130,7 +130,7 @@ export class FileNode {
     const folderPaths: FolderState[] = []
 
     const traverse = (node: FileNode, currentPath: string) => {
-      if (!node.file) {
+      if (node.children.length > 0) {
         const folderPath = joinSegments(currentPath, node.name)
         if (folderPath !== "") {
           folderPaths.push({ path: folderPath, collapsed })
@@ -173,10 +173,10 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
 
   return (
     <>
-      {node.file ? (
+      {node.children.length == 0 ? (
         // Single file node
-        <li key={node.file.slug}>
-          <a href={resolveRelative(fileData.slug!, node.file.slug!)} data-for={node.file.slug}>
+        <li key={node.file?.slug}>
+          <a href={resolveRelative(fileData.slug!, node.file?.slug!)} data-for={node.file?.slug}>
             {node.displayName}
           </a>
         </li>

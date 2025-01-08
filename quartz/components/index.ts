@@ -21,6 +21,7 @@ import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import LandscapeContent from "./pages/LandscapeContent"
 import SiteLogo from "./SiteLogo"
+import MyExplorer from "./MyExplorer"
 
 
 export {
@@ -46,5 +47,6 @@ export {
   NotFound,
   Breadcrumbs,
   LandscapeContent,
-  SiteLogo
+  SiteLogo,
+  MyExplorer
 }

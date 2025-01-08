@@ -34,13 +34,13 @@
 
   & > .overflow {
     height: auto;
-    @media all and not ($desktop) {
-      height: 250px;
-    }
-
+    
     &:after {
       display: none;
     }
     
+    @media all and not ($desktop) {
+      height: 250px;
+    }
   }
 }
