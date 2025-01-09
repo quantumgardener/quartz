@@ -42,12 +42,23 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(
       Component.Spacer()
     ),
-    Component.MyExplorer({
-      title: "Menu (Landscapes)",
-      folderClickBehavior: "link",
-      sortFn: undefined,
-      order: ["filter", "sort", "map"]
-    }),
+    Component.MobileOnly(
+      Component.MyExplorer({
+        title: "Menu (Landscapes)",
+        folderClickBehavior: "link",
+        folderDefaultState: "collapsed",
+        sortFn: undefined,
+        order: ["filter", "sort", "map"]
+      }),
+    ),
+    Component.DesktopOnly(
+      Component.MyExplorer({
+        title: "Menu (Landscapes)",
+        folderClickBehavior: "link",
+        sortFn: undefined,
+        order: ["filter", "sort", "map"]
+      }),
+    )
   ],
   right: [
     Component.DesktopOnly(
