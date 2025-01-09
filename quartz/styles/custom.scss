@@ -428,3 +428,11 @@ iframe#slider {
   font-family: var(--bodyFont) !important;
   font-size: inherit !important;
 }
+
+
+.page-title {
+  @media all and ($mobile) {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}

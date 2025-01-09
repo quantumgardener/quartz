@@ -39,18 +39,6 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.MobileOnly(
-      Component.Spacer()
-    ),
-    Component.MobileOnly(
-      Component.MyExplorer({
-        title: "Menu (Landscapes)",
-        folderClickBehavior: "link",
-        folderDefaultState: "collapsed",
-        sortFn: undefined,
-        order: ["filter", "sort", "map"]
-      }),
-    ),
     Component.DesktopOnly(
       Component.MyExplorer({
         title: "Menu (Landscapes)",
@@ -63,6 +51,15 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.DesktopOnly(
       Component.TableOfContents(),
+    ),
+    Component.MobileOnly(
+      Component.MyExplorer({
+        title: "Menu",
+        folderClickBehavior: "link",
+        folderDefaultState: "collapsed",
+        sortFn: undefined,
+        order: ["filter", "sort", "map"]
+      }),
     ),
     Component.Backlinks({
       hideWhenEmpty: false
