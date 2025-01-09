@@ -39,6 +39,9 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
+    Component.MobileOnly(
+      Component.Spacer()
+    ),
     Component.MyExplorer({
       title: "Menu (Landscapes)",
       folderClickBehavior: "link",
