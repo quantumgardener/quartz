@@ -29,7 +29,7 @@ export default ((opts?: Options) => {
         
         <hr />
         <ul>
-          <li><a href="/notes/about"><i class="fa-solid fa-address-card"></i> About</a></li>
+          <li><a href="/about"><i class="fa-solid fa-address-card"></i> About</a></li>
           <li><a href="/privacy"><i class="fa-solid fa-lock"></i> Privacy</a></li>
           <li>|</li>
           {Object.entries(links).map(([text, detail]) => {
@@ -42,8 +42,8 @@ export default ((opts?: Options) => {
         </ul>
         <div class="site-metadata">
           <i class="fa-regular fa-copyright"></i> David C. Buchan 2002&ndash;{localYear}. Last update: {localToday}. <a href="/recent">Recently updated notes</a>.<br/>
-          {allFiles.length} site pages. See <a href="/credits">Credits</a>. 
-          <a rel="me" href="https://aus.social/@dcbuchan"></a> <span class="tinylytics_hits"></span> <a href="/total-unique-visits">total unique visits</a>.
+          {allFiles.length} site pages. <a href="/colophon">Colophon</a>. 
+          <a rel="me" href="https://aus.social/@dcbuchan"></a> <span class="tinylytics_hits"></span> <a href="/visits">total unique visits</a>.
         </div>
       </footer>
     )

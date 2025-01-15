@@ -86,8 +86,8 @@ export default ((userOpts?: Partial<Options>) => {
         children: [
           { slug: 'notes/100-hours-learning-affinity-photo'}
         ]
-
-      }
+      },
+      { slug: 'subscribe'}
     ]
 
     const parseMenu = (items: MenuItem[], parent: FileNode | undefined = undefined, depth = 0) => {
