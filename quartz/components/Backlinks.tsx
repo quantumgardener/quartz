@@ -15,6 +15,17 @@ const defaultOptions: BacklinksOptions = {
   hideWhenEmpty: true,
 }
 
+// List of slugs we don't want to appear in backlinks
+const excludedSlugs = [
+  'blog',
+  'dropped',
+  'ideas',
+  'maps',
+  'recent',
+  'sitemap',
+  'slashes',
+]
+
 export default ((opts?: Partial<BacklinksOptions>) => {
   const options: BacklinksOptions = { ...defaultOptions, ...opts }
 
@@ -25,7 +36,7 @@ export default ((opts?: Partial<BacklinksOptions>) => {
     cfg,
   }: QuartzComponentProps) => {
     const slug = simplifySlug(fileData.slug!)
-    const backlinkFiles = allFiles.filter((file) => file.links?.includes(slug))
+    const backlinkFiles = allFiles.filter((file) => file.links?.includes(slug) && !excludedSlugs.includes(file.slug as string) && file.slug as string != slug as string) 
     if (options.hideWhenEmpty && backlinkFiles.length == 0) {
       return null
     }
