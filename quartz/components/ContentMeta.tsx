@@ -23,16 +23,52 @@ const defaultOptions: ContentMetaOptions = {
   showLandscapes: true,
 }
 
-function landscapeHTML(landscape: string, title: string) {
-  
-  const url = `/landscapes/${landscape}`
-
-  return (
-    <span>
-      <a class="internal tag-link" href={url}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i> {title}</a>
-    </span>
-  )
+type LandscapeType = 'expand' | 'hobby' | string;
+interface LandscapeInfo {
+  link: string,
+  title: string
 }
+
+interface Links {
+  landscape: string,
+  landscapeTitle: string
+  plot: string | undefined;
+  plotTitle: string | undefined;
+}
+
+const landscapeInfo: { [key: LandscapeType]: LandscapeInfo } = {
+  'expand': {
+    link: 'expand-my-way-of-being',
+    title: 'Expand my Way of Being',
+  },
+  'hobby': {
+    link: 'hobby-together',
+    title: 'Hobby Together'
+  }
+}
+
+function landscapeHTML(links: Links) {
+
+  console.log(links)
+  const landscapeURL = `/notes/${links.landscape}`
+
+  if (links.plot) {
+    const plotURL = `/notes/${links.plot}`
+    return (
+      <span>
+        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp; {links.landscapeTitle}</a>
+        <a class="internal tag-link" href={plotURL}>&gt; {links.plotTitle}</a>
+      </span>
+    )
+  } else {
+    return (
+      <span>
+        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp; {links.landscapeTitle}</a>
+      </span>
+    )
+  }
+}  
+
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
   // Merge options with defaults
@@ -43,6 +79,23 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
+
+      if (options.showLandscapes) {  
+        const landscapeTag = fileData.frontmatter?.tags?.find(element => element.startsWith('landscape/'))
+        if(landscapeTag) {
+          const [marker, landscape, plot] = landscapeTag.split('/')
+          console.log(landscapeTag)
+          const links = {
+            'landscape': landscapeInfo[landscape].link,
+            'landscapeTitle': landscapeInfo[landscape].title,
+            'plot': plot,
+            'plotTitle': plot ? plot.charAt(0).toUpperCase() + plot.slice(1) : undefined
+          }
+
+          segments.push(landscapeHTML(links))
+          segments.push(<br/>)
+        }
+      }
 
       if (fileData.dates && options.showDate) {
         if (fileData.dates?.created.getTime() == fileData.dates?.modified.getTime()) {
@@ -59,15 +112,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           minutes: Math.ceil(minutes),
         })
         segments.push(<span>{displayedTime}</span>)
-      }
-
-      if (options.showLandscapes) {
-        if ( fileData.frontmatter?.landscapes != null ) {
-          for (const landscape of fileData.frontmatter?.landscapes) {
-            const result = allFiles.find(item => item.slug === `landscapes/${landscape}`)     
-            segments.push(landscapeHTML(landscape, result?.frontmatter?.title.toUpperCase() as string))
-          }
-        }
       }
 
       // End of my changes

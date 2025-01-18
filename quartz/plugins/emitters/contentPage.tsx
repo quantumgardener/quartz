@@ -116,10 +116,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
             }
 
             if (!allSlugs.includes(splitAnchor(href)[0] as RelativeURL)) {
-              if(slug == "notes/ontological-coach") {
-                console.log(href)
-              }
-                if (elem.properties.className === undefined) {
+              if (elem.properties.className === undefined) {
                 elem.properties.className = "dead-link"
               } else if (Array.isArray(elem.properties.className)) {
                 if (elem.properties.className.includes("external")) {
