@@ -21,6 +21,7 @@ const excludedSlugs = [
   'dropped',
   'ideas',
   'maps',
+  'now',
   'recent',
   'sitemap',
   'slashes',
