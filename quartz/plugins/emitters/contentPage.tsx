@@ -9,12 +9,13 @@ import BodyConstructor from "../../components/Body"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
-import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
+import { FilePath, isRelativeURL, joinSegments, pathToRoot, resolveRelative, RelativeURL, splitAnchor } from "../../util/path"
 import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
 import DepGraph from "../../depgraph"
+
 
 // get all the dependencies for the markdown file
 // eg. images, scripts, stylesheets, transclusions
@@ -98,13 +99,45 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
       const cfg = ctx.cfg.configuration
       const fps: FilePath[] = []
       const allFiles = content.map((c) => c[1].data)
-
+      
       let containsIndex = false
       for (const [tree, file] of content) {
         const slug = file.data.slug!
         if (slug === "index") {
           containsIndex = true
         }
+        const allSlugs = allFiles.map((f) => f.slug? resolveRelative(slug, f.slug) : "")
+        visit(tree as Root, "element", (elem) => {
+          if (elem.tagName === "a" && elem.properties.href) {
+            const href = elem.properties.href.toString()
+
+            if(href.startsWith('#')) {
+              return
+            }
+
+            if (!allSlugs.includes(splitAnchor(href)[0] as RelativeURL)) {
+              if(slug == "notes/ontological-coach") {
+                console.log(href)
+              }
+                if (elem.properties.className === undefined) {
+                elem.properties.className = "dead-link"
+              } else if (Array.isArray(elem.properties.className)) {
+                if (elem.properties.className.includes("external")) {
+                  return
+                }
+                elem.properties.className.push("dead-link")
+              } else if (typeof elem.properties.className === "string") {
+                if (elem.properties.className.includes("external")) {
+                  return
+                }
+                elem.properties.className += " dead-link"
+              } else {
+                return
+              }
+              elem.tagName = "span"
+            }
+          }
+        })
 
         const externalResources = pageResources(pathToRoot(slug), file.data, resources)
         const componentData: QuartzComponentProps = {
