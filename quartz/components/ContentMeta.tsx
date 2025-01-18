@@ -23,7 +23,7 @@ const defaultOptions: ContentMetaOptions = {
   showLandscapes: true,
 }
 
-type LandscapeType = 'expand' | 'hobby' | string;
+type LandscapeType = 'expand' | 'hobby' | 'lazy' | string;
 interface LandscapeInfo {
   link: string,
   title: string
@@ -44,12 +44,15 @@ const landscapeInfo: { [key: LandscapeType]: LandscapeInfo } = {
   'hobby': {
     link: 'hobby-together',
     title: 'Hobby Together'
-  }
+  },
+  'lazy': {
+    link: 'productive-laziness',
+    title: 'Productive Laziness'
+  },
 }
 
 function landscapeHTML(links: Links) {
 
-  console.log(links)
   const landscapeURL = `/notes/${links.landscape}`
 
   if (links.plot) {
@@ -69,6 +72,13 @@ function landscapeHTML(links: Links) {
   }
 }  
 
+function hashesToTitle( src: string ) {
+  if(src === 'Second-order-learning') {
+    return 'Second-order learning'
+  } else {
+    return src.replaceAll('-',' ')
+  }
+}
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
   // Merge options with defaults
@@ -83,13 +93,12 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       if (options.showLandscapes) {  
         const landscapeTag = fileData.frontmatter?.tags?.find(element => element.startsWith('landscape/'))
         if(landscapeTag) {
-          const [marker, landscape, plot] = landscapeTag.split('/')
-          console.log(landscapeTag)
+          const [tagmarker, landscape, plot] = landscapeTag.split('/')
           const links = {
             'landscape': landscapeInfo[landscape].link,
             'landscapeTitle': landscapeInfo[landscape].title,
             'plot': plot,
-            'plotTitle': plot ? plot.charAt(0).toUpperCase() + plot.slice(1) : undefined
+            'plotTitle': plot ? hashesToTitle(plot.charAt(0).toUpperCase() + plot.slice(1)) : undefined
           }
 
           segments.push(landscapeHTML(links))
