@@ -5,7 +5,7 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { FilePath, FullSlug } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
-import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer, SiteLogo, Explorer } from "../../components"
+import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer, SiteLogo, Explorer, Backlinks, RecentNotes, MyExplorer, DesktopOnly } from "../../components"
 import { defaultProcessedContent } from "../vfile"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
@@ -22,8 +22,18 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
       PageTitle(),
       MobileOnly(Spacer()),
       Search(),
+      DesktopOnly(
+        MyExplorer({
+          title: "Landscapes",
+          folderClickBehavior: "link",
+          sortFn: undefined,
+          order: ["filter", "sort", "map"]
+        })
+      )
     ],
-    right: [],
+    right: [
+      RecentNotes()
+    ],
   }
 
   const { head: Head, pageBody, footer: Footer } = opts

@@ -1,7 +1,7 @@
 import FlexSearch from "flexsearch"
 import { ContentDetails } from "../../plugins/emitters/contentIndex"
 import { registerEscapeHandler, removeAllChildren } from "./util"
-import { FullSlug, normalizeRelativeURLs, resolveRelative } from "../../util/path"
+import { FullSlug, joinSegments, normalizeRelativeURLs, resolveRelative } from "../../util/path"
 
 interface Item {
   id: number
@@ -300,7 +300,8 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   }
 
   function resolveUrl(slug: FullSlug): URL {
-    return new URL(resolveRelative(currentSlug, slug), location.toString())
+    //return new URL(resolveRelative(currentSlug, slug), location.toString())
+    return new URL(joinSegments("/", slug), location.toString())
   }
 
   const resultToHTML = ({ slug, title, content, tags }: Item) => {
