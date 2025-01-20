@@ -41,7 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.DesktopOnly(
       Component.MyExplorer({
-        title: "Menu (Landscapes)",
+        title: "Landscapes",
         folderClickBehavior: "link",
         sortFn: undefined,
         order: ["filter", "sort", "map"]
