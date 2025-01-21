@@ -5,6 +5,7 @@ import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
+import { resolveRelative, SimpleSlug } from "../util/path"
 
 interface ContentMetaOptions {
   /**
@@ -93,7 +94,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       if (options.showLandscapes) {  
         const landscapeTag = fileData.frontmatter?.tags?.find(element => element.startsWith('landscape/'))
         if(landscapeTag) {
-          const [tagmarker, landscape, plot] = landscapeTag.split('/')
+          let [tagmarker, landscape, plot] = landscapeTag.split('/')
+          //const allSlugs = allFiles.map((f) => f.slug? f.slug : "")
+          // if(!allSlugs.includes(plot)) {
+          //   plot = null
+          // }
           const links = {
             'landscape': landscapeInfo[landscape].link,
             'landscapeTitle': landscapeInfo[landscape].title,
