@@ -3,7 +3,7 @@ import { QuartzComponentProps } from "../../components/types"
 import BodyConstructor from "../../components/Body"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
-import { FilePath, FullSlug } from "../../util/path"
+import { FilePath, FullSlug, getAllSegmentPrefixes } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
 import { NotFound, Search, Darkmode, PageTitle, MobileOnly, ArticleTitle, Spacer, SiteLogo, Explorer, Backlinks, RecentNotes, MyExplorer, DesktopOnly } from "../../components"
 import { defaultProcessedContent } from "../vfile"
@@ -32,7 +32,11 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
       )
     ],
     right: [
-      RecentNotes()
+      RecentNotes({
+        title: "Recent blog posts",
+        limit: 8,
+        filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
+      })
     ],
   }
 
