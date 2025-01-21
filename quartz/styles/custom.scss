@@ -67,10 +67,16 @@ a {
 
     &.internal {
       background-color: transparent;
+      
       &.tag-link {
         &::before {
           content: "";
         }
+      }
+
+      &.transclude-src {
+        margin-bottom: 0.75rem;
+        display: inline-block;
       }
     }
 
@@ -78,6 +84,13 @@ a {
       margin: 0 0.30em;
     }
 } 
+
+blockquote {
+  &.transclude {
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+}
 
 .content-meta {
   font-size: 0.9em;

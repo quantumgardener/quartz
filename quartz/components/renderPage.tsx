@@ -218,7 +218,7 @@ export function renderPage(
               children: [
                 { type: "element", 
                   tagName: "i",
-                  properties: { class: ["fa", "fa-indent"] },
+                  properties: { class: ["fa", "fa-file-circle-plus"] },
                   children: []
                 },
                 { type: "text", value: " " + page.frontmatter?.title },
