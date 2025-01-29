@@ -27,7 +27,7 @@ export function JSResourceToScriptElement(resource: JSResource, preserve?: boole
   const spaPreserve = preserve ?? resource.spaPreserve
   if (resource.contentType === "external") {
     return (
-      <script key={resource.src} src={resource.src} type={scriptType}  />
+      <script key={resource.src} src={resource.src} type={scriptType} spa-preserve={spaPreserve} />
     )
   } else {
     const content = resource.script

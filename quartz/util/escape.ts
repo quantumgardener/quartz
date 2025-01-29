@@ -5,7 +5,6 @@ export const escapeHTML = (unsafe: string) => {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;")
-    //.replaceAll("../", "https://quantumgardener.info/")
 }
 
 export const unescapeHTML = (html: string) => {
