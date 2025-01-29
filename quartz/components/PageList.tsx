@@ -34,9 +34,9 @@ type Props = {
 } & QuartzComponentProps
 
 
-export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, folderFiles, limit, sort }: Props) => {
+export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort }: Props) => {
   const sorter = sort ?? byDateAndAlphabetical(cfg)
-  let list = folderFiles.sort(sorter)
+  let list = allFiles.sort(sorter)
   if (limit) {
     list = list.slice(0, limit)
   }
