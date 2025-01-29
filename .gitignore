@@ -3,3 +3,4 @@ public
 .quartz-cache
 .DS_Store
 content
+wrangler.toml
