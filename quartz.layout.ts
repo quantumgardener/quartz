@@ -90,8 +90,25 @@ export const defaultListPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
+    Component.DesktopOnly(
+      Component.MyExplorer({
+        title: "Landscapes",
+        folderClickBehavior: "link",
+        sortFn: undefined,
+        order: ["filter", "sort", "map"]
+      }),
+    )
     ],
   right: [
+    Component.MobileOnly(
+      Component.MyExplorer({
+        title: "Menu",
+        folderClickBehavior: "link",
+        folderDefaultState: "collapsed",
+        sortFn: undefined,
+        order: ["filter", "sort", "map"]
+      }),
+    ),
     Component.RecentNotes({
       title: "Recent blog posts",
       limit: 8,
