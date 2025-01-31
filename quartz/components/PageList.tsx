@@ -83,7 +83,9 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               
               {photo ? (
                 <p style="hyphens:none">
-                  <img src={resolveRelative(fileData.slug!, thumbnail)} style="float:left; margin-top:0; margin-right:1rem;"/> {description}
+                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                    <img src={resolveRelative(fileData.slug!, thumbnail)} style="float:left; margin-top:0; margin-right:1rem;"/>
+                  </a> {description}
                 </p>
               ) : (
                 <p>
