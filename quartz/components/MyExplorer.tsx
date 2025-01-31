@@ -82,6 +82,7 @@ export default ((userOpts?: Partial<Options>) => {
           { slug: 'notes/imatch-to-socials' }
         ]
       },
+      { slug: 'photos/index'},
       { slug: 'projects',
         children: [
           { slug: 'notes/100-hours-learning-affinity-photo'}
