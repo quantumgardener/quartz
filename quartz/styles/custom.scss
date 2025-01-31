@@ -449,3 +449,14 @@ iframe#slider {
     margin-left: 0.5rem;
   }
 }
+
+.photo-page {
+  & tr {
+    border-bottom: 1px solid var(--lightgray);
+  }
+  
+  & th {
+    font-weight: normal;
+    border-bottom: none;
+  }
+}
