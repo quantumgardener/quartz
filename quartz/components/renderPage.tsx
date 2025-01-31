@@ -294,12 +294,12 @@ export function renderPage(
                 {
                   <button id="mastodonComment">
                     <a onclick="MastodonShare(event);" data-src={mastodonComment(componentData.fileData.frontmatter?.title)}>
-                      <i class="fa-brands fa-mastodon"></i> Comment
+                      <i class="nf nf-fa-mastodon"></i> Comment
                     </a>
                   </button>
                 }          
                 {
-                  <button id="emailComment"><a href={emailComment(componentData.fileData.frontmatter?.title)}><i class="fa-solid fa-envelope"></i> Comment</a></button>
+                  <button id="emailComment"><a href={emailComment(componentData.fileData.frontmatter?.title)}><i class="nf nf-md-email_check"></i> Comment</a></button>
                 }
               </div>
               <div class="page-footer">

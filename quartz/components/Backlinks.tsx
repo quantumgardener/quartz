@@ -50,7 +50,7 @@ export default ((opts?: Partial<BacklinksOptions>) => {
         aria-controls="backlinks-content"
         aria-expanded={!fileData.collapseBacklinks}
         >
-          <h3>{i18n(cfg.locale).components.backlinks.title} <a href="/notes/backlinks" style="color:var(--secondary)"><i class="fa-solid fa-circle-question"></i></a></h3>
+          <h3>{i18n(cfg.locale).components.backlinks.title} <a href="/notes/backlinks" style="color:var(--secondary)"><i class="nf nf-fa-question_circle"></i></a></h3>
           <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

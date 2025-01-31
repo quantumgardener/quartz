@@ -202,8 +202,7 @@ export default (() => {
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
-        <script src="https://kit.fontawesome.com/5428a1cc8b.js" crossOrigin="anonymous"></script>
-        <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css"/>
+        <link rel="stylesheet" href="/static/nerdfonts.css"/>
       </head>
     )
   }

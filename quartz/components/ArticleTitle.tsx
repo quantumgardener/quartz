@@ -41,7 +41,7 @@ const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzCompone
     //const workingTitle = title.toTitleCase()
     const workingTitle = title
     if (workingTitle.startsWith("Topic: ")) {
-      return <h1 class="article-title"><i class="fa-regular fa-message"></i>&nbsp;&nbsp;{workingTitle.replace("Topic: ","")}</h1>
+      return <h1 class="article-title"><i class="nf nf-fa-message"></i>&nbsp;&nbsp;{workingTitle.replace("Topic: ","")}</h1>
     } else {
       return <h1 class={`article-title ${displayClass ?? ""}`}>{workingTitle}</h1>
     }

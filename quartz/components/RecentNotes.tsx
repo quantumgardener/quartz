@@ -47,7 +47,7 @@ export default ((userOpts?: Partial<Options>) => {
           aria-controls="recent-notes-content"
           aria-expanded={!fileData.collapseBacklinks}
         >
-        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed" style="color:var(--secondary)"><i class="fa-solid fa-square-rss"></i></a></h3>
+        <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title} <a href="https://quantumgardener.info/feed" style="color:var(--secondary)"><i class="nf nf-fa-square_rss"></i></a></h3>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

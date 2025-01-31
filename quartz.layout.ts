@@ -8,15 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
-  footer: Component.Footer({
-    links: {
-      Mastodon: {link: "https://aus.social/@dcbuchan", icon: "fa-brands fa-mastodon"},
-      "Subscribe (RSS)": {link: "https://quantumgardener.info/feed", icon: "fa-solid fa-square-rss"},
-      Flickr: {link: "https://www.flickr.com/photos/dcbuchan/", icon: "fa-brands fa-flickr"},
-      Pixelfed: {link: "https://pixelfed.au/dcbuchan", icon: "fa-solid fa-photo-film"},
-      Github: {link: "https://github.com/quantumgardener", icon: "fa-brands fa-github"}
-    },
-  }),
+  footer: Component.Footer(),
 }
 
 // components for pages that display a single page (e.g. a single note)

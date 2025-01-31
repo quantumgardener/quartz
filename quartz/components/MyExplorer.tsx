@@ -161,7 +161,7 @@ export default ((userOpts?: Partial<Options>) => {
           aria-controls="explorer-content"
           aria-expanded={opts.folderDefaultState === "open"}
         >
-          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title} <a href="/notes/landscapes" style="color:var(--secondary)"><i class="fa-solid fa-circle-question"></i></a></h2>
+          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title} <a href="/notes/landscapes" style="color:var(--secondary)"><i class="nf nf-fa-question_circle"></i></a></h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

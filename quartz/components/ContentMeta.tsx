@@ -60,14 +60,14 @@ function landscapeHTML(links: Links) {
     const plotURL = `/notes/${links.plot}`
     return (
       <span>
-        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp; {links.landscapeTitle}</a>
+        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="nf nf-fae-mountains"></i>&nbsp; {links.landscapeTitle}</a>
         <a class="internal tag-link" href={plotURL}>&gt; {links.plotTitle}</a>
       </span>
     )
   } else {
     return (
       <span>
-        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="fa-solid fa-mountain-sun"></i>&nbsp; {links.landscapeTitle}</a>
+        <a class="internal tag-link" href={landscapeURL}><i style="color:#5C4033" class="nf nf-fae-mountains"></i>&nbsp; {links.landscapeTitle}</a>
       </span>
     )
   }
