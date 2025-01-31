@@ -6,6 +6,7 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
 import { Data } from "vfile"
 import { i18n } from "../i18n"
+import { compileHighShaderGlProgram } from "pixi.js"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
@@ -65,7 +66,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
         const matches = fileData.slug!.match(new RegExp("\/", "g"))
-        const leaf = !fileData.slug!.startsWith("blog") || matches!.length >= 3
+        const photo = fileData.slug!.startsWith("photos")
+        const thumbnail = "photos/"+page.frontmatter?.thumbnail
         return (
           <li class="section-li">
             <hr/>
@@ -79,9 +81,15 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 </a>
               </h3>
               
-              <p>
+              {photo ? (
+                <p style="hyphens:none">
+                  <img src={resolveRelative(fileData.slug!, thumbnail)} style="float:left; margin-top:0; margin-right:1rem;"/> {description}
+                </p>
+              ) : (
+                <p>
                   {description}
-              </p>
+               </p>
+              )}
             </div>
             {/* <ul class="tags">
                 {tags.filter((tag) => tag != fileData.slug?.split("topics/")[1]).map((tag) => (                  

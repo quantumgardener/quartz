@@ -297,6 +297,7 @@ button#toc {
 div#engage {
   display: flex;
   align-items: stretch;
+  clear: both;
 }
 button#emailComment,
 button#mastodonComment {
