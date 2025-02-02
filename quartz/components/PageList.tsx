@@ -1,5 +1,5 @@
 import path from "path"
-import { stripSlashes, simplifySlug, resolveRelative } from "../util/path"
+import { stripSlashes, simplifySlug, resolveRelative, SimpleSlug } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { getDate, formatDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
@@ -66,8 +66,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
         const matches = fileData.slug!.match(new RegExp("\/", "g"))
+        const album = fileData.slug!.startsWith("albums")
         const photo = fileData.slug!.startsWith("photos")
-        const thumbnail = "photos/"+page.frontmatter?.thumbnail
         return (
           <li class="section-li">
             <hr/>
@@ -81,16 +81,24 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 </a>
               </h3>
               
-              {photo ? (
+              {album ? (
                 <p style="hyphens:none">
                   <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                    <img src={resolveRelative(fileData.slug!, thumbnail)} style="float:left; margin-top:0; margin-right:1rem;"/>
+                    <img src={resolveRelative(fileData.slug!, "photos/"+page.frontmatter?.thumbnail as SimpleSlug)} style="float:left; margin-top:0; margin-right:1rem;"/>
                   </a> {description}
                 </p>
               ) : (
-                <p>
-                  {description}
-               </p>
+                photo ? (
+                  <p style="hyphens:none">
+                    <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                      <img src={resolveRelative(fileData.slug!, "photos/"+page.frontmatter?.thumbnail as SimpleSlug)} style="float:left; margin-top:0; margin-right:1rem;"/>
+                    </a> {description}
+                  </p>
+                ) : (
+                  <p>
+                    {description}
+                </p>
+                )
               )}
             </div>
             {/* <ul class="tags">

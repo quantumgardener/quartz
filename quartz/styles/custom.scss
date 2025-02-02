@@ -451,6 +451,9 @@ iframe#slider {
   }
 }
 
+
+// Photos
+
 .photo-page {
   & tr {
     border-bottom: 1px solid var(--lightgray);
@@ -459,5 +462,43 @@ iframe#slider {
   & th {
     font-weight: normal;
     border-bottom: none;
+  }
+
+}
+
+.album-page {
+  div.grid {
+    margin-left: 10px;
+    width: auto;
+  
+    div.grid-item {
+      width: 150px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      float: left;
+
+      .caption {
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 0;
+      }
+    
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05)
+      }
+    }
   }
 }
