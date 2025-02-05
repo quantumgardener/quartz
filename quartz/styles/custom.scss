@@ -471,6 +471,14 @@ iframe#slider {
     border-bottom: none;
   }
 
+  & p {
+    
+    & img {
+      pointer-events: none;
+    }
+    
+  }
+
 }
 
 .album-page {
