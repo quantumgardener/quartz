@@ -462,6 +462,14 @@ iframe#slider {
 // Photos
 
 .photo-page {
+
+  & table {
+    width: 400px; 
+    margin: 0 auto;
+    text-align: center;
+
+  }
+
   & tr {
     border-bottom: 1px solid var(--lightgray);
   }
@@ -469,16 +477,37 @@ iframe#slider {
   & th {
     font-weight: normal;
     border-bottom: none;
+    text-align: left;
   }
 
-  & p {
-    
+  & th:first-child, td:first-child {
+    width: 1rem;
+    text-align: center;
+  }
+
+  & td {
+    text-align: left;
+  }
+
+  & th:first-child, td:first-child {
+    width: 1rem;
+    text-align: center;
+  }
+
+  & p {   
     & img {
       pointer-events: none;
     }
-    
   }
 
+  & iframe {
+    display: block;
+    margin: 20px auto;
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+    box-shadow: 0.5rem 0.5rem 0.2rem var(--lightgray);
+  }
 }
 
 .album-page {
