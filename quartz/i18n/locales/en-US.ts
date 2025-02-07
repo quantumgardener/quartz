@@ -77,8 +77,8 @@ export default {
       tagIndex: "Topic Index",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 conversation about this topic." : `${count} conversations about this topic.`,
-      showingFirst: ({ count }) => `Showing first ${count} topics.`,
-      totalTags: ({ count }) => `Found ${count} total topics.`,
+      showingFirst: ({ count }) => `Showing first ${count} tags.`,
+      totalTags: ({ count }) => `Found ${count} total tags.`,
     },
     landscapeContent: {
       tag: "Landscape",

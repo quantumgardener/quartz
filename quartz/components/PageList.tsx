@@ -1,12 +1,10 @@
 import path from "path"
-import { stripSlashes, simplifySlug, resolveRelative, SimpleSlug } from "../util/path"
+import { stripSlashes, simplifySlug, resolveRelative, SimpleSlug, FullSlug } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { getDate, formatDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
 import { Data } from "vfile"
-import { i18n } from "../i18n"
-import { compileHighShaderGlProgram } from "pixi.js"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
@@ -65,9 +63,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
         const description = page.description
-        const matches = fileData.slug!.match(new RegExp("\/", "g"))
-        const album = fileData.slug!.startsWith("albums")
-        const photo = fileData.slug!.startsWith("photos")
+        const images = fileData.slug!.startsWith("photos") || tags.includes("class/photo") || fileData.slug!.startsWith("albums") 
         return (
           <li class="section-li">
             <hr/>
@@ -81,7 +77,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 </a>
               </h3>
               
-              {album || photo ? (
+              {images ? (
                 <p style="hyphens:none">
                   <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                     <img src={resolveRelative(fileData.slug!, "photos/"+page.frontmatter?.thumbnail as SimpleSlug)} style="float:left; margin-top:0; margin-right:1rem;"/>
@@ -93,18 +89,18 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 </p>
               )}
             </div>
-            {/* <ul class="tags">
-                {tags.filter((tag) => tag != fileData.slug?.split("topics/")[1]).map((tag) => (                  
+            <ul class="tags">
+                {tags.filter((tag) => tag != fileData.slug?.split("tags/")[1]).map((tag) => (                  
                   <li>
                     <a
                       class="internal tag-link"
-                      href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
+                      href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
                     >
-                      <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{tag}
+                      {tag} <i class="nf nf-oct-tag"></i>
                     </a>
                   </li>
                 ))}
-              </ul> */}
+              </ul>
           </li>
         )
       })}

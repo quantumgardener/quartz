@@ -5,17 +5,16 @@ import { classNames } from "../util/lang"
 const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const tags = fileData.frontmatter?.tags
   const baseDir = pathToRoot(fileData.slug!)
-  return null
   if (tags && tags.length > 0) {
     return (
       <ul class={classNames(displayClass, "tags")}>
         {tags.map((tag) => {
           const display = `${tag}`
-          const linkDest = baseDir + `/topics/${slugTag(tag)}`
+          const linkDest = baseDir + `/tags/${slugTag(tag)}`
           return (
             <li>
               <a href={linkDest} class="internal tag-link">
-                <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{display}
+              {display} <i class="nf nf-oct-tag"></i>
               </a>
             </li>
           )

@@ -23,11 +23,11 @@ export default ((opts?: Partial<TagContentOptions>) => {
     const { tree, fileData, allFiles, cfg } = props
     const slug = fileData.slug
 
-  if (!(slug?.startsWith("topics/") || slug === "topics")) {
+  if (!(slug?.startsWith("tags/") || slug === "tags")) {
     throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`)
   }
 
-  const tag = simplifySlug(slug.slice("topics/".length) as FullSlug)
+  const tag = simplifySlug(slug.slice("tags/".length) as FullSlug)
   const allPagesWithTag = (tag: string) =>
     allFiles.filter((file) =>
       (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag),
@@ -49,6 +49,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
     for (const tag of tags) {
       tagItemMap.set(tag, allPagesWithTag(tag))
     }
+
     return (
       <div class={classes}>
         <article>
@@ -56,48 +57,22 @@ export default ((opts?: Partial<TagContentOptions>) => {
         </article>
         <p>{i18n(cfg.locale).pages.tagContent.totalTags({ count: tags.length })}</p>
         <hr/>
-        <div>
+        <ul class="tags">
           {tags.map((tag) => {
-            const pages = tagItemMap.get(tag)!
-            const listProps = {
-              ...props,
-              allFiles: pages,
-            }
-
-            const contentPage = allFiles.filter((file) => file.slug === `topics/${tag}`).at(0)
-
-            const root = contentPage?.htmlAst
-            const content =
-              !root || root?.children.length === 0
-                ? contentPage?.description
-                : htmlToJsx(contentPage.filePath!, root)
+            const nonBreakingTag = tag.replace(/-/g, '\u2011')
+            // if (tag.startsWith("class") && tag !== "class/photo") {
+            //   return null
+            // }
 
             return (
-              <div>
-                <h2>
-                  <a class="internal tag-link" href={`../topics/${tag}`}>
-                    {tag}
-                  </a>
-                </h2>
-                {content && <p>{content}</p>}
-                <div class="page-listing">
-                  <p>
-                    {i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}
-                    {pages.length > options.numPages && (
-                      <>
-                        {" "}
-                        <span>
-                          {i18n(cfg.locale).pages.tagContent.showingFirst({ count: options.numPages })}
-                        </span>
-                      </>
-                    )}
-                  </p>
-                  <PageList limit={options.numPages} {...listProps} />
-                </div>
-              </div>
-              )
+              <li>
+                <a class="internal tag-link" href={`../tags/${tag}`}>
+                  {nonBreakingTag} <i class="nf nf-oct-tag"></i> ({allPagesWithTag(tag).length})
+                </a>
+              </li>
+            )
             })}
-          </div>
+          </ul>
         </div>
       )
     } else {
@@ -115,7 +90,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
             <li>
               <a
                 class="internal tag-link"
-                href={resolveRelative(fileData.slug!, `topics/${tag}` as FullSlug)}
+                href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
               >
                 <i class="fa-regular fa-message"></i>&nbsp;&nbsp;{tag}
               </a>

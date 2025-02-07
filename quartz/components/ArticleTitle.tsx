@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { i18n } from "../i18n"
 
 // from https://stackoverflow.com/posts/13897813/revisions
 declare global {
@@ -34,14 +35,14 @@ String.prototype.toTitleCase = function() {
   return str;
 }
 
-const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
+const ArticleTitle: QuartzComponent = ({ cfg, fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   if (title) {
     //Don't convert to title case.
     //const workingTitle = title.toTitleCase()
     const workingTitle = title
-    if (workingTitle.startsWith("Topic: ")) {
-      return <h1 class="article-title"><i class="nf nf-fa-message"></i>&nbsp;&nbsp;{workingTitle.replace("Topic: ","")}</h1>
+    if (workingTitle.startsWith(`${i18n(cfg.locale).pages.tagContent.tag} `)) {
+      return <h1 class="article-title">{workingTitle.replace(`${i18n(cfg.locale).pages.tagContent.tag} `,"")} <i class="nf nf-oct-tag"></i></h1>
     } else {
       return <h1 class={`article-title ${displayClass ?? ""}`}>{workingTitle}</h1>
     }

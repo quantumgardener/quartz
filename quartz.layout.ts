@@ -22,7 +22,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta({
       showLandscapes: false,
     }),
-    //Component.TagList(),
+    Component.TagList(),
   ],
   left: [
     Component.SiteLogo(),

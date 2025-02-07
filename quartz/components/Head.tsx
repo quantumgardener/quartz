@@ -202,7 +202,7 @@ export default (() => {
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
-        <link rel="stylesheet" href="/static/nerdfonts.css"/>
+        <link rel="stylesheet" href="/static/icons/nerdfonts.css"/>
         <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script defer src="/src/masonry.js"></script>
