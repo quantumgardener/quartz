@@ -77,12 +77,15 @@ export default ((userOpts?: Partial<Options>) => {
       { 
         slug: 'notes/hobby-together',
         children: [
+          { slug: 'photos/index'},
           { slug: 'notes/photography'},
           { slug: 'notes/video-gaming'},
           { slug: 'notes/imatch-to-socials' }
         ]
       },
-      { slug: 'photos/index'},
+      {
+        slug: 'notes/quantum-os',
+      },
       { slug: 'projects',
         children: [
           { slug: 'notes/100-hours-learning-affinity-photo'}
