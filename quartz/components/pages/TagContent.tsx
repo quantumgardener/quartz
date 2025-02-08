@@ -59,7 +59,6 @@ export default ((opts?: Partial<TagContentOptions>) => {
         <hr/>
         <ul class="tags">
           {tags.map((tag) => {
-            const nonBreakingTag = tag.replace(/-/g, '\u2011')
             // if (tag.startsWith("class") && tag !== "class/photo") {
             //   return null
             // }
@@ -67,7 +66,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
             return (
               <li>
                 <a class="internal tag-link" href={`../tags/${tag}`}>
-                  {nonBreakingTag} <i class="nf nf-oct-tag"></i> ({allPagesWithTag(tag).length})
+                  {tag} <i class="nf nf-oct-tag"></i> ({allPagesWithTag(tag).length})
                 </a>
               </li>
             )
