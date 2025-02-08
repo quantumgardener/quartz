@@ -7,9 +7,9 @@
  @font-face{font-family:'NerdFontsSymbols Nerd Font';src:url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete.woff2") format("woff2");font-weight:normal;font-style:normal}.nf,.nerd-font,.nerd-fonts{font-family:'NerdFontsSymbols Nerd Font';font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
  .nf-fa-address_card:before{content:"\f2bb"}
  .nf-fa-camera:before{content:"\f030"}
- .nf-fa-flickr:before{content:"\f16e"}
  .nf-fa-github:before{content:"\f09b"}
  .nf-fa-lock:before{content:"\f023"}
+ .nf-fa-mastodon:before{content:"\edc0"}
  .nf-fa-message:before{content:"\f27a"}
  .nf-fa-photo_film:before{content:"\efab"}
  .nf-fa-question_circle:before{content:"\f059"}
