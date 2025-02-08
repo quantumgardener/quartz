@@ -291,14 +291,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
 
                 // internal link
                 const url = fp + anchor
-                let displayText = ""
+                let displayText = (rawAlias ?? rawHeader?.replace("#", "") ?? "").replace("|", "")
                 let defaultTypeText = true 
                 if (anchor) {
                   if (fp == file.data.frontmatter?.title) {
                     // internal page line
                     displayText = alias
                   } else {
-                    displayText = `${fp}<span class="anchor-split"/>${alias}`
+                    displayText = `${fp}<span class="anchor-split"/>${displayText}`
                     defaultTypeText = false
                   }
                 } else {
