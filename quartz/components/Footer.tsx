@@ -34,7 +34,6 @@ export default ((opts?: Options) => {
           <li>|</li>
           <li><a href="https://aus.social/@dcbuchan"><i class="nf nf-fa-mastodon"></i> Mastodon</a></li>
           <li><a href="/subscribe"><i class="nf nf-fa-square_rss"></i> Subscribe</a></li>
-          <li><a href="https://www.flickr.com/photos/dcbuchan/"><i class="nf nf-fa-flickr"></i> flickr</a></li>
           <li><a href="https://github.com/quantumgardener"><i class="nf nf-fa-github"></i> Github</a></li>
         </ul>
         <div class="site-metadata">
