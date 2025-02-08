@@ -19,7 +19,8 @@ export type ContentDetails = {
   content: string
   richContent?: string
   date?: Date
-  description?: string
+  description?: string,
+  uri?: string
 }
 
 interface Options {
@@ -60,16 +61,27 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     const inviteComment = escapeHTML(`<p><a href="${emailComment(content.title)}">Email a comment</a></p>`);
     const description = content.richContent ? `${content.richContent}${inviteComment}` : `${content.description}${inviteComment}`;
 
+    let guid = ""
+    if (content.uri !== undefined ) {
+      // console.log(content.uri)
+      // console.warn(`\nBlog missing URI: ${content.title}`)
+      // process.exit(1)
+      guid = content.uri
+    } else {
+      guid = `https://${joinSegments(base, encodeURI(slug))}`
+    }
+
     return `<item>
         <title>${escapeHTML(content.title)}</title>
         <link>https://${joinSegments(base, encodeURI(slug))}</link>
-        <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
+        <guid>${guid}</guid>
         <description>${description}</description>
         <pubDate>${content.date?.toUTCString()}</pubDate>
       </item>`;
   }
 //(f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
 //slug.startsWith(`${rssRootFolder}`) && content.title != "Blog")
+
   const items = Array.from(idx)
     .filter(([slug,content]) => slug.startsWith(`notes`) && Boolean((content.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog')))
     .sort(([_, f1], [__, f2]) => {
@@ -151,6 +163,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               : undefined,
             date: date,
             description: file.data.description ?? "",
+            uri: file.data.frontmatter?.uri
           })
         }
       }

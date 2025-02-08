@@ -68,11 +68,10 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (tags) {
               data.tags = [...new Set(
                 tags
-                  .filter((tag: string) => tag.startsWith("keyword/") || tag.startsWith("class/photo"))
+                  .filter((tag: string) => tag.startsWith("keyword/") || tag.startsWith("class/photo") || tag.startsWith("class/blog"))
                   .map((tag: string) => tag.replace("keyword/", ""))   
               )];
             }
-            
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
             if (aliases) data.aliases = aliases
@@ -113,8 +112,9 @@ declare module "vfile" {
         cssclasses: string[]
         socialImage: string
         landscapes: string[]
-        comments: boolean | string,
+        comments: boolean | string
         thumbnail: string
+        uri: string
       }>
   }
 }
