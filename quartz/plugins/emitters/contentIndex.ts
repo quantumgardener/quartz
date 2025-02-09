@@ -61,15 +61,22 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     const inviteComment = escapeHTML(`<p><a href="${emailComment(content.title)}">Email a comment</a></p>`);
     const description = content.richContent ? `${content.richContent}${inviteComment}` : `${content.description}${inviteComment}`;
 
+    // DO NOT use the filename as a guid in RSS. If the name every changes, then RSS readers will pick up
+    // the old file as a new file becuase Quartz uses the filename to create the GUID.
+    // The GUID should be immutable from first publication. From 8 February 2025, I'm using tag: but prior
+    // to that I have published items using URL as GUID. My Obsidian vault now has a URI for all that is
+    // consistent so title changes or file moves, won't cause a future problem.
     let guid = ""
     if (content.uri !== undefined ) {
-      // console.log(content.uri)
-      // console.warn(`\nBlog missing URI: ${content.title}`)
-      // process.exit(1)
-      guid = content.uri
+      if (content.uri.startsWith("tag:") ) {
+        guid = content.uri
+      } else {
+        guid = `https://${joinSegments(base, encodeURI(slug))}`
+      }
     } else {
-      guid = `https://${joinSegments(base, encodeURI(slug))}`
-    }
+      console.error(`Blog missing URI: ${content.title}`)
+      process.exit(1)
+  }
 
     return `<item>
         <title>${escapeHTML(content.title)}</title>
