@@ -1,5 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
+import { FullSlug, SimpleSlug, joinSegments, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
 import style from "./styles/recentNotes.scss"
@@ -69,17 +69,17 @@ export default ((userOpts?: Partial<Options>) => {
               const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
               const tags = page.frontmatter?.tags ?? []
 
+              const link = joinSegments("/", page.slug!)
+
               return (
                 <li>
-                      <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                      <a href={joinSegments("/", page.slug!)} class="internal">
                         {title}</a><br/>
                         {page.dates && (
                       <span class="meta">
                         <Date date={getDate(cfg, page)!} locale={cfg.locale} />
                       </span>
                     )}
-                      
-                    
                 </li>
               )
             })}
