@@ -59,9 +59,10 @@ export default ((opts?: Partial<TagContentOptions>) => {
         <hr/>
         <ul class="tags">
           {tags.map((tag) => {
-            // if (tag.startsWith("class") && tag !== "class/photo") {
-            //   return null
-            // }
+            // This snippet pattern hides tags from displayong on the index page. The tag still exists.
+            if (tag.startsWith("class") && tag !== "class/photo") {
+              return null
+            }
 
             return (
               <li>

@@ -76,6 +76,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
       const allFiles = content.map((c) => c[1].data)
       const cfg = ctx.cfg.configuration
 
+      // This is the complete list of tags from all files.
       const tags: Set<string> = new Set(
         allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
       )
@@ -83,6 +84,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
       // add base tag
       tags.add("index")
 
+      // Read in descriptions for each tag
       const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
         [...tags].map((tag) => {
           const title =
@@ -99,6 +101,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
         }),
       )
 
+      // Processing file tree for all files in the tags folder. If it is tagged, add it to the tagDescriptions list
       for (const [tree, file] of content) {
         const slug = file.data.slug!
         if (slug.startsWith("tags/")) {
@@ -112,6 +115,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
         }
       }
 
+      // Render the page for every tag in the list.
       for (const tag of tags) {
         const slug = joinSegments("tags", tag) as FullSlug
         const [tree, file] = tagDescriptions[tag]

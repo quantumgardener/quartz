@@ -62,8 +62,9 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         }
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
+        const page_class = page.frontmatter?.page_class
         const description = page.description
-        const images = fileData.slug!.startsWith("photos") || tags.includes("class/photo") || fileData.slug!.startsWith("albums") 
+        const images = (page_class === "photo" || page_class === "album" )
         return (
           <li class="section-li">
             <hr/>

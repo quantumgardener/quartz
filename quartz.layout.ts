@@ -59,7 +59,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent blog posts",
       limit: 8,
-      filter: (f) => Boolean((f.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes('class/blog'))
+      filter: (f) => f.frontmatter?.page_class === "blog"
     }),
     // Component.Graph({localGraph: {
     //   showTags: false,
@@ -112,7 +112,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent blog posts",
       limit: 8,
-      filter: (f) => Boolean(f.slug?.startsWith("blog/") && !f.slug?.endsWith("index"))
+      filter: (f) => f.frontmatter?.page_class === "blog"
     })
   ],
 }

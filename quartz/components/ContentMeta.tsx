@@ -128,6 +128,14 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(<span>{displayedTime}</span>)
       }
 
+      if (fileData.frontmatter?.page_class) {
+        if (fileData.frontmatter?.page_class === "blog") {
+          segments.push(<span> | <i class="nf nf-fa-link"></i> <a href="/blog">{fileData.frontmatter?.page_class}</a></span>)
+        } else {
+          segments.push(<span> | {fileData.frontmatter?.page_class}</span>)
+        }
+      }
+      
       // End of my changes
 
       return (
