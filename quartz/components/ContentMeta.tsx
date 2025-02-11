@@ -6,6 +6,7 @@ import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 import { resolveRelative, SimpleSlug } from "../util/path"
+import { sort } from "d3"
 
 interface ContentMetaOptions {
   /**
@@ -89,7 +90,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     const text = fileData.text
 
     if (text) {
-      const segments: (string | JSX.Element)[] = []
+      let segments: (string | JSX.Element)[] = []
 
       if (options.showLandscapes) {  
         const landscapeTag = fileData.frontmatter?.tags?.find(element => element.startsWith('landscape/'))
@@ -128,15 +129,31 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(<span>{displayedTime}</span>)
       }
 
-      if (fileData.frontmatter?.page_class) {
-        if (fileData.frontmatter?.page_class === "blog") {
-          segments.push(<span> | <i class="nf nf-fa-link"></i> <a href="/blog">{fileData.frontmatter?.page_class}</a></span>)
-        } else {
-          segments.push(<span> | {fileData.frontmatter?.page_class}</span>)
+      const sortedClasses = [...fileData.frontmatter?.classes ?? new Set()].sort()
+      const classes: (string | JSX.Element)[] = []
+      for (let i = 0; i < sortedClasses.length; i++) {
+        const cls = sortedClasses[i]
+        const clsText = cls.replace("-"," ")
+        switch (cls) {
+          case 'blog':
+          case 'now':
+            classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/${cls}`}>{clsText}</a></span>)
+            break;
+          case 'ontological-distinction':
+            classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/notes/${cls}`}>{clsText}</a></span>)
+            break;
+          default:
+            classes.push(<span>{clsText}</span>)
+            break;
+        }
+        if (i < sortedClasses.length -1 ) {
+          classes.push(<span>, </span>)
         }
       }
-      
-      // End of my changes
+      if (classes.length > 0) {
+        segments.push(<span> | </span>)
+        segments = segments.concat(classes)
+      }
 
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>

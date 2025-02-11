@@ -21,7 +21,7 @@ export type ContentDetails = {
   date?: Date
   description?: string,
   uri?: string,
-  page_class?: string
+  classes?: Set<string>
 }
 
 interface Options {
@@ -89,7 +89,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
   }
 
   const items = Array.from(idx)
-    .filter(([slug,content]) => slug.startsWith(`notes`) && content.page_class === "blog")
+    .filter(([slug,content]) => slug.startsWith(`notes`) && content.classes?.has("blog"))
     .sort(([_, f1], [__, f2]) => {
       if (f1.date && f2.date) {
         return f2.date.getTime() - f1.date.getTime()
@@ -170,7 +170,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             date: date,
             description: file.data.description ?? "",
             uri: file.data.frontmatter?.uri,
-            page_class: file.data.frontmatter?.page_class
+            classes: file.data.frontmatter?.classes
           })
         }
       }

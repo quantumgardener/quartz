@@ -63,19 +63,19 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               data.title = file.stem ?? i18n(cfg.configuration.locale).propertyDefaults.title
             }
 
-            data.page_class = ""
+            data.classes = new Set()
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
             // if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
             if (tags) {
               let uniqueTags = new Set(
                 tags
-                  .filter((tag: string) => tag.startsWith("keyword/") || tag.startsWith("class"))
+                  .filter((tag: string) => tag.startsWith("keyword/") || tag.startsWith("class/"))
                   .map((tag: string) => tag.replace("keyword/", ""))   
               );
 
               for (let tag of uniqueTags) {
-                if (tag.startsWith("class")) {
-                  data.page_class = tag.split("/")[1]
+                if (tag.startsWith("class/")) {
+                  data.classes.add(tag.split("/")[1])
                   uniqueTags.delete(tag)                  
                 }
               }
@@ -124,7 +124,7 @@ declare module "vfile" {
         comments: boolean | string
         thumbnail: string
         uri: string
-        page_class: string
+        classes: Set<string>
       }>
   }
 }
