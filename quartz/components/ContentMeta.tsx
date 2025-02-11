@@ -114,19 +114,31 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       if (fileData.dates && options.showDate) {
         if (fileData.dates?.created.getTime() == fileData.dates?.modified.getTime()) {
-          segments.push(`${formatDate(fileData.dates?.created,cfg.locale)} | `)
+          segments.push(`${formatDate(fileData.dates?.created,cfg.locale)}`)
         } else {
-          segments.push(`${formatDate(fileData.dates?.modified,cfg.locale)} [original ${formatDate(fileData.dates?.created,cfg.locale)}] | `)
+          segments.push(`${formatDate(fileData.dates?.modified,cfg.locale)} [original ${formatDate(fileData.dates?.created,cfg.locale)}]`)
         }
       }
 
       // Display reading time if enabled
       if (options.showReadingTime) {
         const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
-        })
-        segments.push(<span>{displayedTime}</span>)
+        if (minutes >= 1) {
+          const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
+            minutes: Math.ceil(minutes),
+          })
+          segments.push(<span> | {displayedTime}</span>)  
+        }
+      }
+
+      if(fileData.frontmatter?.rating) {
+        const regex = /\[\[(.*?)\|(.*?)\]\]/
+        const match = fileData.frontmatter?.rating.match(regex)
+        if (match) {
+          const ratingSlug = match[1]
+          const ratingStars = match[2]
+          segments.push(<span> | <a href={`/notes/${ratingSlug}`}>{ratingStars}</a></span>)
+        }        
       }
 
       const sortedClasses = [...fileData.frontmatter?.classes ?? new Set()].sort()

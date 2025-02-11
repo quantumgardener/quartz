@@ -125,6 +125,7 @@ declare module "vfile" {
         thumbnail: string
         uri: string
         classes: Set<string>
+        rating: string
       }>
   }
 }
