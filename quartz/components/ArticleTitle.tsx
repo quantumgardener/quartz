@@ -42,10 +42,12 @@ const ArticleTitle: QuartzComponent = ({ cfg, fileData, displayClass }: QuartzCo
     //const workingTitle = title.toTitleCase()
     const workingTitle = title
     if (workingTitle.startsWith(`${i18n(cfg.locale).pages.tagContent.tag} `)) {
-      return <h1 class="article-title">{workingTitle.replace(`${i18n(cfg.locale).pages.tagContent.tag} `,"")} <i class="nf nf-oct-tag"></i></h1>
-    } else {
-      return <h1 class={`article-title ${displayClass ?? ""}`}>{workingTitle}</h1>
+      return <h1 class="article-title">{workingTitle.replace(`${i18n(cfg.locale).pages.tagContent.tag} `,"")} <i class="nf nf-cod-tag"></i></h1>
     }
+    if (workingTitle.startsWith(`${i18n(cfg.locale).pages.keywordContent.keyword} `)) {
+      return <h1 class="article-title">{workingTitle.replace(`${i18n(cfg.locale).pages.keywordContent.keyword} `,"")} <i class="nf nf-cod-key"></i></h1>
+    }
+    return <h1 class={`article-title ${displayClass ?? ""}`}>{workingTitle}</h1>
   } else {
     return null
   }

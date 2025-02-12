@@ -141,7 +141,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         }        
       }
 
-      const sortedClasses = [...fileData.frontmatter?.classes ?? new Set()].sort()
+      const sortedClasses = fileData.frontmatter?.classes.sort()
       const classes: (string | JSX.Element)[] = []
       for (let i = 0; i < sortedClasses.length; i++) {
         const cls = sortedClasses[i]

@@ -80,12 +80,12 @@ export interface Translation {
       showingFirst: (variables: { count: number }) => string
       totalTags: (variables: { count: number }) => string
     }
-    // landscapeContent: {
-    //   tag: string
-    //   tagIndex: string
-    //   itemsUnderTag: (variables: { count: number }) => string
-    //   showingFirst: (variables: { count: number }) => string
-    //   totalTags: (variables: { count: number }) => string
-    // }
+    keywordContent: {
+      keyword: string
+      keywordIndex: string
+      itemsUnderKeyword: (variables: { count: number }) => string
+      showingFirst: (variables: { count: number }) => string
+      totalKeywords: (variables: { count: number }) => string
+    }
   }
 }

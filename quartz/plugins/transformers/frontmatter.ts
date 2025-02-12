@@ -6,6 +6,7 @@ import toml from "toml"
 import { slugTag } from "../../util/path"
 import { QuartzPluginData } from "../vfile"
 import { i18n } from "../../i18n"
+import { setPositions } from "pixi.js"
 
 export interface Options {
   delimiters: string | [string, string]
@@ -63,23 +64,28 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               data.title = file.stem ?? i18n(cfg.configuration.locale).propertyDefaults.title
             }
 
-            data.classes = new Set()
+            data.classes = []
+            data.keywords = []
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
-            // if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
-            if (tags) {
-              let uniqueTags = new Set(
-                tags
-                  .filter((tag: string) => tag.startsWith("keyword/") || tag.startsWith("class/"))
-                  .map((tag: string) => tag.replace("keyword/", ""))   
-              );
-
+            if (tags) {           
+              //
+              // NOT PULLING IN ANY TAGS OTHER THAN THOSE TYPES LISTED BELOW
+              //
+              let uniqueTags = new Set(tags.map((tag: string) => slugTag(tag)))
+    
               for (let tag of uniqueTags) {
                 if (tag.startsWith("class/")) {
-                  data.classes.add(tag.split("/")[1])
-                  uniqueTags.delete(tag)                  
+                  data.classes.push(tag.split("/")[1])
+                  uniqueTags.delete(tag)
+                }
+                
+                if (tag.startsWith("keyword/")) {
+                  data.keywords.push(tag.split("/")[1])
+                  uniqueTags.delete(tag)
                 }
               }
               data.tags = Array.from(uniqueTags)
+              //data.tags = []
             }
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
@@ -124,7 +130,8 @@ declare module "vfile" {
         comments: boolean | string
         thumbnail: string
         uri: string
-        classes: Set<string>
+        classes: string[]
+        keywords: string[]
         rating: string
       }>
   }

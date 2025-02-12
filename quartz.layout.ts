@@ -59,7 +59,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent blog posts",
       limit: 8,
-      filter: (f) => f.frontmatter?.classes?.has("blog") ?? false
+      filter: (f) => f.frontmatter?.classes?.includes("blog") ?? false
     }),
     // Component.Graph({localGraph: {
     //   showTags: false,
@@ -112,7 +112,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.RecentNotes({
       title: "Recent blog posts",
       limit: 8,
-      filter: (f) => f.frontmatter?.classes?.has("blog") ?? false
+      filter: (f) => f.frontmatter?.classes?.includes("blog") ?? false
     })
   ],
 }

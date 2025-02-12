@@ -89,7 +89,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
   }
 
   const items = Array.from(idx)
-    .filter(([slug,content]) => slug.startsWith(`notes`) && content.classes?.has("blog"))
+    .filter(([slug,content]) => slug.startsWith(`notes`) && content.classes?.includes("blog"))
     .sort(([_, f1], [__, f2]) => {
       if (f1.date && f2.date) {
         return f2.date.getTime() - f1.date.getTime()

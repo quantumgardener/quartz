@@ -73,20 +73,20 @@ export default {
         count === 1 ? "1 item under this folder." : `${count} items under this folder.`,
     },
     tagContent: {
-      tag: "Tag",
+      tag: "Tag:",
       tagIndex: "Tag Index",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 item with this tag." : `${count} items with this tag.`,
       showingFirst: ({ count }) => `Showing first ${count} tags.`,
       totalTags: ({ count }) => `Found ${count} total tags.`,
     },
-    // landscapeContent: {
-    //   tag: "Landscape",
-    //   tagIndex: "Landscape Index",
-    //   itemsUnderTag: ({ count }) =>
-    //     count === 1 ? "1 view in this landscape." : `${count} views in this landscape.`,
-    //   showingFirst: ({ count }) => `Showing first ${count} views.`,
-    //   totalTags: ({ count }) => `Found ${count} total views.`,
-    // },
+    keywordContent: {
+      keyword: "Keyword:",
+      keywordIndex: "Keyword Index",
+      itemsUnderKeyword: ({ count }) =>
+        count === 1 ? "1 photo with this keyword." : `${count} photos with this keyword.`,
+      showingFirst: ({ count }) => `Showing first ${count} keyword.`,
+      totalKeywords: ({ count }) => `Found ${count} total keywords.`,
+    },
   },
 } as const satisfies Translation

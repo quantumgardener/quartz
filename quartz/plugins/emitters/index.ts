@@ -1,3 +1,5 @@
+import exp from "constants"
+
 export { ContentPage } from "./contentPage"
 export { TagPage } from "./tagPage"
 export { FolderPage } from "./folderPage"
@@ -7,5 +9,5 @@ export { Assets } from "./assets"
 export { Static } from "./static"
 export { ComponentResources } from "./componentResources"
 export { NotFoundPage } from "./404"
-export { LandscapePage } from "./landscapePage"
+export { KeywordPage } from "./keywordPage"
 

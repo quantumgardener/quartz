@@ -19,9 +19,9 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
-import LandscapeContent from "./pages/LandscapeContent"
 import SiteLogo from "./SiteLogo"
 import MyExplorer from "./MyExplorer"
+import KeywordContent from "./pages/KeywordContent"
 
 
 export {
@@ -46,7 +46,7 @@ export {
   RecentNotes,
   NotFound,
   Breadcrumbs,
-  LandscapeContent,
   SiteLogo,
-  MyExplorer
+  MyExplorer,
+  KeywordContent,
 }

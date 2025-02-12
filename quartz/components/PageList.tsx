@@ -64,7 +64,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
         const classes = page.frontmatter?.classes
         const description = page.description
-        const images = (classes?.has("photo") || classes?.has("album") )
+        const images = (classes?.includes("photo") || classes?.includes("album") )
         return (
           <li class="section-li">
             <hr/>
@@ -91,13 +91,13 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               )}
             </div>
             <ul class="tags">
-                {tags.filter((tag) => tag != fileData.slug?.split("tags/")[1]).map((tag) => (                  
+                {tags.filter((tag) => tag != fileData.slug?.split("keywords/")[1]).map((tag) => (                  
                   <li>
                     <a
                       class="internal tag-link"
                       href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
                     >
-                      {tag} <i class="nf nf-oct-tag"></i>
+                      {tag} <i class="nf nf-cod-tag"></i>
                     </a>
                   </li>
                 ))}

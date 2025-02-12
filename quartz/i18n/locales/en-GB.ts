@@ -80,13 +80,6 @@ export default {
       showingFirst: ({ count }) => `Showing first ${count} tags.`,
       totalTags: ({ count }) => `Found ${count} total tags.`,
     },
-    landscapeContent: {
-      tag: "Landscape",
-      tagIndex: "Landscape Index",
-      itemsUnderTag: ({ count }) =>
-        count === 1 ? "1 view in this landscape." : `${count} views in this landscape.`,
-      showingFirst: ({ count }) => `Showing first ${count} views.`,
-      totalTags: ({ count }) => `Found ${count} total views.`,
-    },
+
   },
 } as const satisfies Translation
