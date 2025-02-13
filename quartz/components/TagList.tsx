@@ -6,12 +6,13 @@ const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
   const baseDir = pathToRoot(fileData.slug!)
   const tags = Array.isArray(fileData.frontmatter?.tags) ? fileData.frontmatter.tags : [];
   const keywords = Array.isArray(fileData.frontmatter?.keywords) ? fileData.frontmatter.keywords : [];
-  const combinedItems = [...tags.map(tag => ({ type: 'tag', value: tag })), ...keywords.map(keyword => ({ type: 'keyword', value: keyword }))];
+  const combinedItems = [...tags.map(tag => ({ type: 'tag', value: tag })), ...keywords.map(keyword => ({ type: 'keyword', value: keyword }))]
+  const sortedCombinedItems = combinedItems.sort((a, b) => a.value.localeCompare(b.value));
   
-  if (combinedItems.length > 0) {
+  if (sortedCombinedItems.length > 0) {
     return (
       <ul class={classNames(displayClass, "tags")}>
-        {combinedItems.map((item) => {
+        {sortedCombinedItems.map((item) => {
           const display = `${item.value}`;
           const linkDest = item.type === 'tag' 
             ? baseDir + `/tags/${slugTag(item.value)}` 
