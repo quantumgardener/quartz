@@ -7,6 +7,7 @@ import { slugTag } from "../../util/path"
 import { QuartzPluginData } from "../vfile"
 import { i18n } from "../../i18n"
 import { setPositions } from "pixi.js"
+import { range } from "d3"
 
 export interface Options {
   delimiters: string | [string, string]
@@ -80,7 +81,13 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
                 }
                 
                 if (tag.startsWith("keyword/")) {
-                  data.keywords.push(tag.split("/")[1])
+                  // The tag coming in is hiearchical, even if just one level. keyword/lvl1/lvl2/...
+                  // We want the whole keyword, plus all it's level's parts
+                  let parts = tag.substring("keywords".length).split("/")
+                  for (let i=0; i < parts.length; i++) {
+                    data.keywords.push(parts.slice(0, i+1).join("/"))
+                  }
+                    
                   uniqueTags.delete(tag)
                 }
               }
