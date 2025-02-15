@@ -89,6 +89,9 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
                   //   data.keywords.push(parts.slice(0, i+1).join("/"))
                   // }
                   for (let part of tag.substring("keywords".length).split("/")) {
+                    if (part === "") {
+                      throw new RangeError(`Empty keyword for ${data.title}`)
+                    }
                     if (!data.keywords.includes(part.toLowerCase())) {
                       data.keywords.push(part.toLowerCase())
                     }
