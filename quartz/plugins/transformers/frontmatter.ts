@@ -110,6 +110,8 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
             if (cssclasses) data.cssclasses = cssclasses
 
+            if (data.thumbnail) data.thumbnail = data.thumbnail.replace(/\[\[|\]\]/g,'')
+
             const socialImage = coalesceAliases(data, ["socialImage", "image", "cover"])
 
             const landscapes = coerceToArray(coalesceAliases(data, ["landscapes", "landscape"]))

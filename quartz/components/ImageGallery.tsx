@@ -63,7 +63,7 @@ export const ImageGallery: QuartzComponent = ({ cfg, fileData, allFiles, limit, 
         const title = page.frontmatter?.title
         const keywords = page.frontmatter?.keywords ?? []
         const wide = keywords.includes("panorama") ? "grid-item--width2" : ""
-        let thumbnail = page.frontmatter?.thumbnail?.replace(/\[\[|\]\]/g,'')
+        let thumbnail = page.frontmatter?.thumbnail
         if (wide !== "") {
           thumbnail = thumbnail?.replace("_150.webp", "_300.webp")
         }
