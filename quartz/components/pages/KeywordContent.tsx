@@ -49,15 +49,18 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
       for (const keyword of keywords) {
         keywordItemMap.set(keyword, allPagesWithTag(keyword))
       }
+      
+      type Accumulator = { [key: string]: string[] }
+
       // Group keywords
-      let groupedKeywords = keywords.reduce((acc, keyword) => {
+      let groupedKeywords = keywords.reduce<Accumulator>((acc, keyword) => {
         let firstLetter = keyword[0].toLowerCase(); // Get the first letter
         if (!acc[firstLetter]) {
           acc[firstLetter] = []; // Initialize the array if it doesn't exist
         }
         acc[firstLetter].push(keyword);
         return acc;
-      }, {});
+      }, {} as Accumulator);
       return (
         <div class="popover-hint">
           <article class={classes}>
@@ -65,11 +68,11 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
           </article>
           <p>{i18n(cfg.locale).pages.keywordContent.totalKeywords({ count: keywords.length })}</p>
           <hr />
-          <ul class="tags">
+          <ul>
             {Object.keys(groupedKeywords).sort().map(letter => (
               <div key={letter}>
                 <h2>{letter.toUpperCase()}</h2>
-                <ul>
+                <ul class="tags">
                   {groupedKeywords[letter].map((keyword, index) => {
                     const pages = keywordItemMap.get(keyword)!;
                     const listProps = {
