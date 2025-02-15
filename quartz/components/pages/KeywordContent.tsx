@@ -1,6 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
-import { PageList, SortFn } from "../PageList"
+import { ImageGallery, SortFn } from "../ImageGallery"
 import { FullSlug, getAllSegmentPrefixes, simplifySlug } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
 import { Root } from "hast"
@@ -49,6 +49,15 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
       for (const keyword of keywords) {
         keywordItemMap.set(keyword, allPagesWithTag(keyword))
       }
+      // Group keywords
+      let groupedKeywords = keywords.reduce((acc, keyword) => {
+        let firstLetter = keyword[0].toLowerCase(); // Get the first letter
+        if (!acc[firstLetter]) {
+          acc[firstLetter] = []; // Initialize the array if it doesn't exist
+        }
+        acc[firstLetter].push(keyword);
+        return acc;
+      }, {});
       return (
         <div class="popover-hint">
           <article class={classes}>
@@ -56,50 +65,37 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
           </article>
           <p>{i18n(cfg.locale).pages.keywordContent.totalKeywords({ count: keywords.length })}</p>
           <hr />
-            <ul class="tags">
-                <div>
-                    {keywords.map((keyword) => {
-                    const pages = keywordItemMap.get(keyword)!
+          <ul class="tags">
+            {Object.keys(groupedKeywords).sort().map(letter => (
+              <div key={letter}>
+                <h2>{letter.toUpperCase()}</h2>
+                <ul>
+                  {groupedKeywords[letter].map((keyword, index) => {
+                    const pages = keywordItemMap.get(keyword)!;
                     const listProps = {
-                        ...props,
-                        allFiles: pages,
-                    }
+                      ...props,
+                      allFiles: pages,
+                    };
 
-                    const contentPage = allFiles.filter((file) => file.slug === `keywords/${keyword}`).at(0)
+                    const contentPage = allFiles.filter(file => file.slug === `keywords/${keyword}`).at(0);
 
-                    const root = contentPage?.htmlAst
-                    const content =
-                        !root || root?.children.length === 0
-                        ? contentPage?.description
-                        : htmlToJsx(contentPage.filePath!, root)
+                    const root = contentPage?.htmlAst;
+                    const content = !root || root?.children.length === 0
+                      ? contentPage?.description
+                      : htmlToJsx(contentPage.filePath!, root);
 
                     return (
-                        <li>
-                            <a class="internal tag-link" href={`../keywords/${keyword}`}>
-                                {keyword} <i class="nf nf-cod-key"></i> ({allPagesWithTag(keyword).length})
-                            </a>
-                        </li>
-                            // <div class="page-listing">
-                            //         <p>
-                            //         {i18n(cfg.locale).pages.keywordContent.itemsUnderKeyword({ count: pages.length })}
-                            //         {pages.length > options.numPages && (
-                            //             <>
-                            //             {" "}
-                            //             <span>
-                            //                 {i18n(cfg.locale).pages.keywordContent.showingFirst({
-                            //                 count: options.numPages,
-                            //                 })}
-                            //             </span>
-                            //             </>
-                            //         )}
-                            //         </p>
-                            //         <PageList limit={options.numPages} {...listProps} sort={options?.sort} />
-                            //     </div>
-                            // </div>
-                    )
-                    })}
-                </div>
-            </ul>
+                      <li key={index}>
+                        <a class="internal tag-link" href={`../keywords/${keyword}`}>
+                          {keyword} <i class="nf nf-cod-key"></i> ({allPagesWithTag(keyword).length})
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </ul>;
         </div>
       )
     } else {
@@ -115,7 +111,7 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
           <div class="page-listing">
             <p>{i18n(cfg.locale).pages.keywordContent.itemsUnderKeyword({ count: pages.length })}</p>
             <div>
-              <PageList {...listProps} sort={options?.sort} />
+              <ImageGallery {...listProps} sort={options?.sort} />
             </div>
           </div>
         </div>
@@ -123,6 +119,6 @@ export default ((opts?: Partial<KeywordContentOptions>) => {
     }
   }
 
-  KeywordContent.css = style + PageList.css
+  KeywordContent.css = style + ImageGallery.css
   return KeywordContent
 }) satisfies QuartzComponentConstructor

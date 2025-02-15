@@ -83,9 +83,15 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
                 if (tag.startsWith("keyword/")) {
                   // The tag coming in is hiearchical, even if just one level. keyword/lvl1/lvl2/...
                   // We want the whole keyword, plus all it's level's parts
-                  let parts = tag.substring("keywords".length).split("/")
-                  for (let i=0; i < parts.length; i++) {
-                    data.keywords.push(parts.slice(0, i+1).join("/"))
+
+                  // let parts = tag.substring("keywords".length).split("/")
+                  // for (let i=0; i < parts.length; i++) {
+                  //   data.keywords.push(parts.slice(0, i+1).join("/"))
+                  // }
+                  for (let part of tag.substring("keywords".length).split("/")) {
+                    if (!data.keywords.includes(part.toLowerCase())) {
+                      data.keywords.push(part.toLowerCase())
+                    }
                   }
                     
                   uniqueTags.delete(tag)
