@@ -29,11 +29,13 @@ export default ((opts?: Options) => {
         
         <hr />
         <ul>
+          <li><a href="/subscribe"><i class="nf nf-fa-square_rss"></i> Subscribe</a></li>
           <li><a href="/about"><i class="nf nf-fa-address_card"></i> About</a></li>
+          <li>|</li>
           <li><a href="/privacy"><i class="nf nf-fa-lock"></i> Privacy</a></li>
+          <li><a href="/ai"><i class="nf nf-md-brain"></i> AI Policy</a></li>
           <li>|</li>
           <li><a href="https://aus.social/@dcbuchan"><i class="nf nf-fa-mastodon"></i> Mastodon</a></li>
-          <li><a href="/subscribe"><i class="nf nf-fa-square_rss"></i> Subscribe</a></li>
           <li><a href="https://github.com/quantumgardener"><i class="nf nf-fa-github"></i> Github</a></li>
         </ul>
         <div class="site-metadata">
