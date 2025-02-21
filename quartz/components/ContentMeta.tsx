@@ -151,9 +151,18 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           case 'now':
             classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/${cls}`}>{clsText}</a></span>)
             break;
+          case 'book':
+              classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/books`}>{clsText}</a></span>)
+              break;
           case 'ontological-distinction':
             classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/notes/${cls}`}>{clsText}</a></span>)
             break;
+          case 'slash-page':
+              classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/slashes`}>{clsText}</a></span>)
+              break;
+          case 'video-game':
+              classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/video-games`}>{clsText}</a></span>)
+              break;
           default:
             classes.push(<span>{clsText}</span>)
             break;

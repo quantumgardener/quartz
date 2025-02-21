@@ -79,8 +79,7 @@ export default ((userOpts?: Partial<Options>) => {
         children: [
           { slug: 'photos/index'},
           { slug: 'notes/photography'},
-          { slug: 'notes/video-gaming'},
-          { slug: 'notes/imatch-to-socials' }
+          { slug: 'notes/video-gaming'}
         ]
       },
       {
@@ -88,7 +87,8 @@ export default ((userOpts?: Partial<Options>) => {
       },
       { slug: 'projects',
         children: [
-          { slug: 'notes/100-hours-learning-affinity-photo'}
+          { slug: 'notes/100-hours-learning-affinity-photo'},
+          { slug: 'notes/imatch-to-site' }
         ]
       },
       { slug: 'subscribe'}
@@ -157,20 +157,49 @@ export default ((userOpts?: Partial<Options>) => {
       <div class={classNames(displayClass, "explorer")}>
         <button
           type="button"
-          id="explorer"
+          id="mobile-explorer"
+          class="collapsed hide-until-loaded"
           data-behavior={opts.folderClickBehavior}
           data-collapsed={opts.folderDefaultState}
           data-savestate={opts.useSavedState}
           data-tree={jsonTree}
+          data-mobile={true}
           aria-controls="explorer-content"
-          aria-expanded={opts.folderDefaultState === "open"}
+          aria-expanded={false}
         >
-          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title} <a href="/notes/landscapes" style="color:var(--secondary)"><i class="nf nf-fa-question_circle"></i></a></h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-menu"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="desktop-explorer"
+          class="title-button"
+          data-behavior={opts.folderClickBehavior}
+          data-collapsed={opts.folderDefaultState}
+          data-savestate={opts.useSavedState}
+          data-tree={jsonTree}
+          data-mobile={false}
+          aria-controls="explorer-content"
+          aria-expanded={true}
+        >
+          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title} <a href="/notes/landscapes" style="color:var(--secondary)"><i class="nf nf-fa-question_circle"></i></a></h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="5 8 14 8"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
