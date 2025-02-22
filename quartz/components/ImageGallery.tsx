@@ -53,7 +53,7 @@ export const ImageGallery: QuartzComponent = ({ cfg, fileData, allFiles, limit, 
   }
 
   return (
-    <div class="grid">
+    <div id="my-gallery">
       {list.map((page: Data) => {
         const children = countChildPages(page);
         let pagedate:string = ""
@@ -62,17 +62,11 @@ export const ImageGallery: QuartzComponent = ({ cfg, fileData, allFiles, limit, 
         }
         const title = page.frontmatter?.title
         const keywords = page.frontmatter?.keywords ?? []
-        const wide = keywords.includes("panorama") ? "grid-item--width2" : ""
         let thumbnail = page.frontmatter?.thumbnail
-        if (wide !== "") {
-          thumbnail = thumbnail?.replace("_150.webp", "_300.webp")
-        }
         return (
-          <div class={`grid-item ${wide}`}>
-            <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+          <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
               <img src={resolveRelative(fileData.slug!, "photos/"+thumbnail as SimpleSlug)} style="float:left; margin-top:0; margin-right:1rem;"/>
             </a>
-          </div>
         )
       })}
     </div>

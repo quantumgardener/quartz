@@ -203,9 +203,11 @@ export default (() => {
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
         <link rel="stylesheet" href="/static/icons/nerdfonts.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
         <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-        <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-        <script defer src="/src/masonry.js"></script>
+        <script defer src="/src/justified_gallery.js"></script> 
       </head>
     )
   }

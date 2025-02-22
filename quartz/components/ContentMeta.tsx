@@ -141,12 +141,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         }        
       }
 
-      const sortedClasses = fileData.frontmatter?.classes.sort()
+      const sortedClasses = fileData.frontmatter?.classes?.sort() || []
       const classes: (string | JSX.Element)[] = []
       for (let i = 0; i < sortedClasses.length; i++) {
         const cls = sortedClasses[i]
         const clsText = cls.replace("-"," ")
         switch (cls) {
+          case 'album':
+              classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/albums`}>{clsText}</a></span>)
+              break;
           case 'blog':
           case 'now':
             classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/${cls}`}>{clsText}</a></span>)
