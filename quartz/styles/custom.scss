@@ -18,10 +18,11 @@ h2 {
   font-size: smaller;
 }
 
+
 .page {
     & article {
         & img {
-            border: 1px solid black;
+            border: 1px solid var(--dark);
             box-shadow: 0.5rem 0.5rem 0.2rem var(--lightgray);
             display: block;
             margin-left: auto;
@@ -454,7 +455,7 @@ span {
 }
 
 iframe#slider {
-  border: 1px solid black;
+  border: 1px solid var(--dark);
   box-shadow: 0.5rem 0.5rem 0.2rem var(--lightgray);
   display: block;
   margin-left: auto;
@@ -526,7 +527,7 @@ iframe#slider {
     margin: 20px auto;
     width: 600px;
     height: 400px;
-    border: 1px solid black;
+    border: 1px solid var(--dark);
     box-shadow: 0.5rem 0.5rem 0.2rem var(--lightgray);
   }
 }
