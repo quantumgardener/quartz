@@ -145,7 +145,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const classes: (string | JSX.Element)[] = []
       for (let i = 0; i < sortedClasses.length; i++) {
         const cls = sortedClasses[i]
-        const clsText = cls.replace("-"," ")
+        const clsText = cls.replace(/-/g, " ")
         switch (cls) {
           case 'album':
               classes.push(<span><i class="nf nf-fa-link"></i> <a href={`/albums`}>{clsText}</a></span>)
