@@ -31,27 +31,16 @@ export const defaultContentPageLayout: PageLayout = {
       Component.Spacer()
     ),
     Component.Search(),
-    Component.DesktopOnly(
-      Component.MyExplorer({
-        title: "Landscapes",
-        folderClickBehavior: "link",
-        sortFn: undefined,
-        order: ["filter", "sort", "map"]
-      }),
-    )
+    Component.MyExplorer({
+      title: "Landscapes",
+      folderClickBehavior: "link",
+      sortFn: undefined,
+      order: ["filter", "sort", "map"]
+    }),
   ],
   right: [
     Component.DesktopOnly(
       Component.TableOfContents(),
-    ),
-    Component.MobileOnly(
-      Component.MyExplorer({
-        title: "Menu",
-        folderClickBehavior: "link",
-        folderDefaultState: "collapsed",
-        sortFn: undefined,
-        order: ["filter", "sort", "map"]
-      }),
     ),
     Component.Backlinks({
       hideWhenEmpty: false
