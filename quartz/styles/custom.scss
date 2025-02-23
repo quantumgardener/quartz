@@ -431,6 +431,20 @@ article {
 //   }
 // }
 
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.search-button {
+  flex: 3
+}
+
+.darkmode {
+  flex: 1
+}
 
 span {
   &.self-link {
