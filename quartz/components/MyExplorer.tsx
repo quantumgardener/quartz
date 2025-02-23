@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import explorerStyle from "./styles/explorer.scss"
 
 // @ts-ignore
-import script from "./scripts/explorer.inline"
+import script from "./scripts/myexplorer.inline"
 import { ExplorerNode, FileNode, Options } from "./MyExplorerNode"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
