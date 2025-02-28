@@ -53,7 +53,7 @@ export const ImageGallery: QuartzComponent = ({ cfg, fileData, allFiles, limit, 
   }
 
   return (
-    <div id="my-gallery">
+    <div id="my-gallery" class="justified-gallery">
       {list.map((page: Data) => {
         const children = countChildPages(page);
         let pagedate:string = ""
